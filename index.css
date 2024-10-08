@@ -5,6 +5,8 @@
     font-family: 'Arial', sans-serif;
 }
 
+/* Header start */
+
 .header{
     display: flex;
     justify-content: space-around;
@@ -17,7 +19,7 @@
 }
 
 .logo{
-    width: 30%;
+    width: 10%;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -55,3 +57,134 @@
     background-color: #ff6b6b;
     color: white;
 }
+
+/* Header end */
+
+/* Body start */
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container{
+    width: 90%;
+}
+
+.search {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input {
+    width: 20%;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-button {
+    width: auto;
+    padding: 5px 20px;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #e34b4b;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.res-Card {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.res-Card:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);    
+    border-radius: 5px;
+}
+
+.card-top {
+    position: relative;
+    flex: 1;
+}
+
+.res-card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.offer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.card-details {
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.resName {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+}
+
+.rating-with-time {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.rating-with-time + h5 {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.star-ul {
+    display: flex;
+    background-color: yellow;
+}
+
+/* Body end */

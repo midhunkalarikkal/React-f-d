@@ -23,7 +23,7 @@ const Header = () => {
     <nav className="header">
       <div className="logo-container">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVermuyA5zuSvADyNPet-giCboNoUHK52G9w&s"
+          src="https://cdn-icons-png.flaticon.com/512/3027/3027212.png"
           alter=""
           className="logo"
         />
@@ -61,10 +61,60 @@ const Header = () => {
   );
 };
 
+const RestaurantCard = () => {
+  return (
+    <div className="res-Card">
+      <div className="card-top">
+        <img
+          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jvupcj5r5g3uy8hnasmz"
+          alt="res-card-image"
+          className="res-card-img"
+        />
+        <h3 className="offer">Offer up to 60%</h3>
+      </div>
+      <div className="card-details">
+        <h3 className="resName">Ganapathi Bhavan</h3>
+        <h4 className="rating-with-time">4.3 • 30-35 mins</h4>
+        <h5 className="rating-with-time">
+          Pastas, Burgers, Ice Cream, Pizzas Cheroor
+        </h5>
+      </div>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+        <div className="container">
+          <div className="search">
+            <input type="text" placeholder="Search" className="search-input" />
+            <button className="search-button">Search</button>
+          </div>
+          <div className="res-container">
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+          </div>
+        </div>
+    </div>
+  );
+};
+
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
+      <Body />
     </div>
   );
 };
