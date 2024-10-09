@@ -1115,7 +1115,17 @@ if we use exporting multiple items from a file using default export using an obj
 
 whenever we are importing an named export we need to wrap the names inside curly brace
 
+### Why React is Fast
+=====================
+Virtual dom
+diff algorithm
+re conceliation
 
+useState
+---------
+Whenever a state variable update react will re render the component
+
+useEffect
 
 
 
