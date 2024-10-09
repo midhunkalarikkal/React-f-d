@@ -1094,15 +1094,26 @@ NOTE THAT :- never use the index of the looping as the unique key
 A: A `key` is a special attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. In other words, we can say that keys are unique Identifier used to give an identity to the elements in the lists.
 Keys should be given to the elements within the array to give the elements a stable identity.
 
-### Componets folder filename ###
-================================
+### Good Practice ###
+========================
+
+## Componets folder filename
+--------------------------------
 Make the file name exact of the component name
  
  The extension of the file name will be .js , .jsx , .tsx  its not matters
 
+ ## util / common folder in src
+ ------------------------------
+ this folder will can hace the constant.ja and this fille will contain t hard coded data and export it 
 
+## named_export
+--------------
+is using when we want o export multiple items from a single file
 
+if we use exporting multiple items from a file using default export using an object it will make the bundler to optimize the code
 
+whenever we are importing an named export we need to wrap the names inside curly brace
 
 
 
