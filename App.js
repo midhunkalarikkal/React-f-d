@@ -18,6 +18,15 @@ import ReactDOM from "react-dom/client";
  *   -Contact
  **/
 
+const json = fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=8.528765&lng=76.9375793&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+.then(response => response.json())  
+  .then(data => {
+    console.log(data); 
+  })
+  .catch(error => {
+    console.error("Error fetching data:", error);
+  });
+
 const Header = () => {
   return (
     <nav className="header">
@@ -75,9 +84,7 @@ const RestaurantCard = () => {
       <div className="card-details">
         <h3 className="resName">Ganapathi Bhavan</h3>
         <h4 className="rating-with-time">4.3 • 30-35 mins</h4>
-        <h5 className="rating-with-time">
-          Pastas, Burgers, Ice Cream, Pizzas Cheroor
-        </h5>
+        <h5 className="rating-with-time">Pastas, Burgers, Ice Cream, Pizzas Cheroor</h5>
       </div>
     </div>
   );
@@ -92,17 +99,6 @@ const Body = () => {
             <button className="search-button">Search</button>
           </div>
           <div className="res-container">
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
             <RestaurantCard/>
           </div>
         </div>

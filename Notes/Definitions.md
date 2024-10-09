@@ -1071,13 +1071,34 @@ A: The `type` attribute specifies the type of the script. The type attribute ide
 - `text/babel` : This value indicates that the script is a babel type and required bable to transpile it.
 - `text/typescript`: As the name suggest the script is written in `TypeScript`.
 
+### Props ###
+==============
+The arguments that passed in the functional component
 
+### Config driven UI ###
+=========================
+The ui is driven the config , the config is the data so that we change the ui according to the locations
 
+### `Key` Property in Jsx element ###
+======================================
+Whenever we are looping and making data dynamic we need to set a key property to the JSX element like key = {value}
 
+So these keys are very important for the app optimization 
 
+Suppose if a new data came to the array we are looping , and if there is not unique key for the elements , The react will rerender all the elements again because react dont knwo which is the newly added data so this will make our app more complex in loading
 
+So keeping a unique key for the element will help the react to identify the newly added data and then the react will only render that data
 
+NOTE THAT :- never use the index of the looping as the unique key
 
+A: A `key` is a special attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. In other words, we can say that keys are unique Identifier used to give an identity to the elements in the lists.
+Keys should be given to the elements within the array to give the elements a stable identity.
+
+### Componets folder filename ###
+================================
+Make the file name exact of the component name
+ 
+ The extension of the file name will be .js , .jsx , .tsx  its not matters
 
 
 
