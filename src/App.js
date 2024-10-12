@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from './components/Header';
+import {Header} from './components/Header';
 import Body from './components/Body';
 
 /**
@@ -19,16 +19,6 @@ import Body from './components/Body';
  *   -Address
  *   -Contact
  **/
-
-const json = fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=8.528765&lng=76.9375793&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-.then(response => response.json())  
-  .then(data => {
-    console.log(data); 
-  })
-  .catch(error => {
-    console.error("Error fetching data:", error);
-  });
-
 
 const AppLayout = () => {
   return (

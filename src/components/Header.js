@@ -1,6 +1,6 @@
 import {LOGO} from '../utils/constants'
 
-const Header = () => {
+export const Header = () => {
     return (
       <nav className="header">
         <div className="logo-container">
@@ -42,5 +42,3 @@ const Header = () => {
       </nav>
     );
   };
-
-  export default Header;
