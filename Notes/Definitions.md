@@ -1191,7 +1191,6 @@ In **Monolith Architecture**, the entire application is built as a single, unifi
 
 
 
-
 ### Rendering Approach ###
 ===========================
 
