@@ -1,11 +1,23 @@
 import RestaurantCard from './RestaurantCard';
 import RES_LIST from '../utils/mockdata'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 console.log("RES_LIST : ",RES_LIST.filter((restaurant) =>  restaurant.info.avgRating > 4.5))
 
 const Body = () => {
-    const [listOfRestaurant, setListOfRestaurant ] = useState(RES_LIST)
+    const [listOfRestaurant, setListOfRestaurant ] = useState([])
+
+    useEffect(() => {
+      fetchData()
+    }, [])
+
+    const fetchData = async () => {
+      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.5276416&lng=76.2144349&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+      const json = await data.json()
+      const restaurants = json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      setListOfRestaurant(restaurants)
+    }
+
     return (
       <div className="body">
           <div className="container">
