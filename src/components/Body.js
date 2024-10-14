@@ -1,6 +1,7 @@
 import RestaurantCard from './RestaurantCard';
 import RES_LIST from '../utils/mockdata'
 import { useState, useEffect } from 'react'
+import Shimmer from './Shimmer'
 
 console.log("RES_LIST : ",RES_LIST.filter((restaurant) =>  restaurant.info.avgRating > 4.5))
 
@@ -18,9 +19,11 @@ const Body = () => {
       setListOfRestaurant(restaurants)
     }
 
+    
+
     return (
       <div className="body">
-          <div className="container">
+          <div className="body-container">
             <div className="search">
               <input type="text" placeholder="Search" className="search-input" />
               <button className="search-button">Search</button>
@@ -33,9 +36,13 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {
+                  listOfRestaurant.length === 0 ? (
+                    <Shimmer />
+                  ) : (
                     listOfRestaurant.map((restaurant) => (
                         <RestaurantCard key={restaurant.id} resData={restaurant}/>
                     ))
+                  )
                 }
             </div>
           </div>
