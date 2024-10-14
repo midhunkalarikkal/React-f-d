@@ -58,6 +58,17 @@
   color: white;
 }
 
+.login-btn{
+  width: 60px;
+  height: 30px;
+  background-color: #ff6b6b;
+  border: 0;
+}
+
+.login-btn:hover{
+  background-color: #e34b4b;
+}
+
 /* Header end */
 
 /* Body start */
