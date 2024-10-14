@@ -52,7 +52,7 @@ const Body = () => {
             <Shimmer />
           ) : (
             filteredRestaurant.map((restaurant) => (
-              <RestaurantCard key={restaurant.id} resData={restaurant} />
+              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
             ))
           )}
         </div>
