@@ -1,6 +1,8 @@
 ### REACT ###
 ===============
 
+"DEVELOPERS CODE FASTER TAKE TOO MUCH TIME FOR DEBUGGING THE DEVS CODES SLOW EVEN DONT NEED TO DEBUG"
+
 ### 1 . What is `Emmet` ###
 ===========================
 A: `Emmet` is the essential toolkit for web-developers. It allows you to `type shortcuts` that are then expanded into full pieces of code for writing `HTML and CSS`, based on an abbreviation structure most developers already use that expands into full-fledged HTML markup and CSS rules.
@@ -734,6 +736,8 @@ React hooks are functions that let you use state and other React features in fun
 -----------
 **Purpose:** `useState` is a hook that allows you to add state to your functional components.
 **Usage:** You can define a state variable and a function to update that state.
+
+Whenever a state variable changed the react will trigger a reconcilation cycle (re-render)
 
 ```jsx
 import React, { useState } from 'react';
