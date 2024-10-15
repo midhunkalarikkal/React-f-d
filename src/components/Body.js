@@ -1,12 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
-import RES_LIST from "../utils/mockdata";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
-console.log(
-  "RES_LIST : ",
-  RES_LIST.filter((restaurant) => restaurant.info.avgRating > 4.5)
-);
+
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -25,7 +21,7 @@ const Body = () => {
     );
     const json = await data.json();
     const restaurants =
-      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     setListOfRestaurant(restaurants);
     setFilteredRestaurant(restaurants)
   };
