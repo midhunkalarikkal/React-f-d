@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+require('dotenv').config;
 
 
 
@@ -9,7 +10,7 @@ const Body = () => {
   
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
 
-  const [searchInputText , setSearchInputText] = useState("")
+  const [searchInputText , setSearchInputText] = useState("")  
 
   useEffect(() => {
     fetchData();
@@ -17,7 +18,11 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.5276416&lng=76.2144349&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.5276416&lng=76.2144349&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING", {
+        headers: {
+        'x-cors-api-key': process.env.CORS_KEY
+        }
+      }
     );
     const json = await data.json();
     const restaurants =
