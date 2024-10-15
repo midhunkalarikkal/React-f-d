@@ -739,6 +739,9 @@ React hooks are functions that let you use state and other React features in fun
 
 Whenever a state variable changed the react will trigger a reconcilation cycle (re-render)
 
+Never declare a useState outside of a component
+Never declare a useState inside a if else statement, for loops and functions
+
 ```jsx
 import React, { useState } from 'react';
 
@@ -761,6 +764,13 @@ useEffect have two arguments one is a call back function and another one is the 
 So if we are using useEffect inside a component when we render the compoenent will load first and then the useEffectcallback function will call
 
 Usage: You can specify when the effect should run by providing a dependency array.
+
+Two arguments one us a callback function and another is the dependency array
+the dependency array is not mandatory
+
+If no dependency array is assigned, useEffect is called every render
+If the dependency array is an empty array, useEffect is called on inital (just once)
+If the dependency array have value like eg: a stateVariable, the useEffect is called whenever the stateVariable updated
 
 ```js
 import React, { useEffect, useState } from 'react';
@@ -800,6 +810,23 @@ function TextInput() {
       <button onClick={focusInput}>Focus Input</button>
     </div>
   );
+}
+```
+
+## useRouterError
+-----------------
+Used to show the exact error, when we use this it will give us an object with the exact error.
+
+```js
+import { useRouterError } from 'react-router-dom';
+
+const Component = () => {
+  const err = useRouterError()
+  return (
+    <div>
+      <h1>{err}</h1>
+    </div>
+  )
 }
 ```
 
@@ -848,8 +875,26 @@ function GoHomeButton() {
 ===========================
 React Router is a powerful library used for routing in React applications. It allows you to create a single-page application (SPA) with dynamic navigation between different views or components without reloading the entire page. Here's a breakdown of the key concepts and components of React Router:
 
+## createBrowserRouter
+----------------------
+For this compoent we need the configuration and inside the configuration we are adding an array of object or the routes with path and element and also the errorElement
+
+```js
+const appRouter = createBrowserRouter([
+  {
+    path : '/',
+    element : <AppLayout />,
+    errorElement : <Eroor />
+  },
+  {
+    path : '/about',
+    element : <About />
+  }
+])
+```
+
 ## BrowserRouter
------------------
+-----------------------
 This component is the top-level wrapper that enables routing in your application. It uses the HTML5 history API to keep your UI in sync with the URL.
 
 ```js
@@ -862,6 +907,14 @@ function App() {
          </BrowserRouter>
      );
  }
+ ```
+
+ ## RouterProvider
+ -----------------
+ This component is used in the rendering and pass the app router that is the createBrowserRouter configuration in this component as a prop name router
+
+ ```js
+ root.render(<RouterProvider router={appRouter}/>)
  ```
 
 ## Route
@@ -1231,7 +1284,7 @@ In **Monolith Architecture**, the entire application is built as a single, unifi
 	
 
 
-
+Seat and prep methos
 
 
 

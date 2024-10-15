@@ -9,7 +9,7 @@ const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
-
+  
   const [searchInputText , setSearchInputText] = useState("")  
 
   useEffect(() => {
@@ -18,11 +18,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.5276416&lng=76.2144349&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING", {
-        headers: {
-        'x-cors-api-key': process.env.CORS_KEY
-        }
-      }
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.5276416&lng=76.2144349&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     const restaurants =
