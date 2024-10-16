@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 require('dotenv').config;
 
-
-
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   

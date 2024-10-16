@@ -942,7 +942,10 @@ The Switch component (or Routes in React Router v6) renders the first child `<Ro
 
 ## Link
 ----------
-The Link component is used to create navigational links that change the URL without reloading the page.
+The link component is given by the react-router-dom
+The Link component is used to create navigational links that change the URL without reloading the page. It will only reload the exact component
+This is why the react application is single page application
+When we use anchor tag to navigate it will reload the full page
 
 ```js
 import { Link } from 'react-router-dom';
@@ -1277,14 +1280,17 @@ In **Monolith Architecture**, the entire application is built as a single, unifi
 
 
 
+### Routing in web applications
 
+Client side routing
 
+If we have multiple pages the pages means the components so when we click a link to another page it will just replace the component
 
+Just the components are interchanged via client side routing
 
-	
+server side routing
 
-
-Seat and prep methos
+if we have multiple page when we click on a page link it will make a request to the server and the server will send the whole page
 
 
 
