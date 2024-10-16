@@ -1294,6 +1294,10 @@ if we have multiple page when we click on a page link it will make a request to 
 
 
 
+Link tag
+--------
+This is givesn by react router dom
+Its a wrapper for anchor tag, react router dom making it to an anchor tag and keeping a track on it
 
 
 

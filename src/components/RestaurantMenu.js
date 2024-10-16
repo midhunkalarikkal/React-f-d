@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { CDN_LINK } from "../utils/constants";
+import { MENU_API } from "../utils/constants";
+import { MENU_API_END } from "../utils/constants";
+import { useParams } from 'react-router-dom';
 
 const RestaurantMenu = () => {
   const [resData, setResData] = useState(null);
+  
+  const {resId} = useParams()
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=10.5276416&lng=76.2144349&restaurantId=86242&catalog_qa=undefined&submitAction=ENTER"
-    );
+    const data = await fetch(MENU_API + resId + MENU_API_END);
 
     const json = await data.json();
 
@@ -21,14 +24,10 @@ const RestaurantMenu = () => {
 
   const { name, city, cloudinaryImageId, sla } =
     resData?.cards[2]?.card?.card?.info || {};
+
   const { title, itemCards = [] } =
     resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards[2]?.card
       ?.card || {};
-  console.log(
-    "title : ",
-    resData?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
-      ?.itemCards[0].card?.info
-  );
 
   return resData === null ? (
     <Shimmer />
@@ -47,7 +46,7 @@ const RestaurantMenu = () => {
         </div>
         <div className="menu">
           <h3 className="menu-head">Menu</h3>
-          <h4 className="menu-title">{title}</h4>
+          <h4 className="menu-title">{title} ({itemCards.length})</h4>
           <div className="manuCards-wrap">
             {itemCards.map((item) => (
               <div className="menuCard" key={item.card.info.id}>
@@ -64,10 +63,15 @@ const RestaurantMenu = () => {
                   </p>
                 </div>
                 <div className="menuCard-img">
-                  <img
-                    src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${item.card.info.imageId}`}
-                    alt={item.card.info.name}
-                  />
+                {
+                    item.card.info.imageId ? (
+                    <img
+                      src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${item.card.info.imageId}`}
+                      alt={item.card.info.name}
+                    /> ) : (
+                        <span>No image found</span>
+                    )
+                }
                 </div>
               </div>
             ))}
