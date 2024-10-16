@@ -662,24 +662,52 @@ root.render(<HeadingOne/>)
 ---------------------------------------------
 Class components were the standard way to create components in React before the introduction of hooks. They extend from React.Component and allow the use of lifecycle methods to manage component states and behavior over time.
 
+its normal class in javascript with the name of componentn which inherits the React.component which is given by React
+and which has a render method which return some piece of JSX
+
+for recieving props in class based components we use constructor and inside that 
+constructor(props) we use the super(props)
+
+A super constructor is a special constructor in the class hierarchy of object-oriented programming languages. It refers to the constructor of the parent class that is being extended in the current class. The purpose of using the super constructor with a props argument is to inherit the properties of the parent class and also pass in additional properties as arguments to the child class.
+
+The main reason for passing props parameter to super() call is to access this.props in your child constructors.
+
+When you extend the React.Component class, you must call the parent class's constructor using super(). If you're planning to access props inside the constructor, you need to pass props to super()
+
+if we pass props inside super we can call this.props inside constructor other it will be undefined but we can use props alone without this keyword
+
+## Why?
+The parent React.Component class initializes the component's props through its own constructor. If you skip passing props to super(), React doesn’t initialize them properly within the instance.
+
+Outside the constructor, this.props is necessary because each instance of the class (the component) maintains its own props.
+This ensures that the right instance and its specific props are being accessed.
+
+Inside class methods or event handlers, you typically use this.props and this.state because those methods need to refer to the current instance of the class.
+
+Without this, the method wouldn’t know which component's props to access.
+
+Eaxmple
+--------
+```js
+import React from 'react'
+
+class Component extends React.component{
+
+   constructor(props) {
+    super(props); // Required to access `this.props`
+    console.log(this.props); // Now accessible
+  }
+
+  render(
+    return(
+      <div>Hello this is a class compoenent</div>
+    )
+  )
+}
+```
 ## Component composition
 ------------------------
 Component composition refers to the ability of one component to call or include another component.
-
-**Example:**
--------------
-const HeadingThree = () => (
-    <div>
-        {Heading()}
-        <HeadingOne></HeadingOne>
-        <HeadingTwo />
-        <h1>This is a functional component without using return and curly braces, but wrapped in parentheses</h1>
-    </div>
-);
-
-In this example, Heading, HeadingOne, and HeadingTwo are functional components. Since they are JavaScript functions, they can be composed in this manner.
-
-This format maintains the markdown syntax with proper headings, subheadings, code blocks, and lists for easy readability in a `.md` file.
 
 
 ### 35 . `DYNAMIC ROUTING` ###
