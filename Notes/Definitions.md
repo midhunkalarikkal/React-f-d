@@ -686,6 +686,17 @@ this can achieve in functional component using useEffect
 But in class component wee need to use componentDidMount function make this possible
 so that after one render the componentDidMount function called for the api called and then render the component for fill the api data
 
+componentDidUpdate()
+--------------------
+Runs after every re-render when the props or state change.
+Receives prevProps and prevState as arguments, allowing comparison with the current props/state to determine if any specific updates are needed.
+
+componentWillUnmount()
+-----------------------
+The componentWillUnmount lifecycle method is called just before a component is unmounted and destroyed. This is the right place to clean up resources like event listeners, timers, subscriptions, or network requests to prevent memory leaks.
+
+Sometimes we need to start some setInterval in the componentDidMount will work all the time even we change the page our application so we need to stop that interval inside the componentWillUnmount so it will only work when that specific component appear on the page
+
 Lifecycle of parent child class component
 -----------------------------------------
 parent constructor
@@ -696,6 +707,34 @@ child componentDidMount
 parent componentDidMount 
 
 First the parent class constructor and render function will call and then if there is any child class its constructor and then its render will call and then the child class componentDidMount will call and then parents componentDidMount will call
+
+Render phase
+--------------
+constructor calling
+rendering
+
+Commit phase
+-------------
+React update dom
+componentDidMount
+
+Mounting
+--------
+constructor called
+render componenet with dummy data
+update the dom with dummy data
+componentDidMount
+
+Updating
+--------
+in the componentDidMount will have this.setState function which may have fetch api and it will update the this.state
+render with api data
+update the dom with api data
+componentDidUpdate called 
+
+Unmounting
+----------
+componentWillUnmount function will when the component will replaced by another compoent or the component diappear from the dom like if we click another link in heaser the another component will load that time the componentWillUnmount will called
 
 ## Why?
 The parent React.Component class initializes the component's props through its own constructor. If you skip passing props to super(), React doesn’t initialize them properly within the instance.
@@ -846,6 +885,8 @@ If no dependency array is assigned, useEffect is called every render
 If the dependency array is an empty array, useEffect is called on inital (just once)
 If the dependency array have value like eg: a stateVariable, the useEffect is called whenever the stateVariable updated
 
+Like in the class component we use componentWillUnmount there is no method in functional compoenent but we can use a
+return inside the useEffect and this returns a an arrow function inside this arrow function we can constrol the whatever we need to stop like compoenentWillUnmount
 ```js
 import React, { useEffect, useState } from 'react';
 
@@ -1375,6 +1416,10 @@ Its a wrapper for anchor tag, react router dom making it to an anchor tag and ke
 
 Outlet
 -------
+
+
+Single responsibility principle
+--------------------------------
 
 	
 	

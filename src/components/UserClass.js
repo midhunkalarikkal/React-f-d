@@ -1,35 +1,40 @@
 import React from "react";
-import Sample from './Sample'
 
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      count: 0,
-      count2: 2,
+      userInfo : {
+        name : "Midhun",
+        location : "Kerala",
+        url : "No url",
+        bio : "No bio",
+        avatar_url : "No url"
+      }
     };
 
-    console.log(this.props.name + " Child class component constructor USERCLASS")
   }
 
-  componentDidMount(){
-    console.log( this.props.name + " Child class component componentDidMount USERCLASS")
+  async componentDidMount(){
+    const data = await fetch("https://api.github.com/users/midhunkalarikkal")
+    const json = await data.json()
+    this.setState({
+        userInfo : json
+    })
+    console.log(json)
   }
 
   render() {
-    const { name, location } = this.props;
-    const { count, count2 } = this.state;
-
-    console.log(name  + " Child class component render USERCLASS")
+    const {name , location, url , avatar_url, bio} = this.state.userInfo;
     return (
       <>
-      <Sample name={name}/>
       <h1>Class component</h1>
-        <h1>Count : {count}</h1>
-        <h1>Count2 : {count2}</h1>
-        <h1>Name from Class component : {name}</h1>
+        <h1>Name : {name}</h1>
         <h1>Location : {location}</h1>
+        <h1>Bio : {bio}</h1>
+        <h1>Url : {url}</h1>
+        <img src={avatar_url} alt="avatar_image" />
       </>
     );
   }
