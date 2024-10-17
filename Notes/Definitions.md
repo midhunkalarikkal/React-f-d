@@ -686,6 +686,17 @@ Inside class methods or event handlers, you typically use this.props and this.st
 
 Without this, the method wouldn’t know which component's props to access.
 
+state variable
+--------------
+we can use this.state inside the contrutor for declaring the state variables and the this.state is an object
+
+Never ever update state variable directly sugin this.state.variableName = this.state.variableName + 1
+
+Instead of it react is giveing a this.setState function to update the state varibale and this function will take an object with state Variables assigned with updated value
+
+so if we update a state variable using the this.setState() this portion of the this.state with the state varibale will be updated, react will compare the difference between this.state object and this.setState of object
+
+
 Eaxmple
 --------
 ```js
@@ -696,11 +707,25 @@ class Component extends React.component{
    constructor(props) {
     super(props); // Required to access `this.props`
     console.log(this.props); // Now accessible
+    console.log(props) // accessible
+
+    this.state = {
+      count : 0,
+      count2 : 1,
+    }
   }
 
   render(
     return(
-      <div>Hello this is a class compoenent</div>
+      <div>
+      <h1>count : {this.state.count}</h1>
+      <button onClick={() => {
+        this.setState({
+          count : this.state.count + 1
+        })
+      }}>count increment</button>
+      <h1>Hello this is a class compoenent</h1>
+      </div>
     )
   )
 }
@@ -1327,8 +1352,8 @@ Link tag
 This is givesn by react router dom
 Its a wrapper for anchor tag, react router dom making it to an anchor tag and keeping a track on it
 
-
-
+Outlet
+-------
 
 	
 	

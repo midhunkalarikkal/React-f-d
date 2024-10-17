@@ -6,7 +6,7 @@ const About = () => {
         <div>
             <h1>About Page</h1>
             <User name={"Midhun from function component as props"}/> 
-            <UserClass name={"Midhun from class component as props"}/>
+            <UserClass name={"Midhun from class component as props"} location={"Los Angels"}/>
         </div>
     )
 }

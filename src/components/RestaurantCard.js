@@ -20,7 +20,7 @@ const RestaurantCard = (props) => {
           className="res-card-img"
         />
         <h3 className="offer">{
-        header+ " " + subHeader
+        header !== undefined ? header : ""+ " " + subHeader !== undefined ? subHeader : ""
         }</h3>
       </div>
       <div className="card-details">
