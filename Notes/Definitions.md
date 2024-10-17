@@ -676,6 +676,27 @@ When you extend the React.Component class, you must call the parent class's cons
 
 if we pass props inside super we can call this.props inside constructor other it will be undefined but we can use props alone without this keyword
 
+Whenever the class component loads or mounted the constructor is called and then render function is called then the componentDidMount function is called
+
+componentDidMount()
+--------------------
+used to fetch api calls
+why because in react it loads component then render then make api then fill the component with api data 
+this can achieve in functional component using useEffect
+But in class component wee need to use componentDidMount function make this possible
+so that after one render the componentDidMount function called for the api called and then render the component for fill the api data
+
+Lifecycle of parent child class component
+-----------------------------------------
+parent constructor
+parent render
+child constructor
+child render
+child componentDidMount
+parent componentDidMount 
+
+First the parent class constructor and render function will call and then if there is any child class its constructor and then its render will call and then the child class componentDidMount will call and then parents componentDidMount will call
+
 ## Why?
 The parent React.Component class initializes the component's props through its own constructor. If you skip passing props to super(), React doesn’t initialize them properly within the instance.
 
