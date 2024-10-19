@@ -1,69 +1,53 @@
 import Shimmer from "./Shimmer";
 import { CDN_LINK } from "../utils/constants";
-import { useParams } from 'react-router-dom';
-import useRestaurantMenu from '../utils/useRestaurantMenu';
+import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
-  
-  const {resId} = useParams()
+  const { resId } = useParams();
 
-  const resData = useRestaurantMenu(resId)
+  const resData = useRestaurantMenu(resId);
 
-  const { name, city, cloudinaryImageId, sla } =
+  const { name, city, cloudinaryImageId, sla, avgRatingString } =
     resData?.cards[2]?.card?.card?.info || {};
 
   const { title, itemCards = [] } =
     resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards[2]?.card
       ?.card || {};
 
+  const categories =
+    resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
   return resData === null ? (
     <Shimmer />
   ) : (
-    <div className="restaurantMenu-body">
-      <div className="restaurantMenu-body-container">
-        <div className="restaurantMenu-head">
-          <div className="head-img">
-            <img src={CDN_LINK + cloudinaryImageId} alt="" />
-          </div>
-          <div className="head-text">
-            <h1>{name}</h1>
-            <p>{sla?.slaString}</p>
-            <p>{city}</p>
-          </div>
+    <div className="flex flex-col w-6/12 m-auto mt-2">
+      <div className="flex p-4 rounded-lg shadow-md w-full h-full">
+        <div className="w-4/12 flex justify-center items-center">
+          <img
+            src={CDN_LINK + cloudinaryImageId}
+            className="rounded-lg w-auto h-32 object-fit"
+            alt="Restaurant"
+          />
         </div>
-        <div className="menu">
-          <h3 className="menu-head">Menu</h3>
-          <h4 className="menu-title">{title} ({itemCards.length})</h4>
-          <div className="manuCards-wrap">
-            {itemCards.map((item) => (
-              <div className="menuCard" key={item.card.info.id}>
-                <div className="menuCard-text">
-                  <h3 className="menuCard-title">{item.card.info.name}</h3>
-                  <h4 className="menuCard-price">
-                    ₹ {item.card.info.price / 100}
-                  </h4>
-                  <div className="menuCard-rating">
-                    ⭐ {item.card.info.ratings.aggregatedRating.rating} / 5
-                  </div>
-                  <p className="menuCard-description">
-                    {item.card.info.description}
-                  </p>
-                </div>
-                <div className="menuCard-img">
-                {
-                    item.card.info.imageId ? (
-                    <img
-                      src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${item.card.info.imageId}`}
-                      alt={item.card.info.name}
-                    /> ) : (
-                        <span>No image found</span>
-                    )
-                }
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="w-8/12 flex flex-col justify-center items-center text-center">
+          <h1 className="text-xl font-semibold mb-2">{name}</h1>
+          <span className="flex flex-row">
+            <p className="text-gray-600 mb-1">⭐ {avgRatingString}</p>
+            <p className="text-gray-600 mb-1 px-3">{sla?.slaString}</p>
+          </span>
+          <p className="text-gray-500">{city}</p>
         </div>
+      </div>
+      <div className="mt-2">
+        {categories.map((category) => (
+          <RestaurantCategory data={category?.card?.card} />
+        ))}
       </div>
     </div>
   );
