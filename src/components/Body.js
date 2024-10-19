@@ -45,7 +45,7 @@ const Body = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {filteredRestaurant.length === 0 ? (
-            <Shimmer />
+            Array.from({ length: 8 }).map((_, index) => <Shimmer key={index} />)
           ) : (
             filteredRestaurant.map((restaurant) => (
               <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
