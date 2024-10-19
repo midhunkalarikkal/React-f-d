@@ -32,4 +32,15 @@ const RestaurantCard = (props) => {
   );
 };
 
+export const withOpenedLabel = (RestaurantCard) => {
+  return (Props) => {
+    return(
+      <div className="relative">
+        <label className="absolute top-3 left-7 bg-opacity-50 bg-slate-700 text-white z-10 px-4 py-1 rounded-lg">Opened</label>
+        <RestaurantCard {...Props}/>
+      </div>
+    )
+  }
+}
+
 export default RestaurantCard;

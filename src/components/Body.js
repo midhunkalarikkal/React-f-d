@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from 'react-router-dom';
@@ -9,7 +9,11 @@ const Body = () => {
   
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
   
-  const [searchInputText , setSearchInputText] = useState("")  
+  const [searchInputText , setSearchInputText] = useState("") 
+  
+  const OpenedRestaurantCard = withOpenedLabel(RestaurantCard);
+
+  console.log(listOfRestaurant)
 
   useEffect(() => {
     fetchData();
@@ -48,7 +52,11 @@ const Body = () => {
             Array.from({ length: 8 }).map((_, index) => <Shimmer key={index} />)
           ) : (
             filteredRestaurant.map((restaurant) => (
-              <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
+              <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
+                {
+                  restaurant.info.isOpen ? <OpenedRestaurantCard resData={restaurant} /> : <RestaurantCard resData={restaurant} />
+                }
+                </Link>
             ))
           )}
         </div>
