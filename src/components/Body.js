@@ -27,23 +27,23 @@ const Body = () => {
   };
 
   return (
-    <div className="body">
-      <div className="body-container">
-        <div className="search">
-          <input type="text" placeholder="Search" className="search-input" value={searchInputText} onChange={ (e) => {setSearchInputText(e.target.value)}}/>
-          <button className="search-button" onClick={ () => {setFilteredRestaurant(listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchInputText.toLowerCase())))} }>Search</button>
+    <div className="flex justify-center">
+      <div className="flex w-3/4 flex-col items-center">
+        <div className="w-full flex flex-row justify-center p-4 m-4">
+          <input type="text" placeholder="Search" className="border-2 w-1/4 mx-3" value={searchInputText} onChange={ (e) => {setSearchInputText(e.target.value)}}/>
+          <button className="bg-orange-400 py-1 px-4 rounded-md text-yellow-50 mx-3" onClick={ () => {setFilteredRestaurant(listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchInputText.toLowerCase())))} }>Search</button>
           <button
-            className="filter-button"
+            className="bg-orange-400 py-1 px-4 rounded-md text-yellow-50 mx-3"
             onClick={() => {
               setFilteredRestaurant(listOfRestaurant.filter(
                 (restaurant) => restaurant.info.avgRating > 4.5
               ));
             }}
-          >
+            >
             Filter top rated
           </button>
         </div>
-        <div className="res-container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {filteredRestaurant.length === 0 ? (
             <Shimmer />
           ) : (
@@ -53,7 +53,7 @@ const Body = () => {
           )}
         </div>
       </div>
-    </div>
+          </div>
   );
 };
 
