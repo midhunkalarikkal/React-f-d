@@ -3,73 +3,15 @@
 
 "DEVELOPERS CODE FASTER TAKE TOO MUCH TIME FOR DEBUGGING THE DEVS CODES SLOW EVEN DONT NEED TO DEBUG"
 
-### 1 . What is `Emmet` ###
-===========================
-A: `Emmet` is the essential toolkit for web-developers. It allows you to `type shortcuts` that are then expanded into full pieces of code for writing `HTML and CSS`, based on an abbreviation structure most developers already use that expands into full-fledged HTML markup and CSS rules.
-
-
-### 2 .  What is `CDN`? Why do we use it ###
-============================================
-A: A `content delivery network (CDN)` refers to a geographically distributed group of servers that work together to provide fast delivery of Internet content.
-The goal is to provide high availability and performance by distributing the service spatially relative to end users.
-
-
-### 3 . Why is `React known as React` ###
+###  Why is `React known as React` ###
 ==========================================
 A: And it's called `React` because it `reacts`. It was developed by Facebook (a site that CONSTANTLY updates their data) to improve the user interface development and more effectively change (REACT to) what the user sees when they're doing things like mouse clicking, submitting and typing.
 
 
-### 4 .  `ADVANTAGES OF CDN` ###
-================================
-## Faster content delivery
-Servers are distributed globally, so users receive content from the server closest to their location, reducing latency.
-
-## Improved Website Performance
-By caching content such as images, videos, CSS, and JavaScript files, CDNs reduce the load on the origin server, improving site load times.
-
-## Reduced Bandwidth Costs
-CDNs reduce the amount of data your origin server must provide, lowering bandwidth consumption and costs.
-Scalability
-CDNs can handle high traffic volumes by distributing requests across multiple servers, making it easier to scale for traffic spikes.
-
-## Improved Availability and Redundancy
-If one CDN server goes down, others can take over, reducing the risk of downtime.
-
-## DDoS Protection
-Many CDNs offer security features, such as Distributed Denial of Service (DDoS) attack mitigation, by distributing traffic and providing firewalls.
-
-## Better SEO Rankings
-Faster website performance can positively impact SEO rankings, as search engines like Google favor faster-loading sites.
-
-## Global Reach
-With servers distributed across different regions, a CDN allows businesses to serve global users more effectively.
 
 
-### 5 . `DISADVANTAGES OF CDN` ###
-==================================
-## Cost  
-While CDNs can save bandwidth costs, they come with additional service fees, which can be expensive for smaller websites or businesses.
 
-## Caching Issues  
-Sometimes, content updates may take longer to propagate across all CDN servers, resulting in users seeing outdated content.
-
-## Complexity  
-Configuring and managing a CDN can be complex, especially for small teams or websites with limited technical expertise.
-
-## Limited Control  
-Once content is distributed across a CDN’s servers, you have less control over how it is cached or served.
-
-## Geographical Limitations  
-Although CDNs have global reach, certain regions may still have fewer servers, potentially affecting performance for users in those areas.
-
-## Data Privacy Concerns  
-CDNs are third-party services, which means your data will pass through external servers, raising privacy concerns, especially for sensitive content.
-
-## Potential Latency in Dynamic Content  
-While CDNs excel with static content, dynamic content (like real-time data or personalized information) might not benefit as much, and in some cases, could introduce slight delays.
-
-
-### 6 . `FRAMEWORK`  ###
+### `FRAMEWORK`  ###
 ========================
 A: A framework is a set of pre-written code that provides a structure for developing software applications. A library, on the other hand, is a collection of pre-written code that can be used to perform specific tasks.
 
@@ -80,7 +22,10 @@ It often calls your code at certain points (called **Inversion of Control**), me
 **Examples:** Angular, Django, Ruby
 
 
-### 7 . `LIBRARY` ###
+
+
+
+### `LIBRARY` ###
 ======================
 A library is a collection of pre-written code, functions, or utilities that helps developers perform common tasks more efficiently.
 
@@ -91,7 +36,10 @@ A `library` is a collection of packages that perform specific operations whereas
 **Examples:** React, Lodash, jQuery
 
 
-### 8 . `CDN LINKS FOR REACT` ###
+
+
+
+### `CDN LINKS FOR REACT` ###
 ==================================
 "Using React via CDN is not an ideal approach for larger applications because multiple network calls may occur, which can impact performance. Additionally, you'll need to manually update the URL whenever a new version of React is released."
 
@@ -102,7 +50,10 @@ CDNs host popular libraries like React. When you include a React CDN link in you
 You include the CDN links in the `<script>` tag in your HTML file, and the browser fetches the library from the closest CDN server, improving load time.
 
 
-### 9 . `What These Links Do` ###
+
+
+
+###  `What These Links Do` ###
 ==================================
 
 ## React and ReactDOM Inclusion
@@ -146,7 +97,10 @@ The purpose of crossorigin attribute is used to share the resources from one dom
 - CORS (Cross-Origin Resource Sharing) ensures that these resources are accessed safely across different origins.
 
 
-### 10 . `Difference Between Actual DOM and Virtual DOM` ###
+
+
+
+### `Difference Between Actual DOM and Virtual DOM` ###
 ============================================================
 
 ## Actual DOM
@@ -164,24 +118,11 @@ The purpose of crossorigin attribute is used to share the resources from one dom
 - **Manipulation**: The Virtual DOM allows for efficient batch updates, leading to better performance in rendering and re-rendering UI components.
 
 
-### 11 . `Difference Between Actual DOM and Virtual DOM` ###
-============================================================
-## Actual DOM
---------------
-- **Definition**: The Actual DOM is the real representation of the UI components in a web application.
-- **Performance**: Updating the Actual DOM is slow because it involves complex operations that require recalculating styles and re-rendering elements.
-- **Changes**: Any change in the Actual DOM triggers a complete re-render of the entire UI, which can lead to performance issues.
-- **Manipulation**: Direct manipulation of the Actual DOM can be inefficient, especially for large applications.
-
-## Virtual DOM
----------------
-- **Definition**: The Virtual DOM is an in-memory representation of the Actual DOM. It is a lightweight copy that React uses to optimize updates.
-- **Performance**: Updating the Virtual DOM is faster because it minimizes direct interactions with the Actual DOM.
-- **Changes**: When changes occur, React updates the Virtual DOM first, compares it with the previous version, and calculates the minimum number of changes needed before updating the Actual DOM.
-- **Manipulation**: The Virtual DOM allows for efficient batch updates, leading to better performance in rendering and re-rendering UI components.
 
 
-### 12 . `Difference Between Single Page and Multi Page Application` ###
+
+
+### `Difference Between Single Page and Multi Page Application` ###
 =========================================================================
 ## Single Page Application (SPA)
 --------------------------------
@@ -198,7 +139,10 @@ The purpose of crossorigin attribute is used to share the resources from one dom
 - **Frameworks**: Often built using traditional server-side frameworks like PHP, Ruby on Rails, or ASP.NET.
 
 
-### 13 . `CSR vs SSR` ###
+
+
+
+### `CSR vs SSR` ###
 ==========================
 ## Client-Side Rendering (CSR)
 ------------------------------
@@ -215,29 +159,101 @@ The purpose of crossorigin attribute is used to share the resources from one dom
 - **User Experience**: Can lead to a less interactive experience post-initial load since subsequent navigation may require re-fetching from the server.
 
 
-### 14 . `JSX vs HTML` ###
-==========================
-## JSX
--------
-- **Definition**: JSX is a syntax extension for JavaScript, allowing you to write HTML-like code within JavaScript files.
-- **Functionality**: Allows embedding JavaScript expressions within braces `{}`.
-- **Usage**: Used primarily with React to describe the UI components.
-- **Transpilation**: Needs to be transpiled to JavaScript (using tools like Babel) to run in the browser.
-
-## HTML
--------
-- **Definition**: HTML (HyperText Markup Language) is the standard markup language for creating web pages.
-- **Functionality**: Static markup that does not allow embedding JavaScript expressions directly.
-- **Usage**: Used to structure content on the web.
-- **Browser Interpretation**: Browsers natively understand and render HTML without any transpilation.
 
 
-### 15 . WHAT IS `REACT`? ###
+
+### `Static vs Dynamic` Rendering ###
+=====================================
+
+## Static Rendering
+--------------------
+- **Definition:** Static rendering involves generating the HTML of a web page at build time. This means that the content is fixed and does not change based on user interaction or data fetching after the page is loaded.
+- **Characteristics:**
+  - Pages are pre-rendered, so they load quickly.
+  - Ideal for content that doesn’t change frequently, such as blogs or marketing sites.
+  - No need for server-side processing on each request.
+
+## Dynamic Rendering
+-----------------------
+- **Definition:** Dynamic rendering generates the HTML of a web page on the fly, often based on user interaction, server data, or API calls. This means the content can change based on various factors, such as user input or current state.
+- **Characteristics:**
+  - Pages are generated in real-time, allowing for personalized content.
+  - Suitable for applications with frequently changing data, like social media or e-commerce sites.
+  - May require more server resources, as content is generated with each request.
+
+
+
+
+
+### `ISR` (Incremental Static Regeneration) and `SPA` (Single Page Application) ###
+=================================================================================
+
+## ISR (Incremental Static Regeneration)
+-----------------------------------------
+- **Definition:** ISR is a feature used in frameworks like Next.js that allows you to update static content incrementally without needing to rebuild the entire site. This means you can regenerate specific pages after deployment based on user requests or at defined intervals.
+- **Characteristics:**
+  - Combines the benefits of static and dynamic rendering.
+  - Enables faster page loads while keeping content fresh.
+  - Pages can be statically generated and updated on demand, making it ideal for sites with frequently changing data.
+
+## SPA (Single Page Application)
+---------------------------------
+- **Definition:** An SPA is a web application that loads a single HTML page and dynamically updates content as the user interacts with the app. Instead of loading new pages from the server, SPAs fetch data and render updates using JavaScript.
+- **Characteristics:**
+  - Provides a smoother and faster user experience, similar to desktop applications.
+  - Only the necessary components are updated, minimizing server requests.
+  - Routing and state management are often handled on the client side, which can lead to complexities in managing application state.
+
+
+
+
+
+### WHAT IS `REACT`? ###
 ==============================
 React is a JavaScript library developed by Facebook for building user interfaces (UI), especially in single-page applications (SPAs). It enables developers to create large web applications that can efficiently update and render in response to changing data. React is component-based, meaning UIs are built using small, reusable pieces of code called components.
 
 
-### 16 . `HOW REACT WORKS`? ###
+
+
+
+### What is difference between `React and ReactDOM` ###
+==============================================================
+A: `React` is a JavaScript library for building User Interfaces whereas `ReactDOM` is also JavaScript library that allows `React to interact with the DOM`.
+
+The react package contains `React.createElement()`, `React.Component`, `React.Children`, and other helpers related to elements and component classes. You can think of these as the isomorphic or universal helpers that you need to build components. The react-dom package contains `ReactDOM.render()`, and in react-dom/server we have server-side rendering support with `ReactDOMServer.renderToString()` and `ReactDOMServer.renderToStaticMarkup()`.
+
+
+
+
+
+### Why React is `Fast` ###
+============================
+## Reconciliation
+-------------------
+Reconciliation is the process by which React updates the actual DOM to match the virtual DOM. When there are changes in the application (like user input or data updates), React uses reconciliation to figure out the minimal number of updates needed to the actual DOM.
+
+- React compares the old virtual DOM and the new virtual DOM using a **Diff Algorithm**.
+- Only the parts of the DOM that have actually changed are updated, making the rendering process more efficient.
+
+## React Fiber
+-----------------
+React Fiber is the new reconciliation engine introduced in React 16. It’s designed to enable incremental rendering, meaning React can split the work of updating the UI into smaller tasks. This allows React to pause, prioritize, or stop work, making it more responsive during complex updates or when the user interacts with the application.
+
+- Fiber improves React’s ability to handle updates to the virtual DOM efficiently, especially in apps with complex UIs.
+
+## Diff Algorithm
+------------------
+The **Diff Algorithm** is used by React to efficiently compare the old virtual DOM with the new one. Instead of comparing every single element, the diff algorithm identifies only the parts of the virtual DOM tree that have changed. These minimal changes are then applied to the actual DOM, reducing the performance impact of re-rendering.
+
+## Incremental Rendering
+------------------------
+With **React Fiber**, React introduced **Incremental Rendering**, which breaks down rendering work into smaller units or tasks. This allows React to handle large updates by spreading the work over multiple frames, ensuring smoother performance and avoiding UI blocking. React can pause and resume rendering, giving more flexibility in handling updates and maintaining responsiveness.
+
+
+
+
+
+### `HOW REACT WORKS`? ###
 =================================
 ## Component-Based Architecture
 -------------------------------
@@ -266,7 +282,10 @@ React is a JavaScript library developed by Facebook for building user interfaces
 - Hooks let you use state and other React features in function components. For example, the `useState` hook allows you to add state to functional components, making it easier to manage stateful logic without using class components.
 
 
-### 17 . ADVANTAGES OF `REACT` ###
+
+
+
+### ADVANTAGES OF `REACT` ###
 ==================================
 
 ## Component-Based Architecture
@@ -302,7 +321,10 @@ React is a JavaScript library developed by Facebook for building user interfaces
 - Server-side rendering (using tools like Next.js) improves SEO for React apps by rendering content on the server rather than just on the client side.
 
 
-### 18 . DISADVANTAGES OF `REACT` ###
+
+
+
+### DISADVANTAGES OF `REACT` ###
 =====================================
 
 ## Rapidly Changing
@@ -338,12 +360,18 @@ React is a JavaScript library developed by Facebook for building user interfaces
 - Managing global state in large applications can become complex, requiring libraries like Redux, which adds to the learning curve.
 
 
-### 19 . `REACT` ELEMENT ###
+
+
+
+### `REACT` ELEMENT ###
 =============================
 A React element is a plain JavaScript object that represents a part of the user interface (UI). It describes what should appear on the screen. React uses this element to create and update the actual DOM in a web browser.
 
 
-### 20 . `RENDER METHOD` ###
+
+
+
+### `RENDER METHOD` ###
 ============================
 The `ReactDOM.render()` method is responsible for rendering React elements into the actual browser DOM. It takes React elements (which are JavaScript objects) and translates them into HTML elements that the browser can understand.
 
@@ -354,7 +382,22 @@ The `ReactDOM.render()` method is responsible for rendering React elements into 
   The method updates the DOM by replacing the existing content with the newly rendered elements.
 
 
-### 21 . `NPM` ###
+
+
+
+### `NPX` ###
+===================
+A: `npx` stands for `Node Package eXecute`. It is simply an `npm` package runner. It allows developers to execute any Javascript Package available on the npm registry without even installing it. npx is installed automatically with npm version 5.2.
+
+Example: npx parcel index.html
+
+This command runs Parcel with `index.html` as the entry point.
+
+
+
+
+
+### `NPM` ###
 ===================
 A: `npm` is the world's largest Software Registry. The registry contains over 800,000 code packages. Open-source developers use `npm` to share software.
 
@@ -374,7 +417,10 @@ npm init
 - `npm` is the command line client that allows developers to install and publish those packages.
 
 
-### 22 . `NODE MODULE FOLDER` ###
+
+
+
+### `NODE MODULE FOLDER` ###
 ==================================
 A: The `node_modules` folder contains generated code. This is not code you've written and you should never make any updates to the files inside Node modules because there's a pretty good chance they'll get overwritten next time you install some modules.
 
@@ -386,12 +432,22 @@ Here are all the reasons why you shouldn't commit it: The node_modules folder ha
   Packages can rely on other packages, which may also have their own dependencies. This nested relationship is known as transitive dependency.
 
 
-### 23 . `PACKAGE.JSON` ###
+
+
+
+### `PACKAGE.JSON` ###
 ============================
 `package.json` is a configuration file that provides key details about your project, including its metadata, dependencies, and scripts for tasks like building or testing. It helps npm manage package installations and tracks the setup for your project.
 
+## What is `browserlists` in package.json
+------------------------------------------
+A: Browserslist defines and shares the list of target browsers between various frontend build tools.
 
-### 24 . `PACKAGE-LOCK.JSON` ###
+
+
+
+
+### `PACKAGE-LOCK.JSON` ###
 =================================
 `package-lock.json` is generated by npm to lock the exact versions of installed dependencies, ensuring that every installation uses the same versions, even if the original packages are updated. This consistency helps prevent unexpected issues across different environments.
 
@@ -405,14 +461,20 @@ Here are all the reasons why you shouldn't commit it: The node_modules folder ha
   The `resolved` property shows the exact URL from which the package was downloaded, ensuring npm fetches the correct version during installation.
 
 
-### 25 . `GITIGNORE` ###
+
+
+
+### `GITIGNORE` ###
 ==========================
 - `/node_modules` should always be included in `.gitignore` to avoid unnecessary files being tracked in your Git repository.
 - Files like `package.json` and `package-lock.json` should **not** be ignored, as they are critical for managing the project’s dependencies and ensuring consistency across environments.
 - The general rule: Don't push files that can be regenerated (like `node_modules`) to Git; use `.gitignore` for them.
 
 
-### 26 . `BUNDLERS` ###
+
+
+
+### `BUNDLERS` ###
 =======================
 Bundlers are tools that combine all the files and dependencies in your project into a single (or a few smaller) bundle(s). This improves loading performance by reducing the number of HTTP requests and minimizing file sizes through:
 - **Minification** (removing unnecessary characters or whitespace).
@@ -423,7 +485,10 @@ They handle different assets like JavaScript, CSS, and images, and may use loade
 Example: **Create React App** uses Webpack as its default bundler.
 
 
-### 27 . `DEPENDENCIES` ###
+
+
+
+### `DEPENDENCIES` ###
 ============================
 Dependencies are external libraries or packages that your project requires for specific features. There are two types:
 - **Dev dependencies**: Needed only during development (e.g., testing, build tools).
@@ -435,34 +500,35 @@ Symbols in dependency versions:
 - **No symbol**: Locks the version to the current one.
 
 
-### 28 . `PARCEL` ###
-=====================
+
+
+
+### `PARCEL` ###
+=================
 A: `Parcel` and `webpack` are the bundlers used mostly for `JavaScript` or `Typescript` code that helps you to `minify, clean, and make your code compact` so that it becomes easier to send a request or receive the response from the server when it usually takes you to transfer multiple files without using any bundler for loading the page of your application. Both of these bundlers substantially reduce the time it takes for the transfer of data and files to the server from the application. Along with that both bundlers parcel and webpack remove the unnecessary comments, new lines, any kind of block delimiters, and white spaces while the functionality of the code remains unchanged.
 
 Use of `Parcel/Webpack`:
 Module bundlers are the way to organize and combine many files of JavaScript code into one file. A JavaScript bundler can be used when your project becomes too large for a single file or when you're working with libraries that have multiple dependencies.
 
-features include:
-- **Fast Dev Build**: Quick build process for development.
-- **Local Server**: Runs a development server locally.
-- **HMR (Hot Module Replacement)**: Automatically updates modules without refreshing the entire page.
-- **Image Optimization**: Compresses images for faster loading.
-- **Minification & Compression**: Reduces file size.
-- **Tree Shaking**: Removes unused code for smaller bundle size.
-- **Differential Bundling**: Generates bundles for modern and older browsers.
-- **HTTPS Support**: For secure development environments.
-- **Code Splitting**: Loads only the required parts of the code, improving load times.
-- File Watching Algorithm - written in C++
-- Caching - Faster Builds
-- Minification
-- Bundling
-- Compress
-- Consistent Hashing
-- Code Splitting
-- Differential Bundling - support older browsers
-- Diagnostic
-- Error Handling
-- Different Build for dev and prod bundles
+Here is the refined version with duplicates removed and a concise, organized structure:
+
+### **Features**  
+- **Fast Dev Build**: Quick build process for development.  
+- **Local Server**: Runs a development server locally.  
+- **HMR (Hot Module Replacement)**: Automatically updates modules without full-page refresh.  
+- **Image Optimization**: Compresses images for faster loading.  
+- **Minification & Compression**: Reduces file size for better performance.  
+- **Tree Shaking**: Eliminates unused code to reduce bundle size.  
+- **Differential Bundling**: Generates optimized bundles for both modern and older browsers.  
+- **HTTPS Support**: Enables secure development environments.  
+- **Code Splitting**: Loads only necessary parts of the code, improving load times.  
+- **File Watching Algorithm**: Written in C++ for efficiency.  
+- **Caching**: Speeds up builds by reusing previously generated files.  
+- **Consistent Hashing**: Ensures unique and stable file names across builds.  
+- **Diagnostic & Error Handling**: Provides meaningful errors and diagnostics.  
+- **Separate Dev and Prod Bundles**: Optimizes the build differently for development and production environments.  
+
+This version removes redundancy while maintaining clarity and professionalism.
 
 For a **production build**, you can run: npx parcel build index.html
 
@@ -485,6 +551,16 @@ npm install -D parcel
   ```
   npx parcel build <entry_point>
 
+## `Transpilation` Process
+---------------------------
+Tools like **Parcel** or other bundlers manage the transpilation process for JSX. They transform JSX into JavaScript code using **Babel** behind the scenes. Babel converts JSX into JavaScript objects that React can process.
+
+When transpiled, JSX is transformed into a `React.createElement` function, which creates a plain JavaScript object. During rendering, this object is converted into an HTML element in the DOM.
+
+## `Babel`
+-----------
+**Babel** is a JavaScript compiler that transpiles JSX into React elements and also converts newer ES versions to older versions for compatibility with older browsers.
+
 ## What is `.parcel-cache` folder
 ---------------------------------
 A: `cache folder` (or `.parcel-cache in parcel v2`) stores information about your project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason why parcel can be so fast in development mode.
@@ -495,46 +571,210 @@ A: The `/dist` stands for distributable. The /dist folder contains the minimized
 
 Parcel's default directory for your output is named dist . The --dist-dir public tag defines the output folder for your production files and is named public to avoid confusion with the dist default directory.
 
-## What is `browserlists`
--------------------------
-A: Browserslist defines and shares the list of target browsers between various frontend build tools.
+## `Logical Bundling` -> Good for Performance
+-------------------------------------------
+Logical bundling refers to bundling the code by organizing it into different bundles, each containing a **single, full feature**.  
+
+## Key Benefits:
+------------------
+- Improves performance by **loading only what is required**.
+- Helps maintain **modular code structure**.
+- Reduces the initial load time by avoiding unnecessary bundles.
+
+## Module Dependency Tree
+--------------------------
+Represents how different modules in a project depend on each other.
+Helps the bundler know which files need to be included and in what order.
+
+## Compiling
+---------------
+The process of converting code (e.g., from JSX or TypeScript) into browser-compatible JavaScript.
+
+## Loader
+------------
+Special plugins used by bundlers to transform files (like Babel for JavaScript or CSS loaders).
+
+## Code Splitting
+------------------
+Breaks large bundles into smaller chunks to load only what is necessary at a given moment.
+Improves performance by loading parts of the code on-demand.
 
 
-### 29 . `NPX` ###
-===================
-A: `npx` stands for `Node Package eXecute`. It is simply an `npm` package runner. It allows developers to execute any Javascript Package available on the npm registry without even installing it. npx is installed automatically with npm version 5.2.
-
-Example: npx parcel index.html
-
-This command runs Parcel with `index.html` as the entry point.
 
 
-### 30 . `JSX` ###
+
+### `Rendering Steps` ###
+========================
+React follows specific steps during the rendering process to efficiently update the UI. These steps ensure optimal performance and minimize unnecessary re-renders.
+
+## 1. Triggering
+------------------
+An event, state change, or props update triggers a render.
+Examples include user interactions (like button clicks) or data changes.
+
+## 2. Rendering
+------------------
+React calls the render function to generate a virtual DOM based on the component's current state and props.
+This phase doesn't interact with the real DOM—only virtual DOM trees are prepared.
+
+## 3. Committing
+------------------
+The virtual DOM is compared to the real DOM (using reconciliation) to determine the minimal set of changes.
+React updates the real DOM based on the diff, ensuring only necessary elements are modified.
+
+## 4. Rerendering
+-------------------
+If state or props change again, React triggers another render to reflect the updated data.
+This can happen multiple times if components depend on frequently changing data.
+
+## 5. Batching Updates
+-----------------------
+React batches multiple state or prop updates to avoid unnecessary renders.
+This improves performance by combining several changes into a single render cycle instead of rendering for every update individually.
+
+
+
+
+
+##### `JSX` ####
 ==================
-JSX is a syntax extension for JavaScript that looks similar to HTML, but it's not exactly HTML or XML. JavaScript engines can't interpret JSX directly, so it needs to be transformed into regular JavaScript objects before the engine can process it.
+JSX (JavaScript XML) is a syntax extension for JavaScript that looks similar to HTML but is not exactly HTML or XML. It allows you to write HTML-like code within JavaScript, making React components more readable and maintainable. However, JavaScript engines cannot interpret JSX directly, so it must be transformed into JavaScript objects before browsers can process it.
 
-Key points about JSX:
-- Attributes must be written in **camelCase** (e.g., `className`, `onClick`).
-- For multiple lines of JSX, wrap them in parentheses for clarity.
-- JSX enhances readability but must be converted to JavaScript for browsers.
-
-JSX makes React code more readable and maintainable while enabling you to structure UI elements within JavaScript code.
-
-
-### 31 . `JSX in React` ###
-===========================
-JSX is a syntax extension for JavaScript commonly used in React. It allows us to write HTML-like code within JavaScript. However, JSX is not directly understood by JavaScript engines because they only interpret ECMAScript (ES) standards.
-
-## Superpowers of `JSX`.
+## `JSX` Key points 
 ------------------------
-A: Using JSX,  wecan write markup inside Javascript, providing you with a superpower to write logic and markup of a component inside a single .jsx file. JSX is easy to maintain and debug.
+Attributes in camelCase: Use className instead of class, and onClick instead of onclick.
+Wrap multi-line JSX in parentheses: Improves clarity and readability.
+JSX needs to be converted: Browsers can only interpret standard JavaScript, so JSX is compiled by tools like Babel.
+Logic + Markup Together: Write both logic and UI markup in a single file, improving maintainability and debugging.
+
+## Benifits of `JSX`.
+------------------------
+Improved Readability: Helps structure UI components more intuitively within JavaScript.
+Easier Debugging: Combining logic and markup in one place makes it easier to debug.
+Code Maintainability: Writing everything in one place ensures that UI changes are straightforward.
 
 **Example**
 ```js
 function greeting(user) {
   return <h1>{user}, How are you!!!</h1>;
 }
+
+const eg = <h1> Hello world </h1>
 ```
+
+## `Rules` of JSX  
+----------------
+JSX (JavaScript XML) is a syntax extension in React that allows writing HTML-like code within JavaScript. While it looks similar to HTML, JSX follows some specific rules.
+
+1. **Every JSX Element Must Have One Parent Element:** 
+--------------------------------------------------------
+   - All JSX must be wrapped inside a single parent element, such as a `<div>` or `<React.Fragment>`.  
+
+   - **Example:**  
+     ```jsx
+     return (
+       <div>
+         <h1>Hello</h1>
+         <p>World</p>
+       </div>
+     );
+     ```
+
+2. **JSX Tags Must Be Properly Closed:**  
+------------------------------------------
+   - Every tag in JSX must be self-closing or have an explicit closing tag.
+   - **Correct:** `<img src="image.png" />`
+   - **Incorrect:** `<img src="image.png">`
+
+3. **Use `className` Instead of `class`:**  
+-------------------------------------------
+   - Since `class` is a reserved keyword in JavaScript, JSX uses `className` for CSS classes.
+
+   - **Example:**  
+     ```jsx
+     <div className="container">Hello</div>
+     ```
+
+4. **JavaScript Expressions inside JSX:**  
+------------------------------------------
+   - You can embed JavaScript expressions inside JSX using curly braces `{}`.
+
+   - **Example:**  
+     ```jsx
+     const name = "John";
+     return <h1>Hello, {name}!</h1>;
+     ```
+
+5. **Use `camelCase` for HTML Attributes:**  
+--------------------------------------------
+   - In JSX, HTML attributes follow camelCase naming conventions (e.g., `onClick` instead of `onclick`).
+
+   - **Example:**  
+     ```jsx
+     <button onClick={handleClick}>Click Me</button>
+     ```
+
+6. **Conditional Rendering with Ternary Operators:**  
+----------------------------------------------------
+   - You can use JavaScript ternary operators for conditional rendering.
+   
+   - **Example:**  
+     ```jsx
+     {isLoggedIn ? <h1>Welcome Back</h1> : <h1>Please Log In</h1>}
+     ```
+
+7. **JSX Elements Must Be Properly Indented and Structured:**  
+--------------------------------------------------------------
+   - Proper formatting and indentation improve readability.
+
+8. **Fragments to Avoid Extra Nodes:**  
+----------------------------------------
+   - Use `<React.Fragment>` or shorthand `<>` to group elements without adding unnecessary nodes to the DOM.
+
+   - **Example:**  
+     ```jsx
+     return (
+       <>
+         <h1>Title</h1>
+         <p>Paragraph</p>
+       </>
+     );
+     ```
+
+9. **JSX Prevents Injection Attacks:**  
+---------------------------------------
+   - JSX escapes values by default, protecting the application from XSS (Cross-Site Scripting) attacks.
+
+10. **Comments in JSX:**  
+--------------------------
+   - Comments in JSX must be wrapped inside curly braces `{}`.
+   
+   - **Example:**  
+     ```jsx
+     return (
+       <div>
+         {/* This is a comment */}
+         <h1>Hello World</h1>
+       </div>
+     );
+     ```
+
+## `JSX vs HTML` 
+-----------------
+## JSX
+-------
+- **Definition**: JSX is a syntax extension for JavaScript, allowing you to write HTML-like code within JavaScript files.
+- **Functionality**: Allows embedding JavaScript expressions within braces `{}`.
+- **Usage**: Used primarily with React to describe the UI components.
+- **Transpilation**: Needs to be transpiled to JavaScript (using tools like Babel) to run in the browser.
+
+## HTML
+-------
+- **Definition**: HTML (HyperText Markup Language) is the standard markup language for creating web pages.
+- **Functionality**: Static markup that does not allow embedding JavaScript expressions directly.
+- **Usage**: Used to structure content on the web.
+- **Browser Interpretation**: Browsers natively understand and render HTML without any transpilation.
+
 
 ## `{TitleComponent}` vs `{<TitleComponent/>}` vs `{<TitleComponent></TitleComponent>}` in `JSX`.
 ---------------------------------------------------------------------------------------------------
@@ -542,22 +782,13 @@ A: The Difference is stated below:
 
 - `{TitleComponent}`: This value describes the `TitleComponent` as a javascript expression or a variable.
   The `{}` can embed a javascript expression or a variable inside it.
+
 - `<TitleComponent/>` : This value represents a Component that is basically returning Some JSX value. In simple terms `TitleComponent` a function that is returning a JSX value.
   A component is written inside the `{<  />}` expression.
+  
 - `<TitleComponent></TitleComponent>` : `<TitleComponent />` and `<TitleComponent></TitleComponent>` are equivalent only when `< TitleComponent />` has no child components. The opening and closing tags are created to include the child components.
 
-
-## Transpilation Process
-------------------------
-Tools like **Parcel** or other bundlers manage the transpilation process for JSX. They transform JSX into JavaScript code using **Babel** behind the scenes. Babel converts JSX into JavaScript objects that React can process.
-
-When transpiled, JSX is transformed into a `React.createElement` function, which creates a plain JavaScript object. During rendering, this object is converted into an HTML element in the DOM.
-
-## Babel
---------
-**Babel** is a JavaScript compiler that transpiles JSX into React elements and also converts newer ES versions to older versions for compatibility with older browsers.
-
-### Component Composition in JSX
+## Component Composition in JSX
 ----------------------------------
 We can use curly braces inside JSX elements to integrate other JSX elements or add JavaScript expressions. This allows for dynamic content rendering within JSX components.
 
@@ -565,7 +796,48 @@ We can use curly braces inside JSX elements to integrate other JSX elements or a
 -----------------------------
 When using curly braces in JSX, you can embed JavaScript expressions. However, JSX automatically sanitizes any data received from an API or external source, helping to protect against Cross-Site Scripting (XSS) attacks. JSX escapes values by default, preventing malicious code from being executed unless you explicitly mark it as unsafe using methods like `dangerouslySetInnerHTML`.
 
-### 32 . `DOM` Concept in JavaScript ###
+## Conditional Rendering
+-------------------------
+React can dynamically render components based on route parameters or user input. For example, if a user visits /product/42, the app will display details for product ID 42.
+
+## `<> </>` in React (Fragment Syntax)
+---------------------------------------
+In React, `<> </>` is shorthand for **React Fragments**. A Fragment allows grouping multiple child elements without adding an extra node to the DOM, which is common when returning multiple elements from a component.
+
+### Why Use Fragments?
+- Avoids adding unnecessary DOM elements like extra `div` or `span` tags.
+- Keeps the DOM clean and helps reduce extra styling and layout issues.
+
+ **Example:**
+```jsx
+return (
+  <>
+    <h1>Hello, World!</h1>
+    <p>This is a React fragment.</p>
+  </>
+);
+```
+
+## `Key` Property in Jsx element
+--------------------------------
+Whenever we are looping and making data dynamic we need to set a key property to the JSX element like key = {value}
+
+So these keys are very important for the app optimization 
+
+Suppose if a new data came to the array we are looping , and if there is not unique key for the elements , The react will rerender all the elements again because react dont knwo which is the newly added data so this will make our app more complex in loading
+
+So keeping a unique key for the element will help the react to identify the newly added data and then the react will only render that data
+
+NOTE THAT :- never use the index of the looping as the unique key
+
+A: A `key` is a special attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. In other words, we can say that keys are unique Identifier used to give an identity to the elements in the lists.
+Keys should be given to the elements within the array to give the elements a stable identity.
+
+
+
+
+
+### `DOM` Concept in JavaScript ###
 ========================================
 The **Document Object Model (DOM)** is a programming interface for web documents, representing the structure of an HTML or XML document as a tree of objects. It allows JavaScript to interact with and manipulate the content, structure, and style of web pages dynamically.
 
@@ -579,7 +851,10 @@ The **Document Object Model (DOM)** is a programming interface for web documents
 The DOM represents the HTML document as a tree, with the document object as the root. Each element becomes a node in this tree, and the relationships between elements are represented as parent-child relationships.
 
 
-### 33 . Concept of `Reusability in React` ###
+
+
+
+### Concept of `Reusability in React` ###
 ==============================================
 **Reusability** in React refers to creating modular, independent components that can be used across different parts of an application or even across multiple projects. React’s component-based architecture is designed to promote reusability, which makes it easier to build scalable and maintainable applications.
 
@@ -608,7 +883,134 @@ React hooks like `useState`, `useEffect`, and `useReducer` promote the reuse of 
 You can create libraries of reusable components, such as buttons, forms, or modals, and use them across multiple projects. Libraries like **Material-UI** or **Bootstrap** provide reusable UI components for rapid development.
 
 
-### 33 . `ES6` New Methods ###
+
+
+### `Synthetic Events` ###  
+========================  
+Synthetic Events in React are objects that wrap native browser events to provide a consistent API across all browsers. React’s synthetic event system ensures that event handling works uniformly across different platforms.
+
+1. **What are Synthetic Events?**  
+----------------------------------
+   - Synthetic events are React’s cross-browser wrapper around native events.
+   - These events behave identically across all browsers, providing a consistent interface.
+
+2. **How Synthetic Events Work:**  
+----------------------------------
+   - React creates a synthetic event object that mimics the original native event.
+   - The synthetic event gets automatically pooled (reused) to improve performance. This means the event object is cleared and reused after the callback finishes executing.
+   - If you need to access the event asynchronously, call `event.persist()` to prevent React from reusing it.
+
+3. **Event Handling in React:**  
+-------------------------------
+   - Event handlers in React are added using camelCase syntax (e.g., `onClick` instead of `onclick`).
+   - React follows the virtual DOM pattern, meaning event handlers are attached at the root of the DOM, not directly on individual nodes.
+
+4. **Examples of Synthetic Events:**
+----------------------------------------
+
+   - **onClick:** Handles button clicks.
+     ```jsx
+     <button onClick={() => alert('Button clicked!')}>Click Me</button>
+     ```
+
+   - **onChange:** Handles input field changes.
+     ```jsx
+     <input type="text" onChange={(e) => console.log(e.target.value)} />
+     ```
+
+   - **onSubmit:** Handles form submission.
+     ```jsx
+     <form onSubmit={(e) => { e.preventDefault(); alert('Form submitted!'); }}>
+       <button type="submit">Submit</button>
+     </form>
+     ```
+
+5. **Event Pooling:**  
+---------------------
+   - React reuses the synthetic event object to improve performance. This means the event’s properties become unavailable after the event handler is executed.  
+   - **Example of Persisting an Event:**
+     ```jsx
+     function handleClick(event) {
+       event.persist(); // Prevents the event from being reused
+       setTimeout(() => console.log(event.type), 1000);
+     }
+
+     <button onClick={handleClick}>Click Me</button>
+     ```
+
+6. **Supported Synthetic Events in React:**  
+----------------------------------------------
+   React supports many types of synthetic events, such as:
+
+   - **Mouse Events:** `onClick`, `onDoubleClick`, `onMouseEnter`, `onMouseLeave`
+   - **Keyboard Events:** `onKeyDown`, `onKeyUp`, `onKeyPress`
+   - **Form Events:** `onChange`, `onSubmit`, `onInput`
+   - **Focus Events:** `onFocus`, `onBlur`
+   - **Touch Events:** `onTouchStart`, `onTouchEnd`
+   - **Clipboard Events:** `onCopy`, `onPaste`
+
+7. **Advantages of Synthetic Events:**  
+---------------------------------------
+   - **Cross-browser Compatibility:** Provides uniform behavior across different browsers.
+   - **Performance:** Uses event delegation by attaching handlers to the root, reducing the need for multiple listeners.
+   - **Abstraction:** Makes handling events simpler by wrapping the native browser events.
+
+Synthetic events are an essential part of React, ensuring seamless event handling with optimized performance and consistency.
+
+
+
+
+
+### `Memoization` ###  
+====================  
+Memoization is an optimization technique used to improve the performance of applications by caching the results of expensive function calls and returning the cached result when the same inputs occur again.
+
+1. **What is Memoization?**  
+-----------------------------
+   - Memoization stores the results of function calls and reuses them if the same inputs are passed again, avoiding redundant computations.
+   - It ensures that a function doesn’t run more than necessary by returning previously computed results.
+
+2. **How Memoization Works:**  
+-------------------------------
+   - The first time a function is called with certain arguments, it computes the result and stores it in memory.
+   - If the function is called again with the same arguments, the stored result is returned instead of recalculating it.
+
+3. **Memoization in React:**  
+------------------------------
+   React provides built-in tools for memoization to optimize rendering and avoid unnecessary re-renders.
+
+   - **React.memo:**  
+     - A higher-order component (HOC) that memoizes a functional component, preventing unnecessary re-renders if the props don’t change.
+   
+   - **useMemo:**  
+     - A React hook that memoizes the result of a function to prevent expensive recalculations on every render.
+
+   - **useCallback:**  
+     - Memoizes a function definition so that the same function reference is used across renders, avoiding re-renders in child components that rely on it.
+
+4. **Why Use Memoization?**  
+-----------------------------
+   - **Performance Optimization:** Reduces unnecessary recalculations or re-renders, making the application faster.
+   - **Avoids Redundant Logic:** Ensures that the same logic isn’t executed multiple times for the same inputs.
+   - **Improves User Experience:** Faster load times and fewer re-renders lead to smoother interactions.
+
+5. **When to Use Memoization in React:**  
+-----------------------------------------
+   - **Expensive Calculations:** Use `useMemo` for computations that take significant time.
+   - **Callback Functions Passed as Props:** Use `useCallback` to ensure that child components don’t re-render unnecessarily.
+   - **Rendering Pure Components:** Use `React.memo` to memoize components that rely only on props, avoiding re-renders unless the props change.
+
+6. **Drawbacks of Memoization:**  
+---------------------------------
+   - **Memory Consumption:** Cached data can accumulate over time, increasing memory usage.
+   - **Overhead:** If not used carefully, memoization can add unnecessary complexity, leading to premature optimization.
+   - **Limited Benefit for Lightweight Functions:** Memoization might not significantly improve performance for simple functions.
+
+
+
+
+   
+### `ES6` New Methods ###
 ==============================
 ## Arrow Function
 ------------------
@@ -634,12 +1036,86 @@ Destructuring allows you to unpack values from arrays or properties from objects
 -------------------
 ES6 introduced modules, allowing developers to organize and reuse code across files using `import` and `export`.
 
+## Default Export/Import
+-------------------------
+Each file/module can have only one default export.
+When importing, you can use any name for the imported module.
+Default exports are often used for the primary function/class of a module.
 
-### 34 . `Components` in React ###
+## Named Export/Import
+----------------------
+Multiple named exports can exist in a single module.
+When importing, you must use the exact names of the exported entities, unless you use aliases.
+Named exports are great for exporting multiple utilities or constants.
+
+
+
+
+### `Pure Functions` ###  
+=======================  
+A pure function is a function that adheres to two key principles:
+
+1. **Deterministic:**  
+   - For a given set of inputs, a pure function always produces the same output. This means the function’s behavior is predictable and does not depend on any external state or data.
+  
+2. **No Side Effects:**  
+   - Pure functions do not cause any observable changes in the application’s state or interact with the outside world (like modifying global variables, changing object properties, or performing I/O operations).
+  
+#### Example of a Pure Function:  
+```javascript
+function add(a, b) {
+    return a + b; // Always returns the same result for the same inputs
+}
+```
+
+
+
+
+
+### `Strict Mode` ###
+===================
+Strict Mode is a feature in JavaScript that helps identify and catch common programming errors, as well as enforce a stricter set of rules for JavaScript code. It can be enabled in both JavaScript files and within React components.
+
+Key Features of Strict Mode:
+Eliminates Silent Errors:
+
+Throws errors for silent mistakes (like assigning values to undeclared variables) that would otherwise fail silently.
+Disallows Duplicate Parameter Names:
+
+Prevents the use of duplicate parameter names in functions, which can lead to confusion.
+Prevents this from Being Implicitly Global:
+
+In strict mode, this inside a function that’s called as a function (not as a method of an object) is undefined, preventing accidental global variable creation.
+Disallows with Statement:
+
+The with statement is not allowed in strict mode, which can lead to code that is hard to understand and maintain.
+Changes to Certain Global Variables:
+
+Some global variables (like eval and arguments) are restricted in strict mode.
+
+**Example**
+-----------
+```js
+<React.StrictMode>
+    <App />
+</React.StrictMode>
+```
+
+## Benefits of Strict Mode:
+-----------------------------
+Better Error Checking: Helps developers catch errors early during development.
+More Secure Code: Reduces the likelihood of certain bugs and security issues.
+Encourages Best Practices: Promotes cleaner and more maintainable code by discouraging potentially problematic features.
+
+
+
+
+
+### `Components` in React ###
 ==================================
 In React, components are the building blocks of any React application. They allow you to split the UI into independent, reusable pieces and think about each piece in isolation. There are two main types of components in React: **Class Components** and **Functional Components**.
 
-## Functional Components
+## `Functional` Components
 -------------------------
 Functional components are simpler and are written as JavaScript functions. Before React Hooks, functional components were stateless. However, with the introduction of hooks (like `useState`, `useEffect`), functional components can now manage state and lifecycle events just like class components.
 
@@ -651,22 +1127,37 @@ Functional components use the `useEffect` hook to manage side effects and lifecy
 
 **Example:**
 -------------
+```js
 const HeadingOne = () => {
     return <h1>This is a functional component</h1>
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(<HeadingOne/>)
+```
 
-## Class Components (with Lifecycle Methods)
+## `Class` Components (with Lifecycle Methods)
 ---------------------------------------------
-Class components were the standard way to create components in React before the introduction of hooks. They extend from React.Component and allow the use of lifecycle methods to manage component states and behavior over time.
+Class components were the standard way to create components in React before the introduction of hooks. They extend from React.Component and allow the use of lifecycle methods to manage state and behavior over time.
 
-its normal class in javascript with the name of componentn which inherits the React.component which is given by React
-and which has a render method which return some piece of JSX
+In essence, a class component is a JavaScript class with the name of the component, which inherits from React.Component (provided by React) and contains a render() method that returns some piece of JSX.
 
-for recieving props in class based components we use constructor and inside that 
-constructor(props) we use the super(props)
+# Receiving Props in Class Components
+-------------------------------------
+To access props in a class component, you typically use a constructor method. Inside the constructor, you must call the parent class's constructor using super(props) to properly initialize the component.
+
+```js
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props); // Call parent constructor to initialize 'this'
+    console.log(this.props); // Now 'this.props' is accessible here
+  }
+
+  render() {
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}
+```
 
 A super constructor is a special constructor in the class hierarchy of object-oriented programming languages. It refers to the constructor of the parent class that is being extended in the current class. The purpose of using the super constructor with a props argument is to inherit the properties of the parent class and also pass in additional properties as arguments to the child class.
 
@@ -676,29 +1167,30 @@ When you extend the React.Component class, you must call the parent class's cons
 
 if we pass props inside super we can call this.props inside constructor other it will be undefined but we can use props alone without this keyword
 
-Whenever the class component loads or mounted the constructor is called and then render function is called then the componentDidMount function is called
+Whenever the class component loads or mounted, the constructor is called and then render function is called then the componentDidMount function is called
 
-componentDidMount()
---------------------
-used to fetch api calls
-why because in react it loads component then render then make api then fill the component with api data 
-this can achieve in functional component using useEffect
-But in class component wee need to use componentDidMount function make this possible
-so that after one render the componentDidMount function called for the api called and then render the component for fill the api data
+# componentDidMount()
+----------------------
+The componentDidMount lifecycle method is primarily used for making API calls. In React, the typical lifecycle of a component is to load the component, render it, and then make API calls to fetch data.
 
-componentDidUpdate()
---------------------
-Runs after every re-render when the props or state change.
-Receives prevProps and prevState as arguments, allowing comparison with the current props/state to determine if any specific updates are needed.
+This method is called after the initial render, allowing you to fetch data and update the component's state with the fetched data, which will subsequently trigger a re-render of the component.
 
-componentWillUnmount()
+In functional components, this can be achieved using the useEffect hook, which allows you to perform side effects, such as fetching data.
+
+# componentDidUpdate()
 -----------------------
-The componentWillUnmount lifecycle method is called just before a component is unmounted and destroyed. This is the right place to clean up resources like event listeners, timers, subscriptions, or network requests to prevent memory leaks.
+The componentDidUpdate lifecycle method is invoked after every re-render of the component, which occurs when either props or state change.
 
-Sometimes we need to start some setInterval in the componentDidMount will work all the time even we change the page our application so we need to stop that interval inside the componentWillUnmount so it will only work when that specific component appear on the page
+This method receives prevProps and prevState as arguments, enabling you to compare them with the current props and state to determine if specific updates are necessary. This is particularly useful for optimizing component performance and avoiding unnecessary operations.
 
-Lifecycle of parent child class component
------------------------------------------
+# componentWillUnmount()
+--------------------------
+The componentWillUnmount lifecycle method is called just before a component is unmounted and destroyed. This is the appropriate place to clean up resources, such as removing event listeners, stopping timers, cancelling subscriptions, or aborting network requests, to prevent memory leaks.
+
+For example, if you start a setInterval in componentDidMount, it will continue to run even if the component is no longer displayed. To prevent this, you should stop the interval in componentWillUnmount, ensuring it only operates while the specific component is mounted.
+
+# Lifecycle of parent child class component
+--------------------------------------------
 parent constructor
 parent render
 child constructor
@@ -708,57 +1200,81 @@ parent componentDidMount
 
 First the parent class constructor and render function will call and then if there is any child class its constructor and then its render will call and then the child class componentDidMount will call and then parents componentDidMount will call
 
-Render phase
---------------
-constructor calling
-rendering
+# Render phase
+----------------
+Constructor Calling: When a component is instantiated, the constructor is called. This is where you can initialize state and bind methods.
 
-Commit phase
+Rendering: After the constructor, the render method is invoked. This method returns the JSX that describes what should be rendered on the screen. React then constructs the Virtual DOM based on this returned JSX.
+
+# Commit phase
+----------------
+React Updates DOM: After the Render phase, React compares the Virtual DOM with the actual DOM (this process is known as reconciliation) and identifies changes.
+
+componentDidMount: Once the changes are determined, React updates the actual DOM to reflect the new state of the component. After this update, the componentDidMount lifecycle method is called, which is often used for side effects, such as fetching data or setting up subscriptions.
+
+# Mounting
+-----------
+Constructor Called: The component's constructor is invoked, where initial state and bindings can be set up.
+Render Component with Dummy Data: The render method is called, and the component is rendered with initial or dummy data.
+Update the DOM with Dummy Data: React updates the actual DOM to reflect the rendered output.
+componentDidMount: After the DOM updates, the componentDidMount lifecycle method is called, allowing for side effects like API calls or subscriptions.
+
+# Updating
+-----------
+State Update: Within the componentDidMount, if this.setState is called (possibly due to an API fetch), it triggers a re-render.
+Render with API Data: The component re-renders, now displaying the fetched API data.
+Update the DOM with API Data: React updates the actual DOM to reflect the new data.
+componentDidUpdate Called: After the DOM updates, the componentDidUpdate lifecycle method is invoked, allowing for further side effects or logic based on the updated props or state.
+
+# Unmounting
 -------------
-React update dom
-componentDidMount
+componentWillUnmount: This method is called when the component is about to be removed from the DOM. It’s the ideal place to clean up resources, such as timers, subscriptions, or event listeners, to prevent memory leaks. For example, when navigating away from a component by clicking a link, componentWillUnmount is triggered.
 
-Mounting
---------
-constructor called
-render componenet with dummy data
-update the dom with dummy data
-componentDidMount
+# Why?
+-------
+When you create a class component in React by extending React.Component, the parent class's constructor initializes the component's props. If you skip passing props to super(), React may not initialize them correctly within the instance.
 
-Updating
---------
-in the componentDidMount will have this.setState function which may have fetch api and it will update the this.state
-render with api data
-update the dom with api data
-componentDidUpdate called 
+Key Points:
+Instance-specific Props: Each instance of the class (the component) maintains its own props. By passing props to super(), you ensure that the specific props are correctly initialized for that instance.
 
-Unmounting
-----------
-componentWillUnmount function will when the component will replaced by another compoent or the component diappear from the dom like if we click another link in heaser the another component will load that time the componentWillUnmount will called
+Accessing Props: Outside the constructor, you typically use this.props and this.state within class methods or event handlers. These methods need to refer to the current instance of the class to access the correct props and state.
 
-## Why?
-The parent React.Component class initializes the component's props through its own constructor. If you skip passing props to super(), React doesn’t initialize them properly within the instance.
+Correct Method Functionality: If you do not call super(props), the this.props inside your methods would be undefined, leading to potential errors. The method wouldn't know which component's props to access, which can cause unexpected behavior in your application.
 
-Outside the constructor, this.props is necessary because each instance of the class (the component) maintains its own props.
-This ensures that the right instance and its specific props are being accessed.
+## state variable
+------------------
+In React class components, state variables are managed using this.state, which is an object that holds the component's dynamic data.
 
-Inside class methods or event handlers, you typically use this.props and this.state because those methods need to refer to the current instance of the class.
+# Declaring State Variables
+State variables can be declared inside the constructor using this.state.
 
-Without this, the method wouldn’t know which component's props to access.
+```js
+constructor(props) {
+    super(props);
+    this.state = {
+        variableName: initialValue,
+        // other state variables
+    };
+}
+```
 
-state variable
---------------
-we can use this.state inside the contrutor for declaring the state variables and the this.state is an object
+# Updating State Variables
+Avoid Direct Updates: Never update state variables directly using:
 
-Never ever update state variable directly sugin this.state.variableName = this.state.variableName + 1
+```js
+this.state.variableName = this.state.variableName + 1;
+```
+Directly mutating the state can lead to unexpected behavior and bugs, as React relies on its internal mechanisms to manage re-renders.
 
-Instead of it react is giveing a this.setState function to update the state varibale and this function will take an object with state Variables assigned with updated value
+Using this.setState(): Instead, use the this.setState() method provided by React to update state variables. This method accepts an object containing the state variables you want to update.
 
-so if we update a state variable using the this.setState() this portion of the this.state with the state varibale will be updated, react will compare the difference between this.state object and this.setState of object
+```js
+this.setState({ variableName: this.state.variableName + 1 });
+```
+Reactivity: When you call this.setState(), React merges the provided object with the current state. React then compares the previous state object with the new state object to determine what has changed. If there are differences, React triggers a re-render of the component, ensuring the UI reflects the latest state.
 
-
-Eaxmple
---------
+## Eaxmple
+-----------
 ```js
 import React from 'react'
 
@@ -790,16 +1306,269 @@ class Component extends React.component{
   )
 }
 ```
-## Component composition
-------------------------
-Component composition refers to the ability of one component to call or include another component.
 
 
-### 35 . `DYNAMIC ROUTING` ###
+
+
+
+### React `Render Tree` and Component Concepts ###
+=====================================================
+In React, the **render tree** represents how components are structured and nested to form the UI. Each component plays a specific role, and understanding their properties, behavior, and relationships is crucial to building efficient applications.
+
+## 1. **Top-level Components**
+--------------------------------
+These are the main or parent components responsible for rendering sections or pages of the application. They often serve as containers for other components.
+
+**Example:**
+```jsx
+function App() {
+  return (
+    <div>
+      <Header />
+      <MainPage />
+      <Footer />
+    </div>
+  );
+}
+```
+
+
+
+
+
+### `Leaf` Components ###
+========================
+Leaf components are the smallest building blocks of the UI. They do not contain other components but may receive props to configure their behavior.
+
+**Example**
+-----------
+```js
+function Button({ label }) {
+  return <button>{label}</button>;
+}
+```
+
+
+
+
+
+### `Props` ###
+==============
+Props (short for "properties") are the mechanism by which data is passed from a parent component to a child component in React. They allow you to customize and control how components behave and render based on the input they receive.
+
+# Key Points about Props:
+--------------------------
+Data Transfer: Props are used to pass data and event handlers down to child components.
+Immutable: Props are read-only. A child component cannot modify its own props.
+Function Components: In functional components, props are received as arguments.
+Class Components: In class components, props are accessed using this.props.
+Default Props: You can define default values for props using the defaultProps property in class components or default parameters in functional components.
+
+# Example
+---------
+```js
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+// Usage
+<Greeting name="Midhun" />
+```
+
+
+
+
+
+### `Immutable` Props ###
+========================
+Props are immutable, meaning the child component cannot modify them directly. This ensures predictable behavior and maintains React’s unidirectional data flow.
+
+**Example**
+------------
+```js
+function DisplayNumber({ number }) {
+  // Trying to modify props will cause an error.
+  // number = number + 1; ❌
+  return <p>{number}</p>;
+}
+```
+
+
+
+
+
+### `Forwarding` Props ###
+===========================
+When a parent component needs to pass props through an intermediate component to a deeper child, prop forwarding is used.
+
+**Example**
+-----------
+```js
+function Input(props) {
+  return <input {...props} />;
+}
+
+function Form() {
+  return <Input placeholder="Enter text" />;
+}
+```
+
+
+
+
+
+### `Children` Prop ###
+======================
+The children prop allows you to pass elements or components between the opening and closing tags of another component.
+
+**Example**
+-----------
+```js
+function Wrapper({ children }) {
+  return <div className="wrapper">{children}</div>;
+}
+
+<Wrapper>
+  <h1>Title</h1>
+  <p>This is some content.</p>
+</Wrapper>;
+```
+
+
+
+
+### Importance of `Pure Components` ###
+========================================
+A pure component behaves predictably by rendering the same output for the same input (props or state). Avoiding side effects helps ensure the component's integrity.
+
+**Example**
+-----------
+```js
+function PureGreeting({ name }) {
+  return <h1>Hello, {name}</h1>;
+}
+```
+
+
+
+
+
+### `Local Mutation` and Why to Avoid It ###
+===========================================
+Directly modifying state or props can lead to unpredictable behavior. React promotes immutability by encouraging controlled updates using setState or hooks.
+
+**Example**
+------------
+```js
+this.state.count = this.state.count + 1; // ❌ Avoid direct mutation.
+
+this.setState({ count: this.state.count + 1 }); // ✅ Use setState instead.
+```
+
+
+
+
+
+### React Functional Component Snippets: `rafce` and `tsrafce` ###
+===================================================================
+
+## 1. `rafce` (React Arrow Function Component Export)
+-----------------------------------------------------------
+This snippet quickly generates a React functional component with an arrow function and exports it by default.
+
+**Usage:**  
+- Primarily used in JavaScript (`.js`) React projects.
+- Reduces repetitive boilerplate when creating functional components.
+
+**Example:**
+```jsx
+import React from 'react';
+
+const ExampleComponent = () => {
+  return <div>Hello, World!</div>;
+};
+
+export default ExampleComponent;
+```
+
+## 2. `tsrafce` (TypeScript React Arrow Function Component Export)
+--------------------------------------------------------------------
+This snippet is similar to rafce but used for TypeScript projects. It adds type annotations to ensure type safety.
+
+**Usage:**
+Preferred for React projects using TypeScript (.tsx files).
+Ensures props and other values are properly typed.
+
+```js
+import React from 'react';
+
+interface ExampleProps {
+  title: string;
+}
+
+const ExampleComponent: React.FC<ExampleProps> = ({ title }) => {
+  return <div>{title}</div>;
+};
+
+export default ExampleComponent;
+```
+
+
+
+
+
+### `Life Cycle` ###
+=========================
+React component lifecycle methods allow you to control what happens at specific stages of a component's life. Class components in React use lifecycle methods to manage component behavior during its creation, updating, and destruction phases.
+
+## Mounting Phase
+-----------------
+The lifecycle methods during the mounting phase are invoked when a component is created and added to the DOM.
+
+### `constructor(props)`
+This is the very first method called in the lifecycle. It is used for initializing state or binding event handlers.
+
+### `static getDerivedStateFromProps(props, state)`
+This is a rarely used method that allows the component to update its internal state based on changes in props.
+
+### `render()`
+This is the only required lifecycle method in a class component. It returns the JSX that defines the component's UI. It is called every time the component is re-rendered.
+
+### `componentDidMount()`
+Called immediately after the component is inserted into the DOM. This is a good place to perform side effects like fetching data, setting up subscriptions, or interacting with the DOM.
+
+## Updating Phase
+------------------
+The updating phase happens whenever the component's state or props change, causing it to re-render.
+
+### `static getDerivedStateFromProps(props, state)`
+As mentioned earlier, it is called before rendering during both mounting and updating. It can update the component's state in response to prop changes.
+
+### `shouldComponentUpdate(nextProps, nextState)`
+This method determines whether a re-render is necessary. If it returns false, React skips the rendering and updating process.
+
+### `render()`
+Called whenever the component is re-rendered. It returns the JSX structure of the component.
+
+### `getSnapshotBeforeUpdate(prevProps, prevState)`
+This method is invoked right before the DOM is updated. It allows you to capture information (e.g., scroll position) before the DOM changes. The value returned from this method is passed as a parameter to `componentDidUpdate()`.
+
+### `componentDidUpdate(prevProps, prevState, snapshot)`
+This method is called after the component's updates are flushed to the DOM.
+
+## Unmounting Phase
+--------------------
+This phase occurs when the component is removed from the DOM.
+
+### `componentWillUnmount()`
+This method is invoked just before the component is removed from the DOM. It is commonly used to clean up resources like event listeners, timers, or network requests.
+
+
+### `DYNAMIC ROUTING` ###
 ==============================
 Dynamic routing in React.js refers to the ability to render different components or pages based on the current URL or user input. This is often achieved using React Router, which is a popular library for handling routing in React applications.
 
-### Dynamic Route Parameters
+## Dynamic Route Parameters
 -----------------------------
 You can create routes that accept parameters, making the route dynamic. For example, `/user/:id` will match `/user/1`, `/user/2`, etc., where `:id` is a dynamic segment.
 
@@ -812,10 +1581,6 @@ You can access dynamic route parameters using the useParams hook in the componen
 ```js
 const { id } = useParams();
 ```
-## Conditional Rendering
--------------------------
-React can dynamically render components based on route parameters or user input. For example, if a user visits /product/42, the app will display details for product ID 42.
-
 ## Nested Routes
 ----------------
 Dynamic routing also supports nested routes where a route can have sub-routes based on the URL.
@@ -825,11 +1590,57 @@ Dynamic routing also supports nested routes where a route can have sub-routes ba
   <Route path="/category/:categoryId/product/:productId" component={ProductComponent} />
 </Route>
 
-## Code Splitting with Dynamic Import
---------------------------------------
-You can use dynamic routing along with code-splitting techniques to load only the necessary components for each route dynamically.
+### `Old Way Routing` (React Router v5 and below)
+-------------------------------------------------
+## Router
+---------
+Definition: The Router component is a high-level component that keeps the UI in sync with the URL. It uses the browser's history API to enable navigation without page reloads.
 
-const ProductPage = React.lazy(() => import('./ProductPage'));
+Usage: You typically use the BrowserRouter or HashRouter as the Router component, depending on how you want to manage the history.
+
+## Routes
+-----------
+Definition: The Routes component is a container for all the Route components. It looks through its children Route elements and matches the current location to one of them. It renders the first Route that matches the location.
+
+Usage: You use Routes to group multiple Route components.
+
+## Route
+--------
+Definition: The Route component is used to define a mapping between a URL path and a component. When the app's location matches the path defined in a Route, the corresponding component will render.
+
+Usage: You specify the path prop for the URL and the element prop for the component to render.
+
+```js
+import { Routes, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/user/:id" element={<User />} />
+      </Routes>
+    </Router>
+  );
+}
+```
+
+## BrowserRouter
+-----------------------
+This component is the top-level wrapper that enables routing in your application. It uses the HTML5 history API to keep your UI in sync with the URL.
+
+```js
+import { BrowserRouter } from 'react-router-dom';
+
+function App() {
+     return (
+         <BrowserRouter>
+             {/* Your components and routes will go here */}
+         </BrowserRouter>
+     );
+ }
+ ```
 
 ## Route Switching
 -------------------
@@ -841,12 +1652,106 @@ Using Switch in React Router ensures that only the first matched route is render
 </Switch>
 
 
-### 35 . `REACT HOOKS` ##
+### `New Routing`
+-----------------
+## createBrowserRouter
+-----------------------
+This function is used to create a router instance that uses the HTML5 history API to manage navigation and URL changes. It allows you to define routes in a declarative manner and supports dynamic routing.
+
+## RouterProvider
+------------------
+This component provides the router context to your application. It is used to wrap your application and pass the router instance created by createBrowserRouter. This makes routing functionalities available throughout your app.
+
+## Outlet
+----------
+This component acts as a placeholder for nested routes. It allows you to render child routes inside a parent route component, enabling you to build complex layouts where specific components change based on the current route.
+
+## Link
+--------
+This component is used to create navigational links to different routes in your application. It allows users to navigate without causing a full page reload, leveraging the single-page application (SPA) behavior of React Router.
+
+## NavLink
+--------------
+Similar to Link, but it provides additional styling capabilities for the active link.
+
+```js
+import { NavLink } from 'react-router-dom';
+
+<NavLink to="/about" activeClassName="active">About</NavLink>
+```
+
+# Example
+---------
+```js
+// App.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Link,
+  Outlet,
+  useParams
+} from 'react-router-dom';
+
+// Layout component
+function AppLayout() {
+  return (
+    <div>
+      <h1>My Application</h1>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/user/1">User 1</Link>
+        <Link to="/user/2">User 2</Link>
+      </nav>
+      <Outlet /> {/* Renders the matched child route component */}
+    </div>
+  );
+}
+
+// Home component
+function Home() {
+  return <h2>Home Page</h2>;
+}
+
+// About component
+function About() {
+  return <h2>About Page</h2>;
+}
+
+// User component
+function User() {
+  const { id } = useParams(); // Access the dynamic route parameter
+  return <h2>User ID: {id}</h2>;
+}
+
+// Create the router with dynamic routes
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />, // Layout component with Outlet
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "user/:id", element: <User /> },
+    ],
+  },
+]);
+
+// Render the application
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<RouterProvider router={router} />);
+
+```
+
+
+### `REACT HOOKS` ##
 =========================
 React hooks are functions that let you use state and other React features in functional components. They allow you to manage state, handle side effects, and interact with the component lifecycle without writing class components.
 
-## useState
------------
+## 1 . `useState`
+------------------
 **Purpose:** `useState` is a hook that allows you to add state to your functional components.
 **Usage:** You can define a state variable and a function to update that state.
 
@@ -869,8 +1774,8 @@ function Counter() {
   );
 }
 ```
-## useEffect
--------------
+## 2. `useEffect`
+------------------
 Purpose: useEffect is a hook that lets you perform side effects in your components, such as data fetching, subscriptions, or manual DOM manipulation.
 
 useEffect have two arguments one is a call back function and another one is the dependency array
@@ -903,8 +1808,8 @@ function DataFetcher() {
 }
 ```
 
-## useRef
-------------
+## 3. `useRef`
+---------------
 Purpose: useRef is a hook that allows you to create a mutable object which holds a .current property. This is often used to directly access a DOM element or to hold a mutable value that does not cause re-renders.
 
 Usage: You can store a reference to a DOM element or keep track of a value without triggering a re-render.
@@ -928,8 +1833,91 @@ function TextInput() {
 }
 ```
 
-## useRouterError
------------------
+# 3.1 `forwardRef`
+------------------
+forwardRef is a React function that lets you pass a ref from a parent component to a child component. This is useful when you need to access a child component's DOM element or imperative methods directly from the parent.
+
+# When to use forwardRef?
+-------------------------
+When you want to expose a child’s DOM element to the parent.
+Useful for handling native DOM manipulations like focusing input fields.
+
+**Example**
+-----------
+```js
+import React, { forwardRef } from 'react';
+
+const InputComponent = forwardRef((props, ref) => (
+  <input ref={ref} {...props} />
+));
+
+export default InputComponent;
+```
+
+# 3.2 `useImperativeHandle`
+--------------------------
+useImperativeHandle allows you to customize the instance value (or methods) exposed when a parent accesses the child’s ref. It works alongside forwardRef.
+
+# When to use useImperativeHandle?
+----------------------------------
+When you want to expose only specific functionalities to the parent (instead of the whole DOM).
+It provides a way to limit or control what gets exposed via the ref.
+
+**Example**
+------------
+```js
+import React, { useImperativeHandle, forwardRef, useRef } from 'react';
+
+const InputComponent = forwardRef((props, ref) => {
+  const inputRef = useRef();
+
+  useImperativeHandle(ref, () => ({
+    focus: () => inputRef.current.focus(),
+  }));
+
+  return <input ref={inputRef} {...props} />;
+});
+
+export default InputComponent;
+```
+
+# 3.3 `flushSync`
+--------------------
+flushSync forces React to flush state updates synchronously, ensuring that the DOM updates immediately. This is useful when you need to guarantee a visual update (e.g., animations or measurements) before continuing with other tasks.
+
+# When to use flushSync?
+-------------------------
+In cases where React’s batching mechanism delays updates, but you need an immediate DOM change.
+It’s useful for smooth animations or UI consistency when multiple state updates happen at once.
+
+**Example**
+-----------
+```js
+import { useState } from 'react';
+import { flushSync } from 'react-dom';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    flushSync(() => {
+      setCount(count + 1); // Immediate update in the DOM
+    });
+    console.log('Count updated:', count);
+  };
+
+  return <button onClick={handleClick}>Increment</button>;
+}
+```
+
+# 3.4 How These Work with `useRef`
+-----------------------------------
+forwardRef: Passes down a ref from the parent to a child component.
+useImperativeHandle: Controls what part of the component is exposed to the parent through the ref.
+flushSync: Ensures immediate updates to the DOM, which can be crucial when dealing with DOM elements accessed through useRef.
+
+## 4. `useRouterError`
+----------------------
 Used to show the exact error, when we use this it will give us an object with the exact error.
 
 ```js
@@ -945,7 +1933,65 @@ const Component = () => {
 }
 ```
 
-### 36 . `useHistory vs useNavigate` ###
+## 5. `usePaarams`
+-------------------
+useParams is a hook provided by React Router that allows you to access the dynamic parameters of the current route. This is particularly useful for extracting values from the URL, such as IDs or slugs.
+
+You typically use useParams inside a functional component to retrieve the parameters defined in your route configuration.
+
+Assuming you have a route defined like this:
+```js
+<Route path="/user/:id" element={<UserComponent />} />
+```
+In your UserComponent, you can access the id parameter using useParams
+```js
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
+const UserComponent = () => {
+  const { id } = useParams(); // Accessing the 'id' parameter from the URL
+
+  return (
+    <div>
+      <h1>User ID: {id}</h1>
+      {/* You can use the id to fetch user data or display user information */}
+    </div>
+  );
+};
+
+export default UserComponent;
+```
+
+## 6. `useLayoutEffect`
+------------------------
+Runs synchronously after the DOM updates but before the browser paints the screen.
+Blocks rendering until the effect completes, ensuring DOM updates are applied before the browser paints.
+
+**Suitable for:**
+Measurements (e.g., getting element dimensions).
+Synchronous DOM mutations that need to be immediately reflected.
+Preventing visual flicker caused by rapid updates.
+
+**Example**
+------------
+```js
+import React, { useLayoutEffect, useRef } from 'react';
+
+function Example() {
+  const divRef = useRef();
+
+  useLayoutEffect(() => {
+    console.log(divRef.current.offsetHeight); // Measure height before painting.
+  }, []);
+
+  return <div ref={divRef}>Hello World</div>;
+}
+```
+
+
+
+
+### `useHistory vs useNavigate` ###
 ========================================
 ## useHistory
 -----------------
@@ -986,130 +2032,11 @@ function GoHomeButton() {
 ```
 
 
-### 36 . `REACT ROUTER` ###
-===========================
-React Router is a powerful library used for routing in React applications. It allows you to create a single-page application (SPA) with dynamic navigation between different views or components without reloading the entire page. Here's a breakdown of the key concepts and components of React Router:
-
-## createBrowserRouter
-----------------------
-For this compoent we need the configuration and inside the configuration we are adding an array of object or the routes with path and element and also the errorElement
-
-```js
-const appRouter = createBrowserRouter([
-  {
-    path : '/',
-    element : <AppLayout />,
-    errorElement : <Eroor />
-  },
-  {
-    path : '/about',
-    element : <About />
-  }
-])
-```
-
-## BrowserRouter
------------------------
-This component is the top-level wrapper that enables routing in your application. It uses the HTML5 history API to keep your UI in sync with the URL.
-
-```js
-import { BrowserRouter } from 'react-router-dom';
-
-function App() {
-     return (
-         <BrowserRouter>
-             {/* Your components and routes will go here */}
-         </BrowserRouter>
-     );
- }
- ```
-
- ## RouterProvider
- -----------------
- This component is used in the rendering and pass the app router that is the createBrowserRouter configuration in this component as a prop name router
-
- ```js
- root.render(<RouterProvider router={appRouter}/>)
- ```
-
-## Route
-------------
-The Route component is used to define a mapping between a URL path and a component. When the URL matches the path, the corresponding component is rendered.
-
-```js
-import { Route } from 'react-router-dom';
-
-<Route path="/about" component={About} />
-```
-## Switch (or Routes in newer versions)
----------------------------------------
-The Switch component (or Routes in React Router v6) renders the first child `<Route>` or `<Redirect>` that matches the location. It is useful for grouping multiple routes.
-
-```js
- import { Routes, Route } from 'react-router-dom';
-
- <Routes>
-     <Route path="/" element={<Home />} />
-     <Route path="/about" element={<About />} />
-     <Route path="/contact" element={<Contact />} />
- </Routes>
-```
-
-## Link
-----------
-The link component is given by the react-router-dom
-The Link component is used to create navigational links that change the URL without reloading the page. It will only reload the exact component
-This is why the react application is single page application
-When we use anchor tag to navigate it will reload the full page
-
-```js
-import { Link } from 'react-router-dom';
-
- <Link to="/about">About</Link>
-```
-
-## NavLink
---------------
-Similar to Link, but it provides additional styling capabilities for the active link.
-
-```js
-import { NavLink } from 'react-router-dom';
-
-<NavLink to="/about" activeClassName="active">About</NavLink>
-```
-
-## useParams
--------------
-A hook that allows you to access the URL parameters defined in the route. Useful for dynamic routing.
-
-```js
-import { useParams } from 'react-router-dom';
-
- function UserProfile() {
-     const { userId } = useParams();
-     return <div>User ID: {userId}</div>;
- }
-```
-
-## useHistory / useNavigate (v6)
----------------------------------
-A hook that allows you to programmatically navigate in your application.
-
- ```js
- import { useNavigate } from 'react-router-dom';
-
- function MyComponent() {
-     const navigate = useNavigate();
-     const handleClick = () => {
-         navigate('/about');
-     };
-
-     return <button onClick={handleClick}>Go to About</button>;
- }
- ```
 
 
-### 37 . `Event Handlers` in React ###
+
+
+### `Event Handlers` in React ###
 =======================================
 Event handlers are functions that respond to specific events (like clicks, changes, etc.) triggered by the user interacting with a component. In React, these handlers are usually passed as props to the respective components.
 
@@ -1159,156 +2086,10 @@ export default App;
 ```
 
 
-### 38 . `Life Cycle` ###
-=========================
-React component lifecycle methods allow you to control what happens at specific stages of a component's life. Class components in React use lifecycle methods to manage component behavior during its creation, updating, and destruction phases.
-
-## Mounting Phase
------------------
-The lifecycle methods during the mounting phase are invoked when a component is created and added to the DOM.
-
-### `constructor(props)`
-This is the very first method called in the lifecycle. It is used for initializing state or binding event handlers.
-
-### `static getDerivedStateFromProps(props, state)`
-This is a rarely used method that allows the component to update its internal state based on changes in props.
-
-### `render()`
-This is the only required lifecycle method in a class component. It returns the JSX that defines the component's UI. It is called every time the component is re-rendered.
-
-### `componentDidMount()`
-Called immediately after the component is inserted into the DOM. This is a good place to perform side effects like fetching data, setting up subscriptions, or interacting with the DOM.
-
-## Updating Phase
-------------------
-The updating phase happens whenever the component's state or props change, causing it to re-render.
-
-### `static getDerivedStateFromProps(props, state)`
-As mentioned earlier, it is called before rendering during both mounting and updating. It can update the component's state in response to prop changes.
-
-### `shouldComponentUpdate(nextProps, nextState)`
-This method determines whether a re-render is necessary. If it returns false, React skips the rendering and updating process.
-
-### `render()`
-Called whenever the component is re-rendered. It returns the JSX structure of the component.
-
-### `getSnapshotBeforeUpdate(prevProps, prevState)`
-This method is invoked right before the DOM is updated. It allows you to capture information (e.g., scroll position) before the DOM changes. The value returned from this method is passed as a parameter to `componentDidUpdate()`.
-
-### `componentDidUpdate(prevProps, prevState, snapshot)`
-This method is called after the component's updates are flushed to the DOM.
-
-## Unmounting Phase
---------------------
-This phase occurs when the component is removed from the DOM.
-
-### `componentWillUnmount()`
-This method is invoked just before the component is removed from the DOM. It is commonly used to clean up resources like event listeners, timers, or network requests.
-
-
-### 39 . What are `async and differ` attributes in `<script>` tag ###
-======================================================================
-A: `Async` - The async attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed as soon` as it is available (do not block HTML DOM construction during downloading process) and don’t wait for anything.
-
-### _Syntax_
-------------
-```js
-<script async src="demo_async.js"></script>
-```
-
-`Defer` - The defer attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed after the page` has finished parsing(when browser finished DOM construction). The `defer attribute` tells the browser `not to wait for the script`. Instead, the browser will continue to process the HTML, build DOM.
-
-### _Syntax_
--------------
-
-```js
-<script defer src="demo_defer.js"></script>
-```
-
-
-### 40 . What is difference between `React and ReactDOM` ###
-==============================================================
-A: `React` is a JavaScript library for building User Interfaces whereas `ReactDOM` is also JavaScript library that allows `React to interact with the DOM`.
-
-The react package contains `React.createElement()`, `React.Component`, `React.Children`, and other helpers related to elements and component classes. You can think of these as the isomorphic or universal helpers that you need to build components. The react-dom package contains `ReactDOM.render()`, and in react-dom/server we have server-side rendering support with `ReactDOMServer.renderToString()` and `ReactDOMServer.renderToStaticMarkup()`.
-
-
-### 41.Role of `type` attribute in script tag? What options can I use there
-=============================================================================
-A: The `type` attribute specifies the type of the script. The type attribute identifies the content between the `<script>` and `</script>` tags. It has a Default value which is “text/javascript”.
-
-## `type` attribute can be of the following types
---------------------------------------------------
-- `text/javascript` : It is the basic standard of writing javascript code inside the `<script>` tag.
-  ### Syntax
-  ```
-  <script type="text/javascript"></script>
-  ```
-- `text/ecmascript` : this value indicates that the script is following the `EcmaScript` standards.
-- `module`: This value tells the browser that the script is a module that can import or export other files or modules inside it.
-- `text/babel` : This value indicates that the script is a babel type and required bable to transpile it.
-- `text/typescript`: As the name suggest the script is written in `TypeScript`.
-
-### Props ###
-==============
-The arguments that passed in the functional component
-
-### Config driven UI ###
-=========================
-The ui is driven the config , the config is the data so that we change the ui according to the locations
-
-### `Key` Property in Jsx element ###
-======================================
-Whenever we are looping and making data dynamic we need to set a key property to the JSX element like key = {value}
-
-So these keys are very important for the app optimization 
-
-Suppose if a new data came to the array we are looping , and if there is not unique key for the elements , The react will rerender all the elements again because react dont knwo which is the newly added data so this will make our app more complex in loading
-
-So keeping a unique key for the element will help the react to identify the newly added data and then the react will only render that data
-
-NOTE THAT :- never use the index of the looping as the unique key
-
-A: A `key` is a special attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. In other words, we can say that keys are unique Identifier used to give an identity to the elements in the lists.
-Keys should be given to the elements within the array to give the elements a stable identity.
-
-### Good Practice ###
-======================
-## Components Folder Naming
-- The file name should exactly match the component name.
-- The extension of the file can be `.js`, `.jsx`, or `.tsx` — the extension doesn't matter as long as it matches your setup.
-
-## Util / Common Folder in `src`
-- This folder can contain files like `constants.js`, which will store hardcoded data and export it for use across the project.
-
-## Named Export
-- Named exports are used when we want to export multiple items from a single file.
-- If we export multiple items using a default export inside an object, it may prevent the bundler from optimizing the code.
-- When importing a named export, you need to wrap the names inside curly braces.
-
-
-# Why React is Fast
-
-## Reconciliation
-**Reconciliation** is the process by which React updates the actual DOM to match the virtual DOM. When there are changes in the application (like user input or data updates), React uses reconciliation to figure out the minimal number of updates needed to the actual DOM.
-
-- React compares the old virtual DOM and the new virtual DOM using a **Diff Algorithm**.
-- Only the parts of the DOM that have actually changed are updated, making the rendering process more efficient.
-
-## React Fiber
-**React Fiber** is the new reconciliation engine introduced in React 16. It’s designed to enable incremental rendering, meaning React can split the work of updating the UI into smaller tasks. This allows React to pause, prioritize, or stop work, making it more responsive during complex updates or when the user interacts with the application.
-
-- Fiber improves React’s ability to handle updates to the virtual DOM efficiently, especially in apps with complex UIs.
-
-## Diff Algorithm
-The **Diff Algorithm** is used by React to efficiently compare the old virtual DOM with the new one. Instead of comparing every single element, the diff algorithm identifies only the parts of the virtual DOM tree that have changed. These minimal changes are then applied to the actual DOM, reducing the performance impact of re-rendering.
-
-## Incremental Rendering
-With **React Fiber**, React introduced **Incremental Rendering**, which breaks down rendering work into smaller units or tasks. This allows React to handle large updates by spreading the work over multiple frames, ensuring smoother performance and avoiding UI blocking. React can pause and resume rendering, giving more flexibility in handling updates and maintaining responsiveness.
 
 
 
-### Shadow DOM ###
+### `Shadow` DOM ###
 ====================
 The **Shadow DOM** is a web standard that allows developers to encapsulate a section of the DOM and its styles. It creates a separate, isolated DOM tree within an element, preventing the styles and scripts inside the shadow DOM from affecting the main DOM or other parts of the page. This isolation ensures that the internal structure is hidden from the global document styling and scripting, making it useful for creating reusable and maintainable web components.
 
@@ -1320,106 +2101,35 @@ The **Shadow DOM** is a web standard that allows developers to encapsulate a sec
 ==================
 The **Actual DOM** refers to the real Document Object Model (DOM), which is a tree-like structure representing the HTML elements in a web page. Any changes to the DOM result in re-rendering, which can be slow as the entire page or large parts of it need to be updated.
 
+
 ### Virtual DOM ###
 ====================
 The **Virtual DOM** is a lightweight, in-memory representation of the actual DOM. It exists as a JavaScript object. When the state of a component changes, React creates a new virtual DOM instead of updating the actual DOM immediately. This allows for faster operations because manipulating JavaScript objects is more efficient than working directly with the DOM.
 
-### `<> </>` in React (Fragment Syntax) ###
-=============================================
-In React, `<> </>` is shorthand for **React Fragments**. A Fragment allows grouping multiple child elements without adding an extra node to the DOM, which is common when returning multiple elements from a component.
-
-### Why Use Fragments?
-- Avoids adding unnecessary DOM elements like extra `div` or `span` tags.
-- Keeps the DOM clean and helps reduce extra styling and layout issues.
-
-### Example:
-```jsx
-return (
-  <>
-    <h1>Hello, World!</h1>
-    <p>This is a React fragment.</p>
-  </>
-);
-```
-
-### Monolith Architecture ###
-==============================
-In **Monolith Architecture**, the entire application is built as a single, unified unit. All components (like user interface, business logic, and data access) are interconnected and managed in a single codebase.
-
-- **Tightly Coupled**: All parts of the system are tightly connected, making the entire system dependent on each component.
-- **Deployment**: The application is deployed as a single unit. If any part of the application is updated, the entire application needs to be redeployed.
-- **Scalability**: Scaling a monolith often requires scaling the entire application, even if only one part needs more resources.
-
----
-
-### Microservice Architecture ###
-=================================
-**Microservice Architecture** is an architectural style where an application is composed of small, loosely coupled services. Each service is responsible for a specific functionality and operates independently.
-
-### Key Principles:
-- **Separation of Concerns**: Each microservice is responsible for a distinct functionality and operates independently of the others.
-- **Single Responsibility Principle**: Each microservice should focus on one specific task or business function, improving modularity and allowing easier updates.
-
-### Deployment:
-- Microservices are typically deployed independently and run on different ports or servers.
-- Each service can be scaled independently, offering more flexibility and efficient use of resources.
 
 
 
-### Rendering Approach ###
-===========================
 
-## 1st Approach
----------------
-- **Page loads** → API request is sent → Render the page with the API response.
-- In this approach, the page will wait for the API response before rendering anything.
 
-### Pros:
-- Ensures that the data is already available when the page renders.
+### `Lazy Loading` / On-Demand Loading / Dynamic Import  
+=======================================================
+Lazy loading means **splitting the components** into separate bundles that load only when needed. When the application initially loads, only the required bundles are sent, and other components are loaded **on-demand** when the user navigates to them.
+
+#### Benefits:
+- **Reduces the initial load** time by keeping the main bundle small.
+- **Improves performance** by loading only the necessary components dynamically.
+
+#### React’s Implementation:
+- React provides a **lazy component** for this purpose. Inside the lazy component, we use a **callback with dynamic `import()`** to load the component when required.
   
-### Cons:
-- Slower initial load time, as the page waits for the API response before rendering.
+- However, because React **renders quickly**, the bundle might not load immediately, causing React to throw an **error or display a fallback page**.
 
----
+#### Handling Loading State with Suspense:
+- To avoid rendering errors, we use React's **`Suspense`** component to wrap lazy-loaded components.
+- The **`fallback` prop** of `Suspense` can display a loading UI (like a **shimmer effect**) while the component bundle is being fetched.
 
-## 2nd Approach
----------------
-- **Page loads** → Render the structure → API request is sent → Render again with the API response.
-- In this approach, the page structure is rendered first, and once the API response is received, the data is loaded into the already rendered structure.
+This approach ensures smooth **lazy loading** and avoids disrupting the user experience.
 
-### Pros:
-- Faster initial load as the basic structure is displayed first.
-  
-### Cons:
-- May result in a flicker or empty placeholders while waiting for the API data to load.
-
-
-
-### Routing in web applications
-
-Client side routing
-
-If we have multiple pages the pages means the components so when we click a link to another page it will just replace the component
-
-Just the components are interchanged via client side routing
-
-server side routing
-
-if we have multiple page when we click on a page link it will make a request to the server and the server will send the whole page
-
-
-
-Link tag
---------
-This is givesn by react router dom
-Its a wrapper for anchor tag, react router dom making it to an anchor tag and keeping a track on it
-
-Outlet
--------
-
-
-Single responsibility principle
---------------------------------
 
 	
 	

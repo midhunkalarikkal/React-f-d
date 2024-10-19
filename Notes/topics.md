@@ -1,7 +1,7 @@
 REACT
 =========
 
-1 . Set up
+1 . Set up	`Done`
 ===========
 ⦁	npx create-react-app <appName >
 ⦁	components ~
@@ -13,32 +13,32 @@ REACT
 ⦁	Fragments
 ⦁	Children Prop
 
-2 . Theory
+2 . Theory	`Done`
 ========
-⦁	What is React
-⦁	DOM
-⦁	DOM vs Virtual DOM   ~
-⦁	Reconciliation
-⦁	working
-⦁	Diffing Algorithm
-⦁	React Fibre
-⦁	incremental rendering
-⦁	Shadow DOM
-⦁	Dynamic rendering
-⦁	props vs state
-⦁	Server Side vs Client Side Rendering in React ~
+⦁	What is React	~
+⦁	DOM		~
+⦁	DOM vs Virtual DOM	~
+⦁	Reconciliation		~
+⦁	working	~
+⦁	Diffing Algorithm	~
+⦁	React Fibre	~
+⦁	incremental rendering	~
+⦁	Shadow DOM	~
+⦁	Dynamic rendering	~
+⦁	props vs state	~
+⦁	Server Side vs Client Side Rendering in React	~
 ⦁	Synthetic Events
-⦁	Life Cycle
-⦁	View Oriented
-⦁	Memoization
-⦁	Pure functions
-⦁	Strict Mode
-⦁	SPAs vs MPAs
-⦁	CSR vs SSR
-⦁	Static vs Dynamic rendering
-⦁	ISR, SPA
+⦁	Life Cycle	~
+⦁	View Oriented	~
+⦁	Memoization	~
+⦁	Pure functions	~
+⦁	Strict Mode	~
+⦁	SPAs vs MPAs	~
+⦁	CSR vs SSR	~
+⦁	Static vs Dynamic rendering	~
+⦁	ISR, SPA	~
 
-3 . Components
+3 . Components	`Done`
 ===========
 ⦁	A React render tree
 ⦁	top-level components
@@ -50,7 +50,7 @@ REACT
 ⦁	Importance of making them pure
 ⦁	local mutation
 
-4 . JSX
+4 . JSX  `Done`
 ====
 ⦁	Rules of JSX
 ⦁	Fragment
@@ -59,7 +59,7 @@ REACT
 ⦁	Conditional rendering
 ⦁	Key
 
-5 . UI as a tree
+5 . UI as a tree	`Done`
 ===========
 ⦁	Render trees
 ⦁	Module Dependency Tree 
@@ -69,14 +69,7 @@ REACT
 ⦁	Loader
 ⦁	Code splitting
 
-6 . JSX
-=====
-⦁	Rules of JSX
-⦁	Fragment
-⦁	JavaScript in JSX
-⦁	HTML VS JSX
-
-7 . Rendering steps
+7 . Rendering steps	`Done`
 ===============
 ⦁	Triggering
 ⦁	Rendering
@@ -125,19 +118,19 @@ REACT
 
 12 . Hooks
 ======
-12 . 1 . useState
+12 . 1 . useState	`Done`
 =========
 ⦁	changeValue
 ⦁	changeValueWithFunction
 
-12 . 2 . useRef
+12 . 2 . useRef	`Done`
 =======
 ⦁	useState vs useRef
 ⦁	forwardRef
 ⦁	useImperativeHandle
 ⦁	flushSync
 
-2 . 3 . useEffect
+2 . 3 . useEffect	`Done`
 =========
 ⦁	dependency  
 ⦁	return in useEffect
@@ -364,3 +357,9 @@ Task 1
 13 . Learn the concept of React router
 
 
+
+
+Meterial ui
+
+Tailwind css behind the scenes using postcss for tranforming	css with js, postcsss is a tool
+Parcel is using the postss tool to understand the tailwind
