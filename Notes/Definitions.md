@@ -2143,6 +2143,31 @@ Its a function takes a component and returns a component
 
 ### `Lifting state up`
 =======================
+
+### `Props drilling`
+======================
+
+### `React context`
+=====================
+It is used to avoid props drilling
+we can make an context file and import it in any module
+
+so in functional component for using the context react is giving a hook that is useContext and we can pass the specifi context we have created to that useContext hook and  extract the data inside the context
+
+But in class component we can also import the context but there is no hook inside class component so that react is giving a power that **.consumer** so we can use this  like as an component with adding this to the name of context that we have created <Context.Consumer> </Context.Consumer>  inside this component we can use a curly brace and inside it we can use a call back function and this call back function will take the data as a parameter and we can use this parameter to take the values inside the context 
+
+we can use ContextName.provide component ofr wrapping up other component  and can pass value prop inside it for updating the content fileds , can wrpa the whole app or can wrap a single component and also we can use for wrap our whole app with a updated data and inside the app we can use it again for wrapping another component and pass a different updated data
+
+### `Redux`
+============
+Redux is not Mandotory
+Redux is a seperate library
+
+Redux is not only the one library for state management eg: Zustand
+Easy to debug
+Predictable state container for js application
+
+Vanila reducx and redux toolkit
 	
 
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState , useEffect } from "react";
 import ReactDOM from "react-dom/client";
 
 import Header from "./components/Header";
@@ -10,6 +10,8 @@ import RestaurantMenu from './components/RestaurantMenu';
 import useOnlineStatus from './utils/useOnlineStatus';
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+import UserContext from "./utils/UserContext";
 
 /**
  * Header
@@ -29,8 +31,21 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
  **/
 
 const AppLayout = () => {
+
+  const [userInfo , setUserInfo] = useState()
+
+  useEffect(() => {
+    const data = {
+      name : "Midhun K Paniker"
+    }
+    setUserInfo(data.name)
+  },[])
+  
+  console.log(userInfo)
+
   const onlineStatus = useOnlineStatus()
   return (
+    <UserContext.Provider value={{ logginedUser : userInfo}}>
     <div className="app">
       <Header />
       {
@@ -41,6 +56,7 @@ const AppLayout = () => {
         )
       }
     </div>
+    </UserContext.Provider>
   );
 };
 

@@ -1,11 +1,13 @@
 import { LOGO } from "../utils/constants";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus()
+  const {logginedUser} = useContext(UserContext)
   return (
     <nav className="flex p-3 bg-slate-100">
       <div className="flex w-1/4 justify-center items-center">
@@ -49,6 +51,9 @@ const Header = () => {
             >
               {btnName}
             </button>
+          </li>
+          <li>
+            <h4 className="font-bold text-lg">{logginedUser}</h4>
           </li>
         </ul>
       </div>
