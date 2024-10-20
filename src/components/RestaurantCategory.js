@@ -1,13 +1,14 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data, showList, setShowIndex }) => {
+const RestaurantCategory = ({ data, showList, setShowIndex , index }) => {
 
+  console.log(data.itemCards)
   return (
     <div>
       <div className="mt-2">
         <div
-          className="flex justify-between p-2 bg-slate-200 cursor-pointer shadow-lg"
+          className="flex justify-between p-2 bg-slate-100 cursor-pointer shadow-lg"
           onClick={setShowIndex}
         >
           <div className="font-bold text-lg">
@@ -16,7 +17,7 @@ const RestaurantCategory = ({ data, showList, setShowIndex }) => {
           <div>{showList ? "⬆️" : "⬇️"}</div>
         </div>
         {showList && (
-          <ItemList key={data.itemCards.title} item={data.itemCards} />
+          <ItemList key={index} item={data.itemCards} />
         )}
       </div>
     </div>
