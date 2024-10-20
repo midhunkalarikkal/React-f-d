@@ -2168,7 +2168,37 @@ Easy to debug
 Predictable state container for js application
 
 Vanila reducx and redux toolkit
+
+Redux store is a big javascript object that kept in a global central place
+Any component can read and write data in redux store
+
+So that keeping the redux store as a big javascript oject is fine but we logically divide the redux store in to different slices so that each slice can hold a specific data that is responsible for a specific operation examples are cart , userInfo etc...
+
+We cant directly edit the slice inside the redux store for that we need to do some steps
+
+Example scenario
+----------------
+If we need to modify ccart that is writing
+when we click the button
+
+1. we need to **dispatch** an **Action**
+2. This action calls a **function**. This function is known as **reducer**
+3. This function modifies the cart slice
+
+Reading the data from cart slice
+
+1. We need a **selector** to read data from the slice. This is known as **subscribing** to the store
+2. This selector will update the react component
+3. Now the component is synced with the store , whenever the store updates the react component will get that data
 	
+# Steps
+--------
+- Install @reduxjs/toolkit and react redux library
+- Build our store
+- Connect our store to our app
+- Slice
+- Dispatch (action)
+-Selector (subscribe)
 
 
 
