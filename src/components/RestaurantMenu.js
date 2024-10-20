@@ -3,11 +3,14 @@ import { CDN_LINK } from "../utils/constants";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const resData = useRestaurantMenu(resId);
+
+  const [showIndex, setShowIndex] = useState(null)
 
   const { name, city, cloudinaryImageId, sla, avgRatingString } =
     resData?.cards[2]?.card?.card?.info || {};
@@ -20,7 +23,7 @@ const RestaurantMenu = () => {
     resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
       (c) =>
         c.card?.card?.["@type"] ===
-      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
   return resData === null ? (
@@ -45,8 +48,13 @@ const RestaurantMenu = () => {
         </div>
       </div>
       <div className="mt-2">
-        {categories.map((category) => (
-          <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card} />
+        {categories.map((category, index) => (
+          <RestaurantCategory
+            key={category?.card?.card?.title}
+            data={category?.card?.card}
+            showList = {index === showIndex ? true : false}
+            setShowIndex = {() => setShowIndex(index)}
+          />
         ))}
       </div>
     </div>

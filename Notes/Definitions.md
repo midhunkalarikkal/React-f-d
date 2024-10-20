@@ -2138,7 +2138,11 @@ This approach ensures smooth **lazy loading** and avoids disrupting the user exp
 =============================
 Its a function takes a component and returns a component
 
-	
+### Controlled and Uncontrolled component
+=========================================
+
+### `Lifting state up`
+=======================
 	
 
 
