@@ -39,7 +39,7 @@ const Header = () => {
           </li>
           <li className="">
             <Link to="/cart" className="nav-item hover:underline hover:underline-offset-4 hover:decoration-orange-400 font-bold">
-              Cart [{cartItems.length} items]
+            🛒 [{cartItems.length}]
             </Link>
           </li>
           <li>

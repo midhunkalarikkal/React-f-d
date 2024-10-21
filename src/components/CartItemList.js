@@ -1,14 +1,6 @@
 import { CDN_LINK } from "../utils/constants";
-import { useDispatch } from "react-redux";
-import { addItem } from '../utils/cartSlice';
 
-const ItemList = ({ item }) => {
-
-  const dispatch = useDispatch();
-
-  const handleAddItem = (item) => {
-    dispatch(addItem(item));
-  };
+const CartItemList = ({ item }) => {
 
   return (
     <>
@@ -27,18 +19,12 @@ const ItemList = ({ item }) => {
             </h3>
             <p className="text-xs">{item.card.info.description}</p>
           </div>
-          <div className="relative flex justify-center w-3/12">
+          <div className="flex justify-center w-3/12">
             <img
               src={CDN_LINK + item.card.info.imageId}
               alt=""
               className="w-28 object-fill rounded-lg"
             />
-            <button
-              className="absolute bg-black text-green-400 font-bold text-md bottom-1 p-1 px-2 rounded-lg"
-              onClick={() => handleAddItem(item)}
-            >
-              Add
-            </button>
           </div>
         </div>
       ))}
@@ -46,4 +32,4 @@ const ItemList = ({ item }) => {
   );
 };
 
-export default ItemList;
+export default CartItemList;
