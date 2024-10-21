@@ -2,6 +2,7 @@ import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+
 require("dotenv").config;
 
 const Body = () => {
@@ -12,8 +13,6 @@ const Body = () => {
   const [searchInputText, setSearchInputText] = useState("");
 
   const OpenedRestaurantCard = withOpenedLabel(RestaurantCard);
-
-  console.log(listOfRestaurant);
 
   useEffect(() => {
     fetchData();
@@ -56,7 +55,7 @@ const Body = () => {
               );
             }}
           >
-            Search
+            Search 
           </button>
           <button
             className="bg-orange-400 py-1 px-4 rounded-md text-yellow-50 mx-3"

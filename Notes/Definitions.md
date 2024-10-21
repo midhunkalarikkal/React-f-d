@@ -2191,6 +2191,7 @@ Reading the data from cart slice
 2. This selector will update the react component
 3. Now the component is synced with the store , whenever the store updates the react component will get that data
 	
+  Select is a hook known as useSelector
 # Steps
 --------
 - Install @reduxjs/toolkit and react redux library
