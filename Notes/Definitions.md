@@ -1786,7 +1786,7 @@ Usage: You can specify when the effect should run by providing a dependency arra
 Two arguments one us a callback function and another is the dependency array
 the dependency array is not mandatory
 
-If no dependency array is assigned, useEffect is called every render
+If no dependency array is not assigned, useEffect is called every render
 If the dependency array is an empty array, useEffect is called on inital (just once)
 If the dependency array have value like eg: a stateVariable, the useEffect is called whenever the stateVariable updated
 
@@ -1987,6 +1987,55 @@ function Example() {
   return <div ref={divRef}>Hello World</div>;
 }
 ```
+
+## 7. `useMemo`
+===============
+Use memo is a react hook that lets you cache a result of a calculation between re-renders.
+It ensures that a function’s return value is only recomputed if its dependencies change.
+Use useMemo only when you notice performance issues.
+If the dependencies are complex objects or arrays that change frequently, the memoization might not help much.
+
+```js
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+
+## 8. `useCallback`
+====================
+useCallback is a React Hook that memoizes a function so that it is only re-created when its dependencies change. This helps prevent unnecessary re-renders, especially when passing functions as props to child components.
+
+It’s particularly useful when:
+
+A function is passed as a prop to a memoized child component.
+The function is defined inside a component and changes on every render, causing unnecessary child component updates.
+
+```js
+const memoizedCallback = useCallback(() => {
+  // Function logic here
+}, [dependencies]);
+```
+
+
+## 9. `useReducer`
+==================
+Its a hook that is used for state management, alternative to useState
+useState is built using useReducer
+
+useReducer have two parameter one is reducer function and another is initial value
+the reducer function will two parameters currentState and action and it returns a newState
+useReducer returns a pair of values newState and dispatch
+
+## 10. `useContext`
+====================
+The Context API in React allows you to share state and data globally across components without the need to pass props down the component tree manually. It is useful when multiple components need access to the same data.
+
+The useContext hook makes it easier to consume data from a context inside functional components.
+
+## `Reat.memo`
+===============
+React.memo is a higher-order component (HOC) in React that optimizes functional components by preventing unnecessary re-renders. It does this by memoizing the component—that is, it only re-renders the component if the props have changed.
+When you wrap a component with React.memo, React will compare the new props with the previous ones.
+If the props are the same, React skips rendering that component.
+If the props are different, the component will re-render as usual.
 
 
 
@@ -2192,6 +2241,17 @@ Reading the data from cart slice
 3. Now the component is synced with the store , whenever the store updates the react component will get that data
 	
   Select is a hook known as useSelector
+  Whenever we are using selector to subscribing the store not subscribe the entire store make it only for the portion of store, subscribing the entire store will make performance loss
+
+  ```js
+  // subscribing the entire store
+  const store = useSelector((store) => store)
+  const cartItems = store.cart.items
+
+  // subscribing to the portion of the store
+  const cartItems = useSelectr((store) => store.cart.items)
+  ```
+  
 # Steps
 --------
 - Install @reduxjs/toolkit and react redux library
@@ -2201,6 +2261,20 @@ Reading the data from cart slice
 - Dispatch (action)
 -Selector (subscribe)
 
+**Important**
+In the older version of redux that is **vanila redux** we should **not mutate** the state, instead of this we need to make a copy of the state and modify that copy of the state and return the copy of the state
+
+Now we are using the **redux toolkit** which is the new version in this we have toe **mutate** the state directly in the reducers each action of the slices andd behind the scenes redux toolkit is using a library called **Immer** this library is doing the same thing which is in the vanila redux for us. Instead of mutation the state we can also return a new state.
+
+In vanila redux we need to usea **middlewares and thungs** but in the redux toolkit we have **RTK Query**
+
+
+
+## React `Strictmode`
+=====================
+This is wrapping up our whole app and this will rerender our component for chcking the inconsistency in our component
+Thats why we see while consoling any data it will print twice
+This twice checking behaviour is only occure in the development mode, but in the build mode it will occur once.
 
 
 
