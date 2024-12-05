@@ -15,6 +15,7 @@ import UserContext from "./utils/UserContext";
 
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import UserClass from "./components/UserClass";
 
 /**
  * Header
@@ -43,7 +44,6 @@ const AppLayout = () => {
     setUserInfo(data.name);
   }, []);
 
-  console.log(userInfo);
 
   const onlineStatus = useOnlineStatus();
   return (
@@ -82,6 +82,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/user",
+        element: <UserClass />,
       },
     ],
     errorElement: <Error />,

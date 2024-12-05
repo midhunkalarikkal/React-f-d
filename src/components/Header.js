@@ -6,15 +6,18 @@ import UserContext from "../utils/UserContext";
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus()
   const {logginedUser} = useContext(UserContext)
   const cartItems = useSelector((store) => store.cart.items)
   return (
     <nav className="flex p-3 bg-slate-100">
-      <div className="flex w-1/4 justify-center items-center">
+      <div className="flex w-1/4 justify-center items-center cursor-pointer">
+      <Link to={'/'}>
         <h4 className="px-5 text-lg font-bold underline decoration-orange-500 underline-offset-4">Bhookad Buzz</h4>
+      </Link>
+      <Link to={'/'}>
         <img src={LOGO} alter="" className="w-14" />
+      </Link>
       </div>
       <div className=" flex w-3/4 items- justify-end">
         <ul className="flex w-1/2 justify-around items-center  ">
@@ -43,19 +46,9 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <button
-              className="bg-orange-400 py-1 px-4 rounded-md text-yellow-50"
-              onClick={() => {
-                btnName === "Login"
-                  ? setBtnName("Logout")
-                  : setBtnName("Login");
-              }}
-            >
-              {btnName}
-            </button>
-          </li>
-          <li>
-            <h4 className="font-bold text-lg">{logginedUser}</h4>
+            <Link to={'/user'}>
+              <h4 className="font-bold text-lg cursor-pointer">{logginedUser}</h4>
+            </Link>
           </li>
         </ul>
       </div>

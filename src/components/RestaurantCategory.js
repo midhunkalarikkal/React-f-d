@@ -1,9 +1,7 @@
-import { useState } from "react";
 import ItemList from "./ItemList";
 
 const RestaurantCategory = ({ data, showList, setShowIndex , index }) => {
 
-  console.log(data.itemCards)
   return (
     <div>
       <div className="mt-2">
