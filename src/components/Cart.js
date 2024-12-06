@@ -11,7 +11,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="flex flex-col w-6/12 m-auto">
+    <div className="flex flex-col w-10/12 md:w-6/12 m-auto">
       <div className="flex justify-between p-3 rounded-lg bg-slate-200 m-3">
         <div className="flex">
           <h4 className="font-bold text-lg">Your Cart</h4>
