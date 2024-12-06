@@ -17,6 +17,9 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import UserClass from "./components/UserClass";
 
+import { ToastContainer } from 'react-toastify';
+
+
 /**
  * Header
  *   -Logo
@@ -51,6 +54,18 @@ const AppLayout = () => {
       <UserContext.Provider value={{ logginedUser: userInfo }}>
         <div className="app">
           <Header />
+          <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+              />
           {onlineStatus === false ? (
             <h1>You're offline, Please check your internet connection!</h1>
           ) : (
