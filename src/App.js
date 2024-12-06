@@ -2,7 +2,7 @@ import Body from "./components/Body";
 import Cart from "./components/Cart";
 import About from "./components/About";
 import Error from "./components/Error";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import ReactDOM from "react-dom/client";
 import appStore from "./utils/appStore";
 import Header from "./components/Header";

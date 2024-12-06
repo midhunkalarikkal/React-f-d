@@ -1,15 +1,62 @@
-import { useContext, useState } from "react";
+import { auth, provider} from '../utils/firebase';
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { LOGO } from "../utils/constants";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useContext, useEffect, useState } from "react";
 import UserContext from "../utils/UserContext";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { addUser, removeUser } from '../utils/userSlice';
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const {logginedUser} = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const user = useSelector((store) => store.user.user)
+
+  const dispatch = useDispatch();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    provider.setCustomParameters({ prompt: "select_account" });
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        const userInfo = {name: user.displayName,
+                profileImage: user.photoURL,
+                email: user.email,
+                uid: user.uid,
+         }
+        dispatch(addUser(userInfo));
+        toast.success("Sign in successfully.")
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  }
+  
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const userInfo = {
+          name: user.displayName,
+          profileImage: user.photoURL,
+          email: user.email,
+          uid: user.uid,
+        };
+        dispatch(addUser(userInfo));
+      } else {
+        dispatch(removeUser());
+      }
+    });
+    return () => unsubscribe();
+  }, [dispatch]);
+
+
   return (
     <nav className="flex p-3 bg-slate-100 items-center justify-between">
       <div className="flex w-6/12 md:w-1/4 justify-center items-center cursor-pointer">
@@ -47,6 +94,15 @@ const Header = () => {
                 {cartItems.length}
               </span>
             </Link>
+          </li>
+          <li>
+            {user ? (
+                  <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full'/>
+              ) : (
+            <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
+              <button className="bg-orange-400 text-lg font-bold px-2 py-1 rounded-lg text-white hover:bg-orange-300 hover:text-black mx-2" onClick={handleLogin}>Sign In</button>
+            </Link>
+              )}
           </li>
         </ul>
       </div>
@@ -90,6 +146,18 @@ const Header = () => {
                 {cartItems.length}
               </span>
               </Link>
+            </li>
+            <li>
+              {user ? (
+                <div className='flex items-center'>
+                  <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full'/>
+                  <h4 className='mx-2'>{user.name}</h4>
+                </div>
+              ) : (
+                <Link to={'/'} className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
+                  Sign In
+                </Link>
+              )}
             </li>
           </ul>
         </div>
