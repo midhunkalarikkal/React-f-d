@@ -15,7 +15,7 @@ const Header = () => {
       <div className="flex w-6/12 md:w-1/4 justify-center items-center cursor-pointer">
         <Link to={"/"}>
           <h4 className="px-2 text-sm md:px-5 md:text-lg font-bold underline decoration-orange-500 underline-offset-4">
-            Bhookad Buzz
+            TasteTown
           </h4>
         </Link>
         <Link to={"/"}>
@@ -40,21 +40,19 @@ const Header = () => {
               About
             </Link>
           </li>
-          <li>
+          <li className="relative">
             <Link to="/cart" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 font-bold">
-              🛒 [{cartItems.length}]
-            </Link>
-          </li>
-          <li>
-            <Link to={"/user"}>
-              <h4 className="font-bold text-lg cursor-pointer">{logginedUser}</h4>
+              🛒
+              <span className="absolute bottom-2 left-4 bg-orange-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                {cartItems.length}
+              </span>
             </Link>
           </li>
         </ul>
       </div>
 
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 w-64 h-full bg-white shadow-lg z-50">
+        <div className="fixed top-0 right-0 w-64 h-auto bg-white shadow-lg z-50">
           <ul className="flex flex-col gap-4 p-4">
             <li
               className="cursor-pointer text-right text-lg font-bold"
@@ -84,15 +82,13 @@ const Header = () => {
             <li>
               <Link
                 to="/cart"
-                className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 font-bold"
+                className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 font-bold flex"
                 onClick={() => setIsMenuOpen(false)}
               >
-                🛒 [{cartItems.length}]
-              </Link>
-            </li>
-            <li>
-              <Link to={"/user"} onClick={() => setIsMenuOpen(false)}>
-                <h4 className="font-bold text-lg cursor-pointer">{logginedUser}</h4>
+                🛒
+                <span className=" bg-orange-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                {cartItems.length}
+              </span>
               </Link>
             </li>
           </ul>
