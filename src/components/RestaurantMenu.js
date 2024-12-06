@@ -1,7 +1,7 @@
-import Shimmer from "./Shimmer";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { CDN_LINK } from "../utils/constants";
+import ResMenuShimmer from "./ResMenuShimmer";
 import RestaurantCategory from "./RestaurantCategory";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
@@ -27,7 +27,7 @@ const RestaurantMenu = () => {
     );
 
   return resData === null ? (
-    <Shimmer />
+    <ResMenuShimmer />
   ) : (
     <div className="flex flex-col w-10/12 md:w-6/12 m-auto mt-2">
       <div className="flex p-4 rounded-lg shadow-md w-full h-full">
