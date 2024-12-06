@@ -27,9 +27,11 @@ const RestaurantMenu = () => {
     );
 
   return resData === null ? (
-    <ResMenuShimmer />
+    <div className="min-h-screen">
+      <ResMenuShimmer />
+    </div>
   ) : (
-    <div className="flex flex-col w-10/12 md:w-6/12 m-auto mt-2">
+    <div className="flex flex-col w-10/12 md:w-6/12 m-auto mt-2 min-h-screen">
       <div className="flex p-4 rounded-lg shadow-md w-full h-full">
         <div className="w-4/12 flex justify-center items-center">
           <img

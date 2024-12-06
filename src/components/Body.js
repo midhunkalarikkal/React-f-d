@@ -34,7 +34,7 @@ const Body = () => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center min-h-screen">
       <div className="flex w-10/12 md:w-3/4 flex-col items-center">
         <div className="w-full flex flex-wrap md:flex-nowrap p-4 m-4 justify-center items-center gap-2">
           <input
@@ -78,9 +78,9 @@ const Body = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {filteredRestaurant.length === 0
-            ? Array.from({ length: 1 }).map((_, index) => (
+            ? Array.from({ length: 3 }).map((_, index) => (
                 <Shimmer key={index} />
               ))
             : filteredRestaurant.map((restaurant) => (
