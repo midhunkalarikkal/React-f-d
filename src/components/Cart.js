@@ -1,7 +1,7 @@
-import CartItemList from "./cartItemList";
+import { toast } from "react-toastify";
+import CartItemList from "./CartItemList";
 import { clearCart } from '../utils/cartSlice';
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);

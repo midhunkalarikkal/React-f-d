@@ -3,3 +3,5 @@ node_modules
 dist
 Notes
 .env
+coverage
+src/components/__tests__
