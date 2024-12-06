@@ -1,9 +1,9 @@
-import { LOGO } from "../utils/constants";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+import { LOGO } from "../utils/constants";
 import { useSelector } from 'react-redux';
+import UserContext from "../utils/UserContext";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const onlineStatus = useOnlineStatus()

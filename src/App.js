@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
-
-import Header from "./components/Header";
 import Body from "./components/Body";
-import About from "./components/About";
 import Cart from "./components/Cart";
+import About from "./components/About";
 import Error from "./components/Error";
-import RestaurantMenu from "./components/RestaurantMenu";
-import useOnlineStatus from "./utils/useOnlineStatus";
-
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
-import UserContext from "./utils/UserContext";
-
 import { Provider } from "react-redux";
+import ReactDOM from "react-dom/client";
 import appStore from "./utils/appStore";
+import Header from "./components/Header";
+import UserContext from "./utils/UserContext";
 import UserClass from "./components/UserClass";
-
 import { ToastContainer } from 'react-toastify';
+import React, { useState, useEffect } from "react";
+import useOnlineStatus from "./utils/useOnlineStatus";
+import RestaurantMenu from "./components/RestaurantMenu";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 
 /**

@@ -1,6 +1,6 @@
-import { CDN_LINK } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from '../utils/cartSlice';
+import { CDN_LINK } from "../utils/constants";
 
 const ItemList = ({ item }) => {
 

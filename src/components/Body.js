@@ -1,18 +1,16 @@
 import Shimmer from "./Shimmer";
+import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { RESTAURANT_LIST_API } from "../utils/constants";
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 
 require("dotenv").config;
 
-
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
-
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-
   const [searchInputText, setSearchInputText] = useState("");
 
   const OpenedRestaurantCard = withOpenedLabel(RestaurantCard);
@@ -27,7 +25,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.5276416&lng=76.2144349&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      RESTAURANT_LIST_API
     );
     const json = await data.json();
     const restaurants =
