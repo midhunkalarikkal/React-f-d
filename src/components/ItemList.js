@@ -22,7 +22,7 @@ const ItemList = ({ item }) => {
           <div className="flex flex-col justify-center w-9/12">
             <h3 className="font-bold text-md">{item.card.info.name}</h3>
             <h3>
-              -₹{" "}
+              ₹{" "}
               {item.card.info.price
                 ? item.card.info.price / 100
                 : item.card.info.defaultPrice / 100}

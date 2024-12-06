@@ -18,6 +18,7 @@ const CartItemList = ({ item }) => {
                 : item.card.info.defaultPrice / 100}
             </h3>
             <p className="text-xs">{item.card.info.description}</p>
+            {item.count > 1 && <p className="text-xs">Count : {item.count}</p>}
           </div>
           <div className="flex justify-center w-3/12">
             <img

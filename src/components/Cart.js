@@ -26,11 +26,11 @@ const Cart = () => {
       </div>
       <div className="p-3">
         { cartItems.length === 0 ? 
-        <div class="flex flex-col items-center justify-center h-64 bg-gray-100 px-4">
-        <div class="max-w-md text-center bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-2">Your Cart is Empty</h2>
-          <p class="text-gray-600 mb-4">Looks like you haven't added anything to your cart yet.</p>
-          <a href="/" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition">
+        <div className="flex flex-col items-center justify-center h-64 bg-gray-100 px-4">
+        <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-2">Your Cart is Empty</h2>
+          <p className="text-gray-600 mb-4">Looks like you haven't added anything to your cart yet.</p>
+          <a href="/" className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition">
             Go to Home
           </a>
         </div>

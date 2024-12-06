@@ -1,4 +1,3 @@
-import { useReducer } from 'react';
 import cartReducer from './cartSlice';
 import userReducer from './userSlice';
 import { configureStore } from "@reduxjs/toolkit";
