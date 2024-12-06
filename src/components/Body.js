@@ -58,16 +58,7 @@ const Body = () => {
 
               res.length !== 0
                 ? setFilteredRestaurant(res)
-                : toast.info("OOPS.... No Restaurants Found!..", {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                  });
+                : toast.info("OOPS.... No Restaurants Found!..");
             }}
           >
             Search
