@@ -11,9 +11,9 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items)
   return (
     <nav className="flex p-3 bg-slate-100">
-      <div className="flex w-1/4 justify-center items-center cursor-pointer">
+      <div className="flex w-6/12 md:w-1/4 justify-center items-center cursor-pointer bg-green-200">
       <Link to={'/'}>
-        <h4 className="px-5 text-lg font-bold underline decoration-orange-500 underline-offset-4">Bhookad Buzz</h4>
+        <h4 className="px-2 text-sm md:px-5 md:text-lg font-bold underline decoration-orange-500 underline-offset-4">Bhookad Buzz</h4>
       </Link>
       <Link to={'/'}>
         <img src={LOGO} alter="" className="w-14" />

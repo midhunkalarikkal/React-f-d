@@ -24,13 +24,14 @@ const Body = () => {
   });
 
   const fetchData = async () => {
-    const data = await fetch(RESTAURANT_LIST_API);
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.5276416&lng=76.2144349&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
     const restaurants =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
+        ?.restaurants || [];
     setListOfRestaurant(restaurants);
     setFilteredRestaurant(restaurants);
+    console.log("restaurants : ",restaurants)
   };
 
   return (
