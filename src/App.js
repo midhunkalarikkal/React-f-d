@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import appStore from "./utils/appStore";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import UserContext from "./utils/UserContext";
 import UserClass from "./components/UserClass";
 import { ToastContainer } from 'react-toastify';
@@ -66,6 +67,7 @@ const AppLayout = () => {
           ) : (
             <Outlet />
           )}
+          <Footer />
         </div>
       </UserContext.Provider>
     </Provider>

@@ -2,10 +2,9 @@
   "name": "food-delivery",
   "version": "1.0.0",
   "description": "A simple frontend for food delivery app",
-  "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --dist-dir dist",
     "test": "jest"
   },
   "author": "",

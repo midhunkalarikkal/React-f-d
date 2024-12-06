@@ -1,5 +1,5 @@
-/node_modules
-/.parcel-cache
-/dist
-/Notes
-/.env
+node_modules
+.parcel-cache
+dist
+Notes
+.env
