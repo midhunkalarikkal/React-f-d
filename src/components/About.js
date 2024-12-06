@@ -16,10 +16,7 @@ class About extends Component {
             <div className="w-10/12 md:w-6/12 p-4 bg-gray-200 mx-auto mt-2 rounded-lg shadow-lg">
               <h1 className="text-center font-bold text-3xl mb-4">About Us</h1>
               <p className="text-justify leading-relaxed">
-                This is my first React application, created for study purposes.
-                The application is inspired by Swiggy and built from scratch. It
-                uses the Swiggy API to fetch a list of restaurants and their
-                respective dishes.
+              This is my first React application, created as part of my learning journey. The application is inspired by Swiggy and built entirely from scratch using React.
               </p>
               <p className="text-justify leading-relaxed mt-4">
                 Key features include:
@@ -81,7 +78,6 @@ class About extends Component {
                 multiple React concepts and tools to build a functional and
                 feature-rich application.
               </p>
-              <p className="mt-4">Developed by {data.logginedUser}</p>
             </div>
           )}
         </UserContext.Consumer>
