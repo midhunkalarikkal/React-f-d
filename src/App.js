@@ -2,7 +2,7 @@ import Body from "./components/Body";
 import Cart from "./components/Cart";
 import About from "./components/About";
 import Error from "./components/Error";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import appStore from "./utils/appStore";
 import Header from "./components/Header";
@@ -35,6 +35,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const AppLayout = () => {
   const [userInfo, setUserInfo] = useState();
+  const [showProfileDropDown, setShowProfileDropDown] = useState(false);
 
   useEffect(() => {
     const data = {
@@ -47,7 +48,7 @@ const AppLayout = () => {
   const onlineStatus = useOnlineStatus();
   return (
     <Provider store={appStore}>
-      <UserContext.Provider value={{ logginedUser: userInfo }}>
+      <UserContext.Provider value={{ logginedUser: userInfo , showProfileDropDown, setShowProfileDropDown }}>
         <div className="app">
           <Header />
           <ToastContainer
@@ -63,7 +64,7 @@ const AppLayout = () => {
               theme="light"
               />
           {onlineStatus === false ? (
-            <h1>You're offline, Please check your internet connection!</h1>
+            <Error message={"You're offline, Please check your internet connection!"}/>
           ) : (
             <Outlet />
           )}

@@ -1,3 +1,4 @@
+import Error from "./Error";
 import Shimmer from "./Shimmer";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
@@ -12,6 +13,7 @@ const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchInputText, setSearchInputText] = useState("");
+  const [error, setError] = useState(null);
 
   const OpenedRestaurantCard = withOpenedLabel(RestaurantCard);
 
@@ -24,14 +26,25 @@ const Body = () => {
   });
 
   const fetchData = async () => {
-    const data = await fetch(RESTAURANT_LIST_API);
-    const json = await data.json();
-    const restaurants =
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants || [];
-    setListOfRestaurant(restaurants);
-    setFilteredRestaurant(restaurants);
+    try {
+      const response = await fetch(RESTAURANT_LIST_API);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.statusText}`);
+      }
+      const json = await response.json();
+      const restaurants =
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants || [];
+      setListOfRestaurant(restaurants);
+      setFilteredRestaurant(restaurants);
+    } catch (err) {
+      setError(err.message);
+    }
   };
+
+  if (error) {
+    return <Error message={`Error: ${error}`} />;
+  }
 
   return (
     <div className="flex justify-center min-h-screen">

@@ -8,10 +8,11 @@ import UserContext from "../utils/UserContext";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from '../utils/userSlice';
+import ProfileDropDown from './profileDropDown';
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
-  const {logginedUser} = useContext(UserContext);
+  const {logginedUser ,showProfileDropDown, setShowProfileDropDown} = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -55,6 +56,19 @@ const Header = () => {
     });
     return () => unsubscribe();
   }, [dispatch]);
+  
+  const logout = () => {
+    auth
+      .signOut()
+      .then(() => {
+        dispatch(removeUser());
+        setShowProfileDropDown(false);
+        toast.success("Logged out successfully.");
+      })
+      .catch((error) => {
+        toast.error("Failed to log out: " + error.message);
+      });
+  }
 
 
   return (
@@ -97,9 +111,9 @@ const Header = () => {
           </li>
           <li>
             {user ? (
-                  <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full'/>
-              ) : (
-            <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
+                  <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full cursor-pointer' onClick={() => setShowProfileDropDown((prev) => !prev)}/>
+                ) : (
+                  <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
               <button className="bg-orange-400 text-lg font-bold px-2 py-1 rounded-lg text-white hover:bg-orange-300 hover:text-black mx-2" onClick={handleLogin}>Sign In</button>
             </Link>
               )}
@@ -107,8 +121,11 @@ const Header = () => {
         </ul>
       </div>
 
+      {showProfileDropDown && user && <ProfileDropDown />}
+  
+
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 w-64 h-auto bg-white shadow-lg z-50">
+        <div className="fixed top-5 right-0 w-64 h-auto bg-white shadow-lg z-50">
           <ul className="flex flex-col gap-4 p-4">
             <li
               className="cursor-pointer text-right text-lg font-bold"
@@ -117,6 +134,18 @@ const Header = () => {
               x
             </li>
             <li className="cursor-pointer">{onlineStatus ? "🟢 Online" : "🔴 Offline"}</li>
+            <li>
+              {user ? (
+                <div className='flex items-center'>
+                  <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full'/>
+                  <h4 className='mx-2'>{user.name}</h4>
+                </div>
+              ) : (
+                <Link className="hover:underline hover:underline-offset-4 hover:decoration-orange-400" onClick={handleLogin}>
+                  Sign In
+                </Link>
+              )}
+            </li>
             <li>
               <Link
                 to="/"
@@ -147,18 +176,16 @@ const Header = () => {
               </span>
               </Link>
             </li>
-            <li>
-              {user ? (
-                <div className='flex items-center'>
-                  <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full'/>
-                  <h4 className='mx-2'>{user.name}</h4>
-                </div>
-              ) : (
-                <Link to={'/'} className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
-                  Sign In
-                </Link>
-              )}
+            {user ? (
+              <li>
+              <Link
+                className="hover:underline hover:underline-offset-4 hover:decoration-orange-400"
+                onClick={logout}
+              >
+                Logout
+              </Link>
             </li>
+            ) : ""}
           </ul>
         </div>
       )}
