@@ -32,9 +32,31 @@ const Body = () => {
         throw new Error(`Failed to fetch: ${response.statusText}`);
       }
       const json = await response.json();
-      const restaurants =
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      
+      let restaurants;
+      let data = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || [];
+
+      let arr = [];
+      if (json?.data?.cards) {
+        for (let i = 0; i < json.data.cards.length - 1; i++) {
+          const restaurants = json.data.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+          if (restaurants) {
+            arr.push(restaurants);
+          }
+        }
+      }
+      
+      const lengthiestArray = arr.reduce((longest, current) => {
+        return current.length > longest.length ? current : longest;
+      }, []);
+
+      if(data.length === 0){
+        restaurants = lengthiestArray;
+      }else{
+        restaurants = data
+      }     
+
       setListOfRestaurant(restaurants);
       setFilteredRestaurant(restaurants);
     } catch (err) {

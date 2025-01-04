@@ -1,13 +1,18 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from '../utils/cartSlice';
 import { CDN_LINK } from "../utils/constants";
 import { toast } from "react-toastify";
 
 const ItemList = ({ item }) => {
 
+  const user = useSelector((store) => store.user.user)
   const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
+    if(!user){
+      toast.error("Please login.");
+      return;
+    }
     dispatch(addItem(item));
     toast.success("Item added to cart");
   };

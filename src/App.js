@@ -14,6 +14,7 @@ import React, { useState, useEffect } from "react";
 import useOnlineStatus from "./utils/useOnlineStatus";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Profile from "./components/Profile";
 
 
 /**
@@ -99,6 +100,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/user",
         element: <UserClass />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
     ],
     errorElement: <Error />,

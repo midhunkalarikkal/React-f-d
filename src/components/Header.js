@@ -12,7 +12,7 @@ import ProfileDropDown from './profileDropDown';
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
-  const {logginedUser ,showProfileDropDown, setShowProfileDropDown} = useContext(UserContext);
+  const {showProfileDropDown, setShowProfileDropDown} = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
