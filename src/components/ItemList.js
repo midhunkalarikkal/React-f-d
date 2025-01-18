@@ -13,7 +13,14 @@ const ItemList = ({ item }) => {
       toast.error("Please login.");
       return;
     }
-    dispatch(addItem(item));
+    const { id,name,imageId,price, defaultPrice } = item?.card?.info;
+    const cartItem = {
+      id,
+      name,
+      imageId,
+      price : price || defaultPrice,
+    }
+    dispatch(addItem(cartItem));
     toast.success("Item added to cart");
   };
 

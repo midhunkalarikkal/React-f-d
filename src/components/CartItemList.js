@@ -10,19 +10,16 @@ const CartItemList = ({ item }) => {
           key={index}
         >
           <div className="flex flex-col justify-center w-9/12">
-            <h3 className="font-bold text-md">{item.card.info.name}</h3>
+            <h3 className="font-bold text-md">{item.name}</h3>
             <h3>
               -₹{" "}
-              {item.card.info.price
-                ? item.card.info.price / 100
-                : item.card.info.defaultPrice / 100}
+              {item.price / 100}
             </h3>
-            <p className="text-xs">{item.card.info.description}</p>
             {item.count > 1 && <p className="text-xs">Count : {item.count}</p>}
           </div>
           <div className="flex justify-center w-3/12">
             <img
-              src={CDN_LINK + item.card.info.imageId}
+              src={CDN_LINK + item.imageId}
               alt=""
               className="w-28 object-fill rounded-lg"
             />
