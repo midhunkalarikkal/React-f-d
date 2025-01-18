@@ -34,8 +34,8 @@ const Body = () => {
       const json = await response.json();
       
       let restaurants;
-      let data = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || [];
+      // let data = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          // ?.restaurants || [];
 
       let arr = [];
       if (json?.data?.cards) {
@@ -51,11 +51,7 @@ const Body = () => {
         return current.length > longest.length ? current : longest;
       }, []);
 
-      if(data.length === 0){
-        restaurants = lengthiestArray;
-      }else{
-        restaurants = data
-      }     
+      restaurants = lengthiestArray;
 
       setListOfRestaurant(restaurants);
       setFilteredRestaurant(restaurants);

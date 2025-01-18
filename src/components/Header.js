@@ -90,7 +90,6 @@ const Header = () => {
 
       <div className="hidden lg:flex lg:w-3/4 lg:justify-end">
         <ul className="flex flex-row justify-end items-center gap-4 p-4 w-full">
-          <li className="cursor-pointer">{onlineStatus ? "🟢 Online" : "🔴 Offline"}</li>
           <li>
             <Link to="/" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
               Home
@@ -136,10 +135,12 @@ const Header = () => {
             <li className="cursor-pointer">{onlineStatus ? "🟢 Online" : "🔴 Offline"}</li>
             <li>
               {user ? (
-                <div className='flex items-center'>
+                <Link to={"/profile"}>
+                <div className='flex items-center cursor-pointer'>
                   <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full'/>
                   <h4 className='mx-2'>{user.name}</h4>
                 </div>
+                </Link>
               ) : (
                 <Link className="hover:underline hover:underline-offset-4 hover:decoration-orange-400" onClick={handleLogin}>
                   Sign In
