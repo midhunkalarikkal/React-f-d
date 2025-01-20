@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold mb-4">TasteTown</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-4 underline decoration-orange-500 underline-offset-4">TasteTown</h2>
             <p className="text-gray-700">
               Discover delicious meals from your favorite restaurants, delivered fast and fresh to your door.
             </p>
@@ -37,11 +37,11 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 mb-4 rounded-md text-black"
+                className="w-full px-4 py-1 md:py-2 mb-4 rounded-md text-black"
               />
               <button
                 type="submit"
-                className="w-full bg-orange-400 text-gray-700 py-2 rounded-md hover:bg-orange-500"
+                className="w-full bg-orange-400 text-gray-700 p-1 md:py-2 rounded-md hover:bg-orange-500"
               >
                 Subscribe
               </button>
@@ -49,23 +49,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-between items-center text-sm text-gray-400">
+        <div className="mt-8 text-center text-sm text-gray-400">
           <div>
             © {new Date().getFullYear()} TasteTown. All Rights Reserved.
-          </div>
-          <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-facebook-f hover:text-orange-400"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter hover:text-orange-400"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-instagram hover:text-orange-400"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-linkedin-in hover:text-orange-400"></i>
-            </a>
           </div>
         </div>
       </div>
