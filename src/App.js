@@ -15,6 +15,7 @@ import useOnlineStatus from "./utils/useOnlineStatus";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Profile from "./components/Profile";
+import Payment from "./components/Payment";
 
 /**
  * Header
@@ -66,7 +67,9 @@ const AppLayout = () => {
           {onlineStatus === false ? (
             <Error message={"You're offline, Please check your internet connection!"}/>
           ) : (
-            <Outlet />
+            <main className="min-h-screen">
+              <Outlet />
+            </main>
           )}
           <Footer />
         </div>
@@ -104,6 +107,10 @@ const appRouter = createBrowserRouter([
         path: "/profile",
         element: <Profile />,
       },
+      {
+        path: "/payment",
+        element: <Payment />
+      }
     ],
     errorElement: <Error />,
   },

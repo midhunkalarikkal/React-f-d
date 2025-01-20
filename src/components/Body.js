@@ -65,7 +65,7 @@ const Body = () => {
   }
 
   return (
-    <div className="flex justify-center min-h-screen">
+    <div className="flex justify-center">
       <div className="flex w-10/12 md:w-3/4 flex-col items-center">
         <div className="w-full flex flex-wrap md:flex-nowrap p-4 m-4 justify-center items-center gap-2">
           <input

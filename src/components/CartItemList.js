@@ -12,7 +12,7 @@ const CartItemList = ({ item }) => {
           <div className="flex flex-col justify-center w-9/12">
             <h3 className="font-bold text-md">{item.name}</h3>
             <h3>
-              -₹{" "}
+              ₹{" "}
               {item.price / 100}
             </h3>
             {item.count > 1 && <p className="text-xs">Count : {item.count}</p>}

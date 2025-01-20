@@ -6,7 +6,7 @@ const Profile = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="flex flex-col items-center justify-start h-screen bg-gray-50 p-4">
+    <div className="flex flex-col items-center justify-start bg-gray-50 p-4">
       <div className="bg-white shadow-md rounded-lg w-full max-w-sm p-6">
         <div className="flex flex-col items-center">
           <img
