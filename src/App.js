@@ -16,6 +16,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Profile from "./components/Profile";
 import Payment from "./components/Payment";
+import Banner from "./components/Banner";
 
 /**
  * Header
@@ -52,7 +53,7 @@ const AppLayout = () => {
       <UserContext.Provider value={{ logginedUser: userInfo , showProfileDropDown, setShowProfileDropDown }}>
         <div className="app">
           <Header />
-          <ToastContainer
+            <ToastContainer
               position="top-center"
               autoClose={2000}
               hideProgressBar={false}

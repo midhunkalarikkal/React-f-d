@@ -72,10 +72,16 @@ const Header = () => {
 
 
   return (
-    <nav className="flex p-3 bg-slate-100 items-center justify-between">
+    <div className="relative w-full h-screen">
+    <img 
+      src="https://img.freepik.com/free-photo/hot-pizza-adorned-with-vibrant-tomatoes-greens-features-melted-cheese-stretching-out_91128-4677.jpg?t=st=1737542567~exp=1737546167~hmac=e2372b708d3080c88279f215bf661cf0105f30a67f4b3ed286c06ea3785b09b4&w=1800" 
+      className="w-full h-[700px] object-cover absolute top-0 left-0 z-0" 
+      alt="Background" 
+    />
+    <nav className="flex p-3 items-center justify-between absolute top-0 left-0 w-full bg-gradient-to-b from-black to-transparent">
       <div className="flex w-6/12 md:w-1/4 justify-center items-center cursor-pointer">
         <Link to={"/"}>
-          <h4 className="px-2 text-sm md:px-5 md:text-lg font-bold underline decoration-orange-500 underline-offset-4">
+          <h4 className="px-2 text-sm md:px-5 md:text-lg font-bold underline decoration-orange-500 underline-offset-4 text-white">
             TasteTown
           </h4>
         </Link>
@@ -91,12 +97,12 @@ const Header = () => {
       <div className="hidden lg:flex lg:w-3/4 lg:justify-end">
         <ul className="flex flex-row justify-end items-center gap-4 p-4 w-full">
           <li>
-            <Link to="/" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
+            <Link to="/" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 text-white">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
+            <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 text-white">
               About
             </Link>
           </li>
@@ -110,7 +116,7 @@ const Header = () => {
           </li>
           <li>
             {user ? (
-                  <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full cursor-pointer' onClick={() => setShowProfileDropDown((prev) => !prev)}/>
+                  <img src={user.profileImage} alt='' className='w-10 h-10 rounded-full cursor-pointer border-2 border-orange-500' onClick={() => setShowProfileDropDown((prev) => !prev)}/>
                 ) : (
                   <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
               <button className="bg-orange-400 text-lg font-bold px-2 py-1 rounded-lg text-white hover:bg-orange-300 hover:text-black mx-2" onClick={handleLogin}>Sign In</button>
@@ -137,7 +143,7 @@ const Header = () => {
               {user ? (
                 <Link to={"/profile"}>
                 <div className='flex items-center cursor-pointer'>
-                  <img src={user.profileImage} alt='profile' className='w-10 h-10 rounded-full'/>
+                  <img src={user.profileImage} alt='' className='w-10 h-10 rounded-full'/>
                   <h4 className='mx-2'>{user.name}</h4>
                 </div>
                 </Link>
@@ -191,6 +197,7 @@ const Header = () => {
         </div>
       )}
     </nav>
+    </div>
   );
 };
 
