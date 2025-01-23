@@ -5,7 +5,6 @@ import Error from "./components/Error";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import appStore from "./utils/appStore";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import UserContext from "./utils/UserContext";
 import UserClass from "./components/UserClass";
@@ -16,7 +15,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Profile from "./components/Profile";
 import Payment from "./components/Payment";
-import Banner from "./components/Banner";
+import HeaderBg from "./components/HeaderBg";
 
 /**
  * Header
@@ -52,7 +51,7 @@ const AppLayout = () => {
     <Provider store={appStore}>
       <UserContext.Provider value={{ logginedUser: userInfo , showProfileDropDown, setShowProfileDropDown }}>
         <div className="app">
-          <Header />
+          <HeaderBg />
             <ToastContainer
               position="top-center"
               autoClose={2000}
