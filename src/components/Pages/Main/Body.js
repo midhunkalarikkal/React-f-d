@@ -67,83 +67,65 @@ const Body = () => {
 
   return (
     <>
-    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] shadow-lg">
-      <img 
-        src="https://img.freepik.com/free-photo/hot-pizza-adorned-with-vibrant-tomatoes-greens-features-melted-cheese-stretching-out_91128-4677.jpg?t=st=1737542567~exp=1737546167~hmac=e2372b708d3080c88279f215bf661cf0105f30a67f4b3ed286c06ea3785b09b4&w=1800"
-        className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover absolute top-0 left-0 z-0"
-        alt="Background"
-      />
-      
-      <div className="absolute top-0 left-0 w-full h-full bg-black via-transparent to-transparent z-1 opacity-30"></div>
-
-      <Search />
-    </div>
-
-    <div className="flex justify-center">
-      <div className="flex w-10/12 md:w-3/4 flex-col items-center">
-        <div className="w-full flex flex-wrap md:flex-nowrap p-4 m-4 justify-center items-center gap-2">
-          <input
-            type="text"
-            placeholder="Search"
-            className="border-2 py-2 px-4 rounded-md w-full md:w-6/12"
-            value={searchInputText}
-            onChange={(e) => {
-              setSearchInputText(e.target.value);
-            }}
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] shadow-lg">
+        <img 
+          src="https://img.freepik.com/free-photo/hot-pizza-adorned-with-vibrant-tomatoes-greens-features-melted-cheese-stretching-out_91128-4677.jpg?t=st=1737542567~exp=1737546167~hmac=e2372b708d3080c88279f215bf661cf0105f30a67f4b3ed286c06ea3785b09b4&w=1800"
+          className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover absolute top-0 left-0 z-0"
+          alt="Background"
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black via-transparent to-transparent z-1 opacity-30"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 sm:w-8/12 lg:w-1/2 z-3">
+          <div className="flex items-center space-x-4">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-9/12 sm:w-10/12 p-1 md:p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-black bg-opacity-80 text-white"
+              value={searchInputText}
+              onChange={(e) => {
+                setSearchInputText(e.target.value);
+              }}
             />
-
-          <button
-            className="bg-orange-400 py-2 px-4 rounded-md text-yellow-50 w-full md:w-2/12"
+            <button className="w-3/12 sm:w-2/12 py-1 md:py-3 px-3 md:px-6 bg-orange-500 text-white rounded-md hover:bg-orange-400 transition duration-300 text-md font-semibold" 
             onClick={() => {
-              const res = listOfRestaurant.filter((res) =>
-                res.info.name
-              .toLowerCase()
-              .includes(searchInputText.toLowerCase())
-            );
-            
-            res.length !== 0
-            ? setFilteredRestaurant(res)
-            : toast.info("OOPS.... No Restaurants Found!..");
-          }}
-          >
-            Search
-          </button>
-
-          <button
-            className="bg-orange-400 py-2 px-4 rounded-md text-yellow-50 w-full md:w-3/12"
-            onClick={() => {
-              setFilteredRestaurant(
-                listOfRestaurant.filter(
-                  (restaurant) => restaurant.info.avgRating > 4.5
-                )
+                const res = listOfRestaurant.filter((res) =>
+                  res.info.name
+                .toLowerCase()
+                .includes(searchInputText.toLowerCase())
               );
-            }}
-            >
-            Filter Top Rated
-          </button>
-        </div>
-
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
-          {filteredRestaurant.length === 0
-            ? Array.from({ length: 3 }).map((_, index) => (
-              <Shimmer key={index} />
-            ))
-            : filteredRestaurant.map((restaurant) => (
-              <Link
-              key={restaurant.info.id}
-              to={"/restaurant/" + restaurant.info.id}
-              >
-                  {restaurant.info.isOpen ? (
-                    <OpenedRestaurantCard resData={restaurant} />
-                  ) : (
-                    <RestaurantCard resData={restaurant} />
-                  )}
-                </Link>
-              ))}
+              res.length !== 0
+              ? setFilteredRestaurant(res)
+              : toast.info("OOPS.... No Restaurants Found!..");
+            }}>
+              Search
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-              </>
+
+      <div className="flex justify-center min-h-screen">
+        <div className="flex w-10/12 md:w-3/4 flex-col items-center">
+
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
+            {filteredRestaurant.length === 0
+              ? Array.from({ length: 3 }).map((_, index) => (
+                <Shimmer key={index} />
+              ))
+              : filteredRestaurant.map((restaurant) => (
+                <Link
+                key={restaurant.info.id}
+                to={"/restaurant/" + restaurant.info.id}
+                >
+                    {restaurant.info.isOpen ? (
+                      <OpenedRestaurantCard resData={restaurant} />
+                    ) : (
+                      <RestaurantCard resData={restaurant} />
+                    )}
+                  </Link>
+                ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
