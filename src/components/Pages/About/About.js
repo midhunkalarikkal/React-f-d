@@ -41,6 +41,9 @@ class About extends Component {
                   <li>
                     Fully responsive UI, ensuring seamless experience across all devices.
                   </li>
+                  <li>
+                    Payment gateway- Razorpay.
+                  </li>
                 </ul>
                 <p className="text-justify leading-relaxed mt-4">
                   What Technologies Were Used In This Project

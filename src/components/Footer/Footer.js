@@ -51,7 +51,7 @@ const Footer = () => {
 
         <div className="mt-8 text-center text-sm text-gray-400">
           <div>
-            © {new Date().getFullYear()} TasteTown. All Rights Reserved.
+            © {new Date().getFullYear()} CraveRoute. All Rights Reserved.
           </div>
         </div>
       </div>

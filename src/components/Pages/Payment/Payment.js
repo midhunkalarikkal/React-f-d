@@ -117,7 +117,7 @@ const Payment = () => {
     <>
       {!showSuccessDiv && (
     <div className="md:grid md:grid-cols-2 gap-6 w-full max-w-7xl m-auto p-6">
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div className="bg-slate-100 p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800">
               Address Details
             </h2>
@@ -177,7 +177,7 @@ const Payment = () => {
             </form>
           </div>
 
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md mt-2 md:mt-0">
+          <div className="bg-slate-100 p-6 rounded-lg shadow-md mt-2 md:mt-0">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               Order Summary
             </h2>
