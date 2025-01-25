@@ -11,8 +11,12 @@ const Cart = () => {
 
   const dispatch = useDispatch()
   const handleClearCart = () => {
-    dispatch(clearCart());
-    toast.success("Cart cleared");
+    if(cartItems.length == 0){
+      toast.success("Cart is already clear.");
+    }else{
+      dispatch(clearCart());
+      toast.success("Cart cleared");
+    }
   }
 
   const moveToPayment = () => {
@@ -31,7 +35,7 @@ const Cart = () => {
 
   return (
     <div className="flex flex-col w-10/12 md:w-6/12 m-auto">
-      <div className="flex justify-between p-3 rounded-lg bg-slate-200 m-3">
+      <div className="flex justify-between p-3 rounded-lg bg-slate-100 m-3 shadow-lg">
         <div className="flex">
           <h4 className="font-bold text-lg">Your Cart Items</h4>
         </div>
@@ -42,8 +46,8 @@ const Cart = () => {
         </div>
       </div>
       <div className="p-3">
-        { cartItems === null ?
-        <div className="flex flex-col items-center justify-center h-64 bg-gray-100 px-4">
+        { cartItems.length === 0 ?
+        <div className="flex flex-col items-center justify-center h-64 bg-slate-100 px-4 shadow-lg rounded-lg">
         <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-6">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">Your Cart is Empty</h2>
           <p className="text-gray-600 mb-4">Looks like you haven't added anything to your cart yet.</p>
@@ -56,7 +60,7 @@ const Cart = () => {
       </div>
 
       { cartItems.length > 0 && (
-        <div className="flex justify-between p-3 rounded-lg bg-slate-200 m-3 mt-0">
+        <div className="flex justify-between p-3 rounded-lg bg-slate-100 m-3 mt-0">
         <div className="flex">
           <h4 className="font-bold text-lg">Confirm your order</h4>
         </div>

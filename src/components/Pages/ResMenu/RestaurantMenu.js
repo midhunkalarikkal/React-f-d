@@ -9,15 +9,12 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const resData = useRestaurantMenu(resId);
+  console.log("resData : ",resData);
 
   const [showIndex, setShowIndex] = useState(null)
 
   const { name, city, cloudinaryImageId, sla, avgRatingString } =
     resData?.cards[2]?.card?.card?.info || {};
-
-  const { title, itemCards = [] } =
-    resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards[2]?.card
-      ?.card || {};
 
   const categories =
     resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
@@ -30,7 +27,7 @@ const RestaurantMenu = () => {
       <ResMenuShimmer />
   ) : (
     <div className="flex flex-col w-10/12 md:w-6/12 m-auto mt-2">
-      <div className="flex p-4 rounded-lg shadow-md w-full h-full">
+      <div className="flex p-4 rounded-lg shadow-md w-full h-full bg-slate-100">
         <div className="w-4/12 flex justify-center items-center">
           <img
             src={CDN_LINK + cloudinaryImageId}
