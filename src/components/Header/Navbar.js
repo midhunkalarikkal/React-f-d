@@ -74,7 +74,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`flex p-3 items-center justify-between top-0 left-0 w-full z-10 ${isHomePage ? "absolute" : ""} ${!isHomePage ? "bg-[#101010]" : ""}`}>
+    <nav className={`flex p-1 items-center justify-between top-0 left-0 w-full z-10 ${isHomePage ? "absolute" : ""} ${!isHomePage ? "bg-[#101010]" : ""}`}>
       <div className="flex w-6/12 md:w-1/4 justify-center items-center cursor-pointer">
         <Link to={"/"}>
           <h4 className="px-2 text-sm md:px-5 md:text-lg font-bold underline decoration-orange-400 underline-offset-4 text-white">
