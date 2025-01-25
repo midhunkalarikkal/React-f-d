@@ -1,13 +1,13 @@
-import Body from "./components/Body";
+import Body from "./components/Pages/Main/Body";
 import Cart from "./components/Pages/Cart/Cart";
 import About from "./components/Pages/About/About";
-import Error from "./components/Error";
+import Error from "./components/Pages/Error";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import appStore from "./utils/appStore";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import UserContext from "./utils/UserContext";
-import UserClass from "./components/UserClass";
+import UserClass from "./components/Testing/UserClass";
 import { ToastContainer } from 'react-toastify';
 import React, { useState, useEffect } from "react";
 import useOnlineStatus from "./utils/useOnlineStatus";

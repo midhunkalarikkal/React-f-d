@@ -1,12 +1,12 @@
-import Error from "./Error";
-import Shimmer from "./Shimmers/Shimmer";
+import Error from "../Error";
+import Shimmer from "../../Shimmers/Shimmer";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { RESTAURANT_LIST_API } from "../utils/constants";
+import { RESTAURANT_LIST_API } from "../../../utils/constants";
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
-import Search from "./Header/Search";
+import Search from "../../Header/Search";
 
 require("dotenv").config;
 
