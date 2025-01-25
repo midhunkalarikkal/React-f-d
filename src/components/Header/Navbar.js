@@ -1,16 +1,16 @@
-import { auth, provider} from '../utils/firebase';
+import { auth, provider} from '../../utils/firebase';
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import { LOGO } from "../utils/constants";
+import { LOGO } from "../../utils/constants";
 import { useDispatch, useSelector } from 'react-redux';
 import { useContext, useEffect, useState } from "react";
-import UserContext from "../utils/UserContext";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
-import { addUser, removeUser } from '../utils/userSlice';
-import ProfileDropDown from './profileDropDown';
+import { addUser, removeUser } from '../../utils/userSlice';
+import ProfileDropDown from '../profileDropDown';
 
-const Header = () => {
+const Navbar = () => {
   const onlineStatus = useOnlineStatus();
   const {showProfileDropDown, setShowProfileDropDown} = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
@@ -72,44 +72,39 @@ const Header = () => {
 
 
   return (
-    <div className="relative w-full h-screen">
-    <img 
-      src="https://img.freepik.com/free-photo/hot-pizza-adorned-with-vibrant-tomatoes-greens-features-melted-cheese-stretching-out_91128-4677.jpg?t=st=1737542567~exp=1737546167~hmac=e2372b708d3080c88279f215bf661cf0105f30a67f4b3ed286c06ea3785b09b4&w=1800" 
-      className="w-full h-[700px] object-cover absolute top-0 left-0 z-0" 
-      alt="Background" 
-    />
-    <nav className="flex p-3 items-center justify-between absolute top-0 left-0 w-full bg-gradient-to-b from-black to-transparent">
+  
+    <nav className="flex p-3 items-center justify-between absolute top-0 left-0 w-full bg-gradient-to-b from-black to-transparent z-3">
       <div className="flex w-6/12 md:w-1/4 justify-center items-center cursor-pointer">
         <Link to={"/"}>
           <h4 className="px-2 text-sm md:px-5 md:text-lg font-bold underline decoration-orange-500 underline-offset-4 text-white">
-            TasteTown
+            <span className='text-orange-500'>Crave</span>Ruote
           </h4>
         </Link>
         <Link to={"/"}>
-          <img src={LOGO} alt="" className="w-14" />
+          <img src="https://res.cloudinary.com/ddqyiqkbi/image/upload/v1737814756/TasteTown_logo_knv3cx.png" alt="Logo" className="w-10" />
         </Link>
       </div>
 
       <div className="lg:hidden cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <span className="text-2xl">☰</span>
+        <span className="text-2xl text-orange-500">☰</span>
       </div>
 
       <div className="hidden lg:flex lg:w-3/4 lg:justify-end">
         <ul className="flex flex-row justify-end items-center gap-4 p-4 w-full">
           <li>
-            <Link to="/" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 text-white">
+            <Link to="/" className="hover:underline hover:underline-offset-4 hover:decoration-orange-500 text-white">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 text-white">
+            <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-500 text-white">
               About
             </Link>
           </li>
           <li className="relative">
-            <Link to="/cart" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 font-bold">
+            <Link to="/cart" className="hover:underline hover:underline-offset-4 hover:decoration-orange-500 font-bold">
               🛒
-              <span className="absolute bottom-2 left-4 bg-orange-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              <span className="absolute bottom-2 left-4 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {cartItems.length}
               </span>
             </Link>
@@ -118,8 +113,8 @@ const Header = () => {
             {user ? (
                   <img src={user.profileImage} alt='' className='w-10 h-10 rounded-full cursor-pointer border-2 border-orange-500' onClick={() => setShowProfileDropDown((prev) => !prev)}/>
                 ) : (
-                  <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400">
-              <button className="bg-orange-400 text-lg font-bold px-2 py-1 rounded-lg text-white hover:bg-orange-300 hover:text-black mx-2" onClick={handleLogin}>Sign In</button>
+                  <Link to="/about" className="hover:underline hover:underline-offset-4 hover:decoration-orange-500">
+              <button className="bg-orange-500 text-lg font-semibold px-2 py-1 rounded-lg text-white hover:bg-orange-400 mx-2" onClick={handleLogin}>Sign In</button>
             </Link>
               )}
           </li>
@@ -130,7 +125,7 @@ const Header = () => {
   
 
       {isMenuOpen && (
-        <div className="fixed top-5 right-0 w-64 h-auto bg-white shadow-lg z-50">
+        <div className="fixed top-5 right-0 w-64 h-auto bg-white shadow-lg z-10">
           <ul className="flex flex-col gap-4 p-4">
             <li
               className="cursor-pointer text-right text-lg font-bold"
@@ -197,8 +192,7 @@ const Header = () => {
         </div>
       )}
     </nav>
-    </div>
   );
 };
 
-export default Header;
+export default Navbar;

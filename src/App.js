@@ -15,7 +15,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Profile from "./components/Profile";
 import Payment from "./components/Payment";
-import HeaderBg from "./components/HeaderBg";
+import HeaderBg from "./components/Header/HeaderBg";
 
 /**
  * Header
