@@ -1,6 +1,6 @@
 import Body from "./components/Body";
-import Cart from "./components/Cart";
-import About from "./components/About";
+import Cart from "./components/Pages/Cart/Cart";
+import About from "./components/Pages/About/About";
 import Error from "./components/Error";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
@@ -11,11 +11,11 @@ import UserClass from "./components/UserClass";
 import { ToastContainer } from 'react-toastify';
 import React, { useState, useEffect } from "react";
 import useOnlineStatus from "./utils/useOnlineStatus";
-import RestaurantMenu from "./components/RestaurantMenu";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Profile from "./components/Profile";
-import Payment from "./components/Payment";
-import HeaderBg from "./components/Header/HeaderBg";
+import RestaurantMenu from "./components/Pages/ResMenu/RestaurantMenu";
+import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-router-dom";
+import Profile from "./components/Pages/Profile/Profile";
+import Payment from "./components/Pages/Payment/Payment";
+import Navbar from "./components/Header/Navbar";
 
 /**
  * Header
@@ -47,11 +47,12 @@ const AppLayout = () => {
 
 
   const onlineStatus = useOnlineStatus();
+  const location = useLocation()
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ logginedUser: userInfo , showProfileDropDown, setShowProfileDropDown }}>
         <div className="app">
-          <HeaderBg />
+          <Navbar />
             <ToastContainer
               position="top-center"
               autoClose={2000}

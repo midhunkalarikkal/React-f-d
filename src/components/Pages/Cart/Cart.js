@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import CartItemList from "./CartItemList";
-import { clearCart } from '../utils/cartSlice';
+import { clearCart } from '../../../utils/cartSlice';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { clearCart } from "../utils/cartSlice";
+import { clearCart } from "../../../utils/cartSlice";
 import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'
 

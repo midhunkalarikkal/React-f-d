@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { auth } from '../utils/firebase';
+import { auth } from '../../utils/firebase';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
-import { removeUser } from '../utils/userSlice';
-import UserContext from '../utils/UserContext';
+import { removeUser } from '../../utils/userSlice';
+import UserContext from '../../utils/UserContext';
 
 const ProfileDropDown = () => {
 
     const dispatch = useDispatch();
-    const {showProfileDropDown, setShowProfileDropDown} = useContext(UserContext);
+    const {setShowProfileDropDown} = useContext(UserContext);
 
     const logout = () => {
         auth
@@ -26,7 +26,7 @@ const ProfileDropDown = () => {
   return (
     <div className="relative inline-block text-left">
         <div
-          className="absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          className="absolute right-5 z-10 mt-5 w-44 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
