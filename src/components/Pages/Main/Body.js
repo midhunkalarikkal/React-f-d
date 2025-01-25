@@ -1,12 +1,11 @@
 import Error from "../Error";
-import Shimmer from "../../Shimmers/Shimmer";
+import ResCardShimmer from "../../Shimmers/ResCardShimmer";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { RESTAURANT_LIST_API } from "../../../utils/constants";
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
-import Search from "../../Header/Search";
 
 require("dotenv").config;
 
@@ -103,12 +102,11 @@ const Body = () => {
       </div>
 
       <div className="flex justify-center min-h-screen">
-        <div className="flex w-10/12 md:w-3/4 flex-col items-center">
-
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
+        <div className="flex w-full md:w-10/12 flex-col items-center">
+          <div className="grid gap-2 md:gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
             {filteredRestaurant.length === 0
-              ? Array.from({ length: 3 }).map((_, index) => (
-                <Shimmer key={index} />
+              ? Array.from({ length: 8 }).map((_, index) => (
+                <ResCardShimmer key={index} />
               ))
               : filteredRestaurant.map((restaurant) => (
                 <Link
