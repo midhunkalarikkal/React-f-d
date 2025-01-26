@@ -102,6 +102,11 @@ const Navbar = () => {
               About
             </Link>
           </li>
+          <li>
+            <Link to="/contact" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 text-white">
+              Contact
+            </Link>
+          </li>
           <li className="relative">
             <Link to="/cart" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 font-bold">
               🛒
@@ -163,6 +168,15 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className="hover:underline hover:underline-offset-4 hover:decoration-orange-400"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
               </Link>
             </li>
             <li>

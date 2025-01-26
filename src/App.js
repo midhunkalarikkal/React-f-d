@@ -16,6 +16,7 @@ import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-
 import Profile from "./components/Pages/Profile/Profile";
 import Payment from "./components/Pages/Payment/Payment";
 import Navbar from "./components/Header/Navbar";
+import Contact from "./components/Pages/About/Contact";
 
 /**
  * Header
@@ -111,6 +112,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/payment",
         element: <Payment />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
       }
     ],
     errorElement: <Error />,
