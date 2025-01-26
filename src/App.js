@@ -1,39 +1,22 @@
-import Body from "./components/Pages/Main/Body";
-import Cart from "./components/Pages/Cart/Cart";
-import About from "./components/Pages/About/About";
-import Error from "./components/Pages/Error";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import appStore from "./utils/appStore";
-import Footer from "./components/Footer/Footer";
+import Error from "./components/Pages/Error";
 import UserContext from "./utils/UserContext";
-import UserClass from "./components/Testing/UserClass";
+import Body from "./components/Pages/Main/Body";
+import Cart from "./components/Pages/Cart/Cart";
+import Footer from "./components/Footer/Footer";
 import { ToastContainer } from 'react-toastify';
+import Navbar from "./components/Header/Navbar";
+import About from "./components/Pages/About/About";
 import React, { useState, useEffect } from "react";
 import useOnlineStatus from "./utils/useOnlineStatus";
+import UserClass from "./components/Testing/UserClass";
+import Contact from "./components/Pages/About/Contact";
+import Payment from "./components/Pages/Payment/Payment";
+import Profile from "./components/Pages/Profile/Profile";
 import RestaurantMenu from "./components/Pages/ResMenu/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Profile from "./components/Pages/Profile/Profile";
-import Payment from "./components/Pages/Payment/Payment";
-import Navbar from "./components/Header/Navbar";
-import Contact from "./components/Pages/About/Contact";
-
-/**
- * Header
- *   -Logo
- *   -Nav items
- * Body
- *   -Search bar with button
- *   -Restaurant card container
- *       -Restaurant Card
- *           -Card image
- *           -Name of res, Star rating, Cuisine, Delivery time
- * Footer
- *   -Coyright
- *   -Links
- *   -Address
- *   -Contact
- **/
 
 const AppLayout = () => {
   const [userInfo, setUserInfo] = useState();
@@ -45,7 +28,6 @@ const AppLayout = () => {
     };
     setUserInfo(data.name);
   }, []);
-
 
   const onlineStatus = useOnlineStatus();
   return (

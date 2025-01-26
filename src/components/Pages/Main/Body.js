@@ -31,14 +31,9 @@ const Body = () => {
     try {
       const response = await fetch(RESTAURANT_LIST_API);
       if (!response.ok) {
-        if(dummyData){
-          json = dummyData;
-        }else{
           throw new Error(`Failed to fetch: ${response.statusText}`);
-        }
-      }else{
-        json = await response.json();
       }
+      json = await response.json();
       
       let restaurants;
 
@@ -56,17 +51,12 @@ const Body = () => {
         return current.length > longest.length ? current : longest;
       }, []);
 
-      restaurants = lengthiestArray || dummyData?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+      restaurants = lengthiestArray;
 
       setListOfRestaurant(restaurants);
       setFilteredRestaurant(restaurants);
     } catch (err) {
-      // setError(err.message);
-      json = dummyData;
-
-      const restaurants = json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
-      setListOfRestaurant(restaurants);
-      setFilteredRestaurant(restaurants);
+      setError(err.message);
     }
   };
 

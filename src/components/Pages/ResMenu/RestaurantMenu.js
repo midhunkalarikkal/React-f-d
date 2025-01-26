@@ -15,12 +15,21 @@ const RestaurantMenu = () => {
   const { name, city, cloudinaryImageId, sla, avgRatingString } =
     resData?.cards[2]?.card?.card?.info || {};
 
-  const categories =
-    resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
-      (c) =>
-        c.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    );
+    let categories = null;
+    let cards = resData?.cards || [];
+    
+    if (cards.length > 0) {
+      for (let i = 0; i < cards.length; i++) {
+        if (cards[i]?.groupedCard) {
+          categories = cards[i].groupedCard.cardGroupMap?.REGULAR.cards.filter(
+            (c) =>
+              c.card?.card?.["@type"] ===
+              "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+          );
+          break;
+        }
+      }
+    }
 
   return resData === null ? (
       <ResMenuShimmer />
@@ -30,17 +39,17 @@ const RestaurantMenu = () => {
         <div className="w-4/12 flex justify-center items-center">
           <img
             src={CDN_LINK + cloudinaryImageId}
-            className="rounded-lg w-auto h-32 object-fit"
+            className="rounded-lg w-auto h-20 md:h-32 object-fit"
             alt="Restaurant"
           />
         </div>
         <div className="w-8/12 flex flex-col justify-center items-center text-center">
-          <h1 className="text-xl font-semibold mb-2">{name}</h1>
+          <h1 className="text-lg md:text-xl font-semibold mb-2">{name}</h1>
           <span className="flex flex-row">
-            <p className="text-gray-600 mb-1">⭐ {avgRatingString}</p>
-            <p className="text-gray-600 mb-1 px-3">{sla?.slaString}</p>
+            <p className="text-sm md:text-md text-gray-600 mb-1">⭐ {avgRatingString}</p>
+            <p className="text-sm md:text-md text-gray-600 mb-1 px-3">{sla?.slaString}</p>
           </span>
-          <p className="text-gray-500">{city}</p>
+          <p className="text-xs md:text-sm text-gray-500">{city}</p>
         </div>
       </div>
       <div className="mt-2 mb-4">

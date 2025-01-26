@@ -10,8 +10,8 @@ const CartItemList = ({ item }) => {
           key={index}
         >
           <div className="flex flex-col justify-center w-9/12">
-            <h3 className="font-bold text-md">{item.name}</h3>
-            <h3>
+            <h3 className="font-bold text-sm md:text-lg">{item.name}</h3>
+            <h3 className="text-xs md:text-lg font-bold text-green-600">
               ₹{" "}
               {item.price / 100}
             </h3>

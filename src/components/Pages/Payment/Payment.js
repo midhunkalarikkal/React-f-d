@@ -16,6 +16,7 @@ const Payment = () => {
   const { width, height } = useWindowSize();
 
   useEffect(() => {
+
     if (cartItems) {
       const total = cartItems.reduce((acc, cv) => acc + cv.price, 0);
       setCartTotal(total / 100);
@@ -75,41 +76,45 @@ const Payment = () => {
   };
 
   const handlePayment = () => {
-    if (validateForm()) {
-      const options = {
-        key: process.env.RAZORPAY_KEY_ID,
-        amount: (cartTotal + 50) * 100,
-        currency: "INR",
-        name: "CraveRoute",
-        description: "Test Transaction",
-        handler: async () => {
-          toast.success("Payment Successful!");
-          dispatch(clearCart());
-          setSuccessDiv(true);
-          setTimeout(() => {
-            navigate("/");
-          },5000);
-        },
-        modalClose: () => {
-          toast.error("Payment Failed! Please try again.");
-        },
-        prefill: {
-          name: formData.name,
-          contact: formData.phone,
-        },
-        theme: {
-          color: "#f97316",
-          logo: "https://res.cloudinary.com/ddqyiqkbi/image/upload/v1737814756/TasteTown_logo_knv3cx.png",
-        },
-        external: {
-          error: (error) => {
-            toast.error("Payment failed due to an error! Please try again.");
+    if(cartItems.length === 0){
+      toast.error("Your cart is empty.");
+    }else{
+      if (validateForm()) {
+        const options = {
+          key: process.env.RAZORPAY_KEY_ID,
+          amount: (cartTotal + 50) * 100,
+          currency: "INR",
+          name: "CraveRoute",
+          description: "Test Transaction",
+          handler: async () => {
+            toast.success("Payment Successful!");
+            dispatch(clearCart());
+            setSuccessDiv(true);
+            setTimeout(() => {
+              navigate("/");
+            },5000);
           },
-        },
-      };
+          modalClose: () => {
+            toast.error("Payment Failed! Please try again.");
+          },
+          prefill: {
+            name: formData.name,
+            contact: formData.phone,
+          },
+          theme: {
+            color: "#f97316",
+            logo: "https://res.cloudinary.com/ddqyiqkbi/image/upload/v1737814756/TasteTown_logo_knv3cx.png",
+          },
+          external: {
+            error: (error) => {
+              toast.error("Payment failed due to an error! Please try again.");
+            },
+          },
+        };
 
-      const rzp = new window.Razorpay(options);
-      rzp.open();
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+      }
     }
   };
 
@@ -118,7 +123,7 @@ const Payment = () => {
       {!showSuccessDiv && (
     <div className="md:grid md:grid-cols-2 gap-6 w-full max-w-7xl m-auto p-6">
           <div className="bg-slate-100 p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+            <h2 className="text-lg md:text-2xl font-semibold mb-4 text-gray-800">
               Address Details
             </h2>
             <form className="space-y-4">
@@ -178,7 +183,7 @@ const Payment = () => {
           </div>
 
           <div className="bg-slate-100 p-6 rounded-lg shadow-md mt-2 md:mt-0">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-lg md:text-2xl font-semibold text-gray-800 mb-4">
               Order Summary
             </h2>
             <div className="flex justify-between mb-4">
@@ -206,12 +211,12 @@ const Payment = () => {
 
             <div className="mt-6 text-center text-gray-600">
               <p className="text-sm">Secure payment via</p>
-              <p className="font-bold text-gray-800">Razorpay</p>
+              <p className="font-bold text-blue-600 italic">Razorpay</p>
             </div>
 
             <div className="mt-6">
               <button
-                className="w-full bg-green-500 text-white py-2 px-6 rounded-md hover:bg-green-600 transition duration-300"
+                className="w-full bg-green-500 text-white py-1 md:py-2 px-6 rounded-md hover:bg-green-600 transition duration-300"
                 onClick={handlePayment}
               >
                 Proceed to Payment
