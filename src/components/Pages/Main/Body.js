@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { RESTAURANT_LIST_API } from "../../../utils/constants";
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
+import { dummyData } from "../../../utils/DummyData";
 
 require("dotenv").config;
 
@@ -26,16 +27,20 @@ const Body = () => {
   });
 
   const fetchData = async () => {
+    let json;
     try {
       const response = await fetch(RESTAURANT_LIST_API);
       if (!response.ok) {
-        throw new Error(`Failed to fetch: ${response.statusText}`);
+        if(dummyData){
+          json = dummyData;
+        }else{
+          throw new Error(`Failed to fetch: ${response.statusText}`);
+        }
+      }else{
+        json = await response.json();
       }
-      const json = await response.json();
       
       let restaurants;
-      // let data = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          // ?.restaurants || [];
 
       let arr = [];
       if (json?.data?.cards) {
@@ -51,12 +56,17 @@ const Body = () => {
         return current.length > longest.length ? current : longest;
       }, []);
 
-      restaurants = lengthiestArray;
+      restaurants = lengthiestArray || dummyData?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
 
       setListOfRestaurant(restaurants);
       setFilteredRestaurant(restaurants);
     } catch (err) {
-      setError(err.message);
+      // setError(err.message);
+      json = dummyData;
+
+      const restaurants = json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+      setListOfRestaurant(restaurants);
+      setFilteredRestaurant(restaurants);
     }
   };
 
@@ -68,7 +78,7 @@ const Body = () => {
     <>
       <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] shadow-lg">
         <img 
-          src="https://img.freepik.com/free-photo/hot-pizza-adorned-with-vibrant-tomatoes-greens-features-melted-cheese-stretching-out_91128-4677.jpg?t=st=1737542567~exp=1737546167~hmac=e2372b708d3080c88279f215bf661cf0105f30a67f4b3ed286c06ea3785b09b4&w=1800"
+          src="https://res.cloudinary.com/ddqyiqkbi/image/upload/v1737894216/2151846558_day7bk.jpg"
           className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover absolute top-0 left-0 z-0"
           alt="Background"
         />

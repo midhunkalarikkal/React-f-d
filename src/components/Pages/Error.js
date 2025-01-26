@@ -3,7 +3,7 @@ import { useRouteError } from "react-router-dom";
 const Error = ({message}) => {
   const err = useRouteError();
   return (
-    <div className="flex flex-col items-center justify-center bg-red-50 text-gray-700 min-h-screen">
+    <div className="flex flex-col items-center justify-center bg-black text-gray-700 min-h-screen">
       <div className="bg-white shadow-lg rounded-lg p-8 text-center">
         <h1 className="text-4xl font-bold text-red-600 mb-4">Oops!!!</h1>
         <h2 className="text-2xl font-semibold mb-4">

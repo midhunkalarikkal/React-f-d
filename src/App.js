@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import React, { useState, useEffect } from "react";
 import useOnlineStatus from "./utils/useOnlineStatus";
 import RestaurantMenu from "./components/Pages/ResMenu/RestaurantMenu";
-import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Profile from "./components/Pages/Profile/Profile";
 import Payment from "./components/Pages/Payment/Payment";
 import Navbar from "./components/Header/Navbar";
@@ -48,7 +48,6 @@ const AppLayout = () => {
 
 
   const onlineStatus = useOnlineStatus();
-  const location = useLocation()
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ logginedUser: userInfo , showProfileDropDown, setShowProfileDropDown }}>
