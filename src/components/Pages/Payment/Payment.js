@@ -5,12 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { clearCart } from "../../../utils/cartSlice";
 import { useWindowSize } from 'react-use';
 import Confetti from 'react-confetti';
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "../../../utils/firebase";
 
 const Payment = () => {
   const cartItems = useSelector((store) => store?.cart?.items);
-  const user = useSelector((store) => store.user?.user);
   let [cartTotal, setCartTotal] = useState(0);
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const [showSuccessDiv, setSuccessDiv] = useState(false);
@@ -88,9 +85,6 @@ const Payment = () => {
         handler: async () => {
           toast.success("Payment Successful!");
           dispatch(clearCart());
-
-         await addTransaction( user.uid,(cartTotal + 50) * 100);
-
           setSuccessDiv(true);
           setTimeout(() => {
             navigate("/");
@@ -116,18 +110,6 @@ const Payment = () => {
 
       const rzp = new window.Razorpay(options);
       rzp.open();
-    }
-  };
-
-  const addTransaction = async (userId, amount) => {
-    try {
-      const docRef = await addDoc(collection(db, "transactions"), {
-        userId: userId,
-        date: serverTimestamp(),
-        amount: amount,
-      });
-    } catch (error) {
-      console.log("Error adding document: ", error);
     }
   };
 
