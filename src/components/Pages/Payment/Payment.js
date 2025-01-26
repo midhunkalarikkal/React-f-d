@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { clearCart } from "../../../utils/cartSlice";
-import { useWindowSize } from 'react-use'
-import Confetti from 'react-confetti'
+import { useWindowSize } from 'react-use';
+import Confetti from 'react-confetti';
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../../../utils/firebase";
 
 const Payment = () => {
   const cartItems = useSelector((store) => store?.cart?.items);
+  const user = useSelector((store) => store.user?.user);
   let [cartTotal, setCartTotal] = useState(0);
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const [showSuccessDiv, setSuccessDiv] = useState(false);
@@ -80,11 +83,14 @@ const Payment = () => {
         key: process.env.RAZORPAY_KEY_ID,
         amount: (cartTotal + 50) * 100,
         currency: "INR",
-        name: "TasteTown",
+        name: "CraveRoute",
         description: "Test Transaction",
-        handler: () => {
+        handler: async () => {
           toast.success("Payment Successful!");
           dispatch(clearCart());
+
+         await addTransaction( user.uid,(cartTotal + 50) * 100);
+
           setSuccessDiv(true);
           setTimeout(() => {
             navigate("/");
@@ -99,7 +105,7 @@ const Payment = () => {
         },
         theme: {
           color: "#f97316",
-          logo: "https://cdn-icons-png.flaticon.com/512/3027/3027212.png",
+          logo: "https://res.cloudinary.com/ddqyiqkbi/image/upload/v1737814756/TasteTown_logo_knv3cx.png",
         },
         external: {
           error: (error) => {
@@ -110,6 +116,18 @@ const Payment = () => {
 
       const rzp = new window.Razorpay(options);
       rzp.open();
+    }
+  };
+
+  const addTransaction = async (userId, amount) => {
+    try {
+      const docRef = await addDoc(collection(db, "transactions"), {
+        userId: userId,
+        date: serverTimestamp(),
+        amount: amount,
+      });
+    } catch (error) {
+      console.log("Error adding document: ", error);
     }
   };
 
