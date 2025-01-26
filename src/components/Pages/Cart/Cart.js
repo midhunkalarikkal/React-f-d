@@ -25,7 +25,7 @@ const Cart = () => {
   
   if(!user){
     return (
-      <div className="flex justify-center items-center bg-gray-50">
+      <div className="flex justify-center items-center min-h-screen">
         <div className="text-center bg-white rounded-lg shadow-lg p-6 max-w-md border-orange-300 border-2">
           <h2 className="text-lg lg:text-2xl font-semibold text-gray-800 mb-4">Please Login to View Your Cart</h2>
         </div>

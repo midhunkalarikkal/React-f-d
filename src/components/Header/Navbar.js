@@ -111,7 +111,7 @@ const Navbar = () => {
             <Link to="/cart" className="hover:underline hover:underline-offset-4 hover:decoration-orange-400 font-bold">
               🛒
               <span className="absolute bottom-2 left-4 bg-orange-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                {cartItems.length}
+                {user ? cartItems.length : 0}
               </span>
             </Link>
           </li>
@@ -187,7 +187,7 @@ const Navbar = () => {
               >
                 🛒
                 <span className=" bg-orange-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                {cartItems.length}
+                {user ? cartItems.length : 0}
               </span>
               </Link>
             </li>

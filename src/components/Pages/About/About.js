@@ -13,13 +13,13 @@ class About extends Component {
       <div>
         <UserContext.Consumer>
           {() => (
-              <div className="w-10/12 md:w-6/12 p-4 bg-gray-100 mx-auto mt-2 rounded-lg shadow-lg border-2 border-orange-300">
+              <div className="w-10/12 md:w-6/12 p-4 bg-gray-100 mx-auto mt-2 rounded-lg shadow-lg border-2 border-orange-300 mb-6">
                 <h1 className="text-center font-bold text-3xl mb-4">
                   Project overview
                 </h1>
                 <p className="text-justify leading-relaxed">
                   This is my first React application, created as part of my
-                  learning journey. The application is inspired by Swiggy and
+                  learning journey. The application is inspired by some food delivery apps and
                   built entirely from scratch using React.
                 </p>
                 <p className="text-justify leading-relaxed mt-4">
@@ -30,7 +30,7 @@ class About extends Component {
                     Authentication with <strong className="text-orange-600">firebase</strong>.
                   </li>
                   <li>
-                    Restaurant listing with a custom-built search and filtering system, including top-rated restaurants.
+                    Restaurant listing with a custom-built search.
                   </li>
                   <li>
                     Restaurant menu list with a custom-built accordion for smooth, user-friendly navigation.
@@ -39,10 +39,10 @@ class About extends Component {
                     Cart feature that integrates with user profiles for personalized experience.
                   </li>
                   <li>
-                    Fully responsive UI, ensuring seamless experience across all devices.
+                    Payment gateway- Razorpay.
                   </li>
                   <li>
-                    Payment gateway- Razorpay.
+                    Fully responsive UI, ensuring seamless experience across all devices.
                   </li>
                 </ul>
                 <p className="text-justify leading-relaxed mt-4">

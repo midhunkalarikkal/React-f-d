@@ -13,26 +13,26 @@ const Footer = () => {
           </div>
 
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-md md:text-xl font-bold mb-2 md:mb-4">Quick Links</h3>
             <ul>
               <li className="mb-2">
-                <a href="/about" className="hover:text-orange-400">About Us</a>
+                <a href="/about" className="hover:text-orange-400 text-sm md:text-md">About Us</a>
               </li>
               <li className="mb-2">
-                <a href="/contact" className="hover:text-orange-400">Contact</a>
+                <a href="/contact" className="hover:text-orange-400 text-sm md:text-md">Contact</a>
               </li>
               <li className="mb-2">
-                <a href="/faq" className="hover:text-orange-400">FAQ</a>
+                <a href="/faq" className="hover:text-orange-400 text-sm md:text-md">FAQ</a>
               </li>
               <li>
-                <a href="/privacy" className="hover:text-orange-400">Privacy Policy</a>
+                <a href="/privacy" className="hover:text-orange-400 text-sm md:text-md">Privacy Policy</a>
               </li>
             </ul>
           </div>
 
           <div className="w-full md:w-1/3">
-            <h3 className="text-xl font-bold mb-4">Stay Updated</h3>
-            <p className="text-gray-100 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
+            <h3 className="text-xl font-bold mb-2 md:mb-4">Stay Updated</h3>
+            <p className="text-gray-100 mb-2 md:mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
             <form>
               <input
                 type="email"
