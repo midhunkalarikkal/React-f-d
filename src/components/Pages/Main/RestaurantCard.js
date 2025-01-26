@@ -34,7 +34,7 @@ export const withOpenedLabel = (RestaurantCard) => {
   return (Props) => {
     return (
       <div className="relative">
-        <label className="absolute text-sm top-3 left-2 bg-opacity-60 bg-slate-700 text-white z-10 p-1 rounded-lg">
+        <label className="absolute text-sm top-3 left-2 bg-opacity-60 bg-slate-700 text-white p-1 rounded-lg z-10">
           Opened
         </label>
         <RestaurantCard {...Props} />
