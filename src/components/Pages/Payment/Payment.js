@@ -31,6 +31,7 @@ const Payment = () => {
     address: "",
     phone: "",
     city: "",
+    pincode: "",
   });
 
   const handleInputChange = (e) => {
@@ -45,13 +46,16 @@ const Payment = () => {
     const nameRegex = /^[a-zA-Z\s]{3,}$/;
     const phoneRegex = /^[6-9]\d{9}$/;
     const addressRegex = /^.{10,}$/;
+    const cityRegex = /^[A-Za-z\s-]+$/;
+    const pincodeRegex = /^\d{6}$/;
 
     const name = formData.name;
     const address = formData.address;
     const phone = formData.phone;
     const city = formData.city;
+    const pincode = formData.pincode;
 
-    if (!name || !address || !phone || !city) {
+    if (!name || !address || !phone || !city || !pincode) {
       toast.error("Please fill the address form");
       return false;
     }
@@ -68,7 +72,11 @@ const Payment = () => {
       toast.error("Invalid phone number!");
       return false;
     }
-    if (city.trim() === "") {
+    if (!pincodeRegex.test(pincode)) {
+      toast.error("Invalid pincode number!");
+      return false;
+    }
+    if (!cityRegex.test(city)) {
       toast.error("City cannot be empty!");
       return false;
     }
@@ -127,9 +135,10 @@ const Payment = () => {
   return (
     <>
       {!showSuccessDiv && (
-    <div className="md:grid md:grid-cols-2 gap-6 w-full max-w-7xl m-auto p-6">
-          <div className="bg-slate-100 p-6 rounded-lg shadow-md">
-            <h2 className="text-lg md:text-2xl font-semibold mb-4 text-gray-800">
+      <div class="md:flex md:gap-6 w-11/12 md:w-8/12 mx-auto mt-5">
+        <div class="w-full md:w-1/2">
+          <div class="shadow-lg p-4 bg-slate-100 rounded-lg">
+          <h2 className="text-lg md:text-2xl font-semibold mb-4 text-gray-800">
               Address Details
             </h2>
             <form className="space-y-4">
@@ -142,7 +151,7 @@ const Payment = () => {
                   id="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full p-2 border border-gray-300 rounded-md"
+                  className="w-full p-1 md:p-2 border border-gray-300 rounded-md"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -155,7 +164,7 @@ const Payment = () => {
                   id="address"
                   value={formData.address}
                   onChange={handleInputChange}
-                  className="w-full p-2 border border-gray-300 rounded-md"
+                  className="w-full p-1 md:p-2 border border-gray-300 rounded-md"
                   placeholder="Enter your address"
                 />
               </div>
@@ -168,7 +177,7 @@ const Payment = () => {
                   id="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full p-2 border border-gray-300 rounded-md"
+                  className="w-full p-1 md:p-2 border border-gray-300 rounded-md"
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -181,17 +190,36 @@ const Payment = () => {
                   id="city"
                   value={formData.city}
                   onChange={handleInputChange}
-                  className="w-full p-2 border border-gray-300 rounded-md"
+                  className="w-full p-1 md:p-2 border border-gray-300 rounded-md"
                   placeholder="Enter your city"
                 />
               </div>
+              <div>
+                <label htmlFor="pincode" className="block text-gray-600 mb-2">
+                  Pincode
+                </label>
+                <input
+                  type="number"
+                  id="pincode"
+                  value={formData.pincode}
+                  onChange={handleInputChange}
+                  className="w-full p-1 md:p-2 border border-gray-300 rounded-md"
+                  placeholder="Enter your city"
+                />
+              </div>
+              <div>
+                <p className="text-gray-500 text-xs md:text-sm">Providing accurate information helps us process your order smoothly and avoid delays. If you’re shipping to a different address, you can add a separate shipping address below.</p>
+              </div>
             </form>
-          </div>
 
-          <div className="bg-slate-100 p-6 rounded-lg shadow-md mt-2 md:mt-0">
-            <h2 className="text-lg md:text-2xl font-semibold text-gray-800 mb-4">
-              Order Summary
-            </h2>
+          </div>
+        </div>
+    
+      <div class="w-full md:w-1/2 mt-2 md:mt-0">
+        <div class="shadow-lg flex flex-col p-4 bg-slate-100 rounded-lg">
+          <h2 className="text-lg md:text-2xl font-semibold text-gray-800 mb-4">
+            Order Summary
+          </h2>
             <div className="flex justify-between mb-4">
               <p className="text-gray-600">Items Count:</p>
               <p className="font-semibold text-gray-800">{cartItemsCount}</p>
@@ -228,7 +256,9 @@ const Payment = () => {
                 Proceed to Payment
               </button>
             </div>
-          </div>
+
+        </div>
+      </div>
     </div>
       )}
 
