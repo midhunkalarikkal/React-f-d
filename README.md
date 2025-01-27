@@ -19,6 +19,7 @@ Although it is a basic project, with data stored only in **localStorage**, Crave
 * 🔍 **Filter & Search**: Sort restaurants by ratings and search by name.
 * 🛠️ **Reusable Logic**: Utilized custom hooks and higher-order components for efficiency.
 * 💡 **Polished Design**: Includes shimmer loading effects for a better user experience.
+* 💡 **Toast notification**: Integrated react-toastify for user-friendly, real-time notifications, providing feedback for actions like adding items to the cart, successful transactions, or errors..
 
 ---
 
