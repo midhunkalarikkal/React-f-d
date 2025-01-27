@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { CDN_LINK } from "../../../utils/constants";
-import ResMenuShimmer from "../../Shimmers/ResMenuShimmer";
 import RestaurantCategory from "./RestaurantCategory";
+import ResMenuShimmer from "../../Shimmers/ResMenuShimmer";
 import useRestaurantMenu from "../../../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {

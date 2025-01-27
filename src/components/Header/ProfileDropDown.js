@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { auth } from '../../utils/firebase';
 import { toast } from 'react-toastify';
+import React, { useContext } from 'react';
 import { useDispatch } from 'react-redux';
+import { auth } from '../../utils/firebase';
 import { removeUser } from '../../utils/userSlice';
 import UserContext from '../../utils/UserContext';
 

@@ -1,6 +1,6 @@
-import { toast } from 'react-toastify';
 import cartReducer from './cartSlice';
 import userReducer from './userSlice';
+import { toast } from 'react-toastify';
 import { configureStore } from "@reduxjs/toolkit";
 
 const saveToLocalStorage = (state) => {

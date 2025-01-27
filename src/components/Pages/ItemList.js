@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import { addItem } from '../../utils/cartSlice';
 import { CDN_LINK } from "../../utils/constants";
-import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
 
 const ItemList = ({ item }) => {
 

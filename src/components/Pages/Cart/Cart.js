@@ -1,8 +1,8 @@
 import { toast } from "react-toastify";
 import CartItemList from "./CartItemList";
+import { useNavigate } from "react-router-dom";
 import { clearCart } from '../../../utils/cartSlice';
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);

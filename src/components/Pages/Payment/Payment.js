@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { clearCart } from "../../../utils/cartSlice";
-import { useWindowSize } from 'react-use';
 import Confetti from 'react-confetti';
+import { toast } from "react-toastify";
+import { useWindowSize } from 'react-use';
+import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { clearCart } from "../../../utils/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Payment = () => {
   const cartItems = useSelector((store) => store?.cart?.items);

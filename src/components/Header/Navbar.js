@@ -1,14 +1,13 @@
-import { auth, provider } from "../../utils/firebase";
 import { toast } from "react-toastify";
+import ProfileDropDown from "./ProfileDropDown";
+import UserContext from "../../utils/UserContext";
 import { Link, useLocation } from "react-router-dom";
-import { LOGO } from "../../utils/constants";
+import { auth, provider } from "../../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { useContext, useEffect, useState } from "react";
-import UserContext from "../../utils/UserContext";
 import useOnlineStatus from "../../utils/useOnlineStatus";
-import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../../utils/userSlice";
-import ProfileDropDown from "./ProfileDropDown";
+import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
 
 const Navbar = () => {
   const onlineStatus = useOnlineStatus();

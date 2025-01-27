@@ -1,12 +1,12 @@
 import Error from "../Error";
-import ResCardShimmer from "../../Shimmers/ResCardShimmer";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { RESTAURANT_LIST_API } from "../../../utils/constants";
-import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 import { dummyData } from "../../../utils/DummyData";
+import { GET_RESTAURANTS } from '../../../utils/constants'
+import ResCardShimmer from "../../Shimmers/ResCardShimmer";
+import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 
 require("dotenv").config;
 
@@ -29,29 +29,11 @@ const Body = () => {
   const fetchData = async () => {
     let json;
     try {
-      const response = await fetch(RESTAURANT_LIST_API);
+      const response = await fetch(GET_RESTAURANTS);
       if (!response.ok) {
           throw new Error(`Failed to fetch: ${response.statusText}`);
       }
-      json = await response.json();
-      
-      let restaurants;
-
-      let arr = [];
-      if (json?.data?.cards) {
-        for (let i = 0; i < json.data.cards.length - 1; i++) {
-          const restaurants = json.data.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-          if (restaurants) {
-            arr.push(restaurants);
-          }
-        }
-      }
-      
-      const lengthiestArray = arr.reduce((longest, current) => {
-        return current.length > longest.length ? current : longest;
-      }, []);
-
-      restaurants = lengthiestArray;
+      restaurants = await response.json();
 
       setListOfRestaurant(restaurants);
       setFilteredRestaurant(restaurants);
