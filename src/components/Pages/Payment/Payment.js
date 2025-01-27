@@ -82,7 +82,7 @@ const Payment = () => {
       if (validateForm()) {
         const options = {
           key: process.env.RAZORPAY_KEY_ID,
-          amount: (cartTotal + 50) * 100,
+          amount: Math.round((cartTotal + 50) * 100),
           currency: "INR",
           name: "CraveRoute",
           description: "Test Transaction",
@@ -94,12 +94,14 @@ const Payment = () => {
               navigate("/");
             },5000);
           },
-          modalClose: () => {
-            toast.error("Payment Failed! Please try again.");
+          modal: {
+            ondismiss: () => {
+              toast.error("Payment Failed! Please try again.");
+            },
           },
           prefill: {
-            name: formData.name,
-            contact: formData.phone,
+            name: formData?.name || "Guest User",
+            contact: formData?.phone || "9999999999",
           },
           theme: {
             color: "#f97316",
@@ -111,8 +113,12 @@ const Payment = () => {
             },
           },
         };
-
+        
         const rzp = new window.Razorpay(options);
+        rzp.on("payment.failed", (response) => {
+          toast.error("Payment failed! Please try again.");
+        });
+        
         rzp.open();
       }
     }

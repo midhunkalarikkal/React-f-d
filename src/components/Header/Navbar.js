@@ -96,7 +96,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className="lg:hidden cursor-pointer"
+        className="lg:hidden cursor-pointer mr-2"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <span className="text-2xl text-orange-400">☰</span>
@@ -162,7 +162,7 @@ const Navbar = () => {
       {showProfileDropDown && user && <ProfileDropDown />}
 
       {isMenuOpen && (
-        <div className="fixed top-4 right-0 w-48 h-auto bg-white shadow-lg z-50">
+        <div className="fixed top-4 right-0 w-44 h-auto bg-white shadow-lg z-50">
           <ul className="flex flex-col gap-4 p-2">
             <li
               className="cursor-pointer text-right text-lg font-bold"

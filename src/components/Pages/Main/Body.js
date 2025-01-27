@@ -3,12 +3,10 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { dummyData } from "../../../utils/DummyData";
-import { GET_RESTAURANTS } from '../../../utils/constants'
 import ResCardShimmer from "../../Shimmers/ResCardShimmer";
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
-
 require("dotenv").config;
+const API_URL = process.env.RESTAURANT_LIST_API;
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -27,14 +25,10 @@ const Body = () => {
   });
 
   const fetchData = async () => {
-    let json;
     try {
-      const response = await fetch(GET_RESTAURANTS);
-      if (!response.ok) {
-          throw new Error(`Failed to fetch: ${response.statusText}`);
-      }
-      restaurants = await response.json();
-
+      const response = await fetch(API_URL);
+      const responseText = await response.text();
+      const restaurants = JSON.parse(responseText);
       setListOfRestaurant(restaurants);
       setFilteredRestaurant(restaurants);
     } catch (err) {
