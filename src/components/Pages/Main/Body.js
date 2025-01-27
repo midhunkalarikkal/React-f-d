@@ -60,10 +60,6 @@ const Body = () => {
     }
   };
 
-  if (error) {
-    return <Error message={`Error: ${error}`} />;
-  }
-
   return (
     <>
       <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] shadow-lg">
@@ -77,7 +73,7 @@ const Body = () => {
           <div className="flex items-center space-x-4">
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search Restaurants"
               className="w-9/12 sm:w-10/12 p-1 md:p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-black bg-opacity-80 text-white"
               value={searchInputText}
               onChange={(e) => {
@@ -101,6 +97,7 @@ const Body = () => {
         </div>
       </div>
 
+{!error ? 
       <div className="flex justify-center min-h-screen">
         <div className="flex w-full md:w-10/12 flex-col items-center">
           <div className="grid gap-2 md:gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
@@ -123,6 +120,23 @@ const Body = () => {
           </div>
         </div>
       </div>
+      :
+      <div className="flex flex-col items-center justify-center bg-black text-gray-700 min-h-screen">
+      <div className="bg-white shadow-lg rounded-lg p-8 text-center">
+        <h1 className="text-4xl font-bold text-red-600 mb-4">Oops!!!</h1>
+        <h2 className="text-2xl font-semibold mb-4">
+        Error!
+        </h2>
+        <h3 className="text-xl font-medium text-gray-800 mb-2">
+          Data fetching error
+        </h3>
+        <p className="text-gray-600">
+          Please try again after sometimes.
+        </p>
+      </div>
+    </div>
+}
+
     </>
   );
 };

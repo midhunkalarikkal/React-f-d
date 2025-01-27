@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "craveroute-food-order",
     "public": "dist",
     "ignore": [
       "firebase.json",

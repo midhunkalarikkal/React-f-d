@@ -6,15 +6,22 @@ const useRestaurantMenu = (resId) => {
     const [ resInfo, setResInfo ] = useState(null)
 
     useEffect(() => {
-        fetchData()
-    },[])
+        if (resId) {
+            fetchData();
+        }
+    }, [resId]);
 
     const fetchData = async () => {
-        const data = await fetch(MENU_API + resId + MENU_API_END)
-        const json = await data.json()
-        setResInfo(json.data)
-    }
-    return resInfo
+        try {
+            const response = await fetch(MENU_API + resId + MENU_API_END);
+            const json = await response.json();
+            setResInfo(json?.data || null);
+        } catch (error) {
+            setResInfo(null);
+        }
+    };
+
+    return resInfo;
 }
 
 export default useRestaurantMenu;
