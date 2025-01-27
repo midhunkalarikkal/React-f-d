@@ -1,8 +1,8 @@
-# 🍽️ CraveRoute - A Food a simple food ordering Application
+# 🍽️ CraveRoute - A Simple Food Ordering Application
 
-CraveRoute is a simple and elegant front-end food delivery application built as part of my learning journey with **React** and **Tailwind CSS**. This project helped me explore and implement various concepts and features of React, Redux, and Tailwind CSS, combining them into a fully functional and responsive sample application.
+CraveRoute is a simple and elegant food delivery application built as part of my learning journey with **React** and **Tailwind CSS**. This project helped me explore and implement various concepts and features of React, Redux, and Tailwind CSS, combining them into a fully functional and responsive sample application.
 
-Developed entirely from scratch, CraveRoute reflects my dedication to learning React and building modern web applications. By starting from a blank canvas and structured the application logic, explored component-based development, and created a seamless user experience.
+Developed entirely from scratch, CraveRoute reflects my dedication to learning React and building modern web applications. By starting from a blank canvas, I structured the application logic, explored component-based development, and created a seamless user experience.
 
 Although it is a basic project, with data stored only in **localStorage**, CraveRoute served as an excellent platform for me to dive deeper into React's capabilities and styling with Tailwind, while understanding how state management with Redux can simplify complex UI logic. Inspired by popular food delivery apps, it showcases essential features like restaurant listings, menu viewing, cart management, and a payment gateway.
 
@@ -25,12 +25,14 @@ Although it is a basic project, with data stored only in **localStorage**, Crave
 ## ⚙️ Technologies and Tools Used
 
 ### 🚀 Core Technologies
+
 * **React**: For building the UI using both class and functional components.
 * **Redux**: To manage state effectively.
 * **React Router**: For seamless navigation between pages.
 * **Tailwind CSS**: For modern, responsive, and easy-to-maintain styling.
 
 ### 🛠️ Additional Concepts and Tools
+
 * **Firebase**: For authentication.
 * **Razorpay**: Integrated for payment processing.
 * **Custom Hooks**: Reusable logic for better component design.
@@ -38,12 +40,14 @@ Although it is a basic project, with data stored only in **localStorage**, Crave
 * **Higher-Order Components**: Used for restaurant cards.
 * **Parcel Bundler**: Optimized application build and configuration.
 * **Jest**: For testing components and ensuring functionality.
+* **Server**: Created a small server to handle APIs, CORS, and data destructuring.
 
 ---
 
 ## 📦 Dependencies
 
 ### 🔗 Regular Dependencies
+
 * `@reduxjs/toolkit` - Efficient Redux state management.
 * `dotenv` - Manage environment variables securely.
 * `firebase` - For authentication and real-time database.
@@ -57,6 +61,7 @@ Although it is a basic project, with data stored only in **localStorage**, Crave
 * `redux-persist` - Persist and rehydrate Redux store.
 
 ### 🛠️ Development Dependencies
+
 * `@babel/core` - Core Babel functionality for JavaScript transpilation.
 * `@babel/preset-env` - Enables Babel to transform modern JavaScript.
 * `@babel/preset-react` - Babel preset for React.
@@ -82,6 +87,7 @@ Although it is a basic project, with data stored only in **localStorage**, Crave
 ## 🎯 Learning Outcome
 
 CraveRoute was a great learning experience, allowing me to:
+
 * Build reusable components.
 * Explore state management with Redux.
 * Implement routing and conditional rendering.
@@ -89,5 +95,4 @@ CraveRoute was a great learning experience, allowing me to:
 * Style with Tailwind CSS.
 * Test components with Jest.
 * Optimize the app with Parcel.
-
----
+* Created a simple server to handle APIs, CORS, and data destructuring.
