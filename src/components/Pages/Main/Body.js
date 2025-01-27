@@ -79,7 +79,7 @@ const Body = () => {
         )
       }
 
-    {!error ? 
+    {!error && filteredRestaurant.length !== 0 ? 
       <div className="flex justify-center min-h-screen">
         <div className="flex w-full md:w-10/12 flex-col items-center">
           <div className="grid gap-2 md:gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
