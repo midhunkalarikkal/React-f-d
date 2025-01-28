@@ -1,7 +1,7 @@
 const ResCardShimmer = () => {
   return (
-    <div className="flex flex-wrap p-4 w-full md:w-10/12 min-h-screen mx-auto">
-      {Array.from({ length: 8 }).map((_, index) => (
+    <div className="flex flex-wrap p-4 w-full md:w-10/12 mx-auto">
+      {Array.from({ length: 10 }).map((_, index) => (
         <div
           key={index}
           className="p-2 flex flex-col ounded-lg w-[calc(50%-8px)] md:w-[calc(33.33%-12px)] lg:w-[calc(25%)]"
