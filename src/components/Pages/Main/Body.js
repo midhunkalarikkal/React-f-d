@@ -7,6 +7,7 @@ import ResCardShimmer from "../../Shimmers/ResCardShimmer";
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 require("dotenv").config;
 const API_URL = process.env.RESTAURANT_LIST_API;
+const BG_URL = process.env.BG_URL;
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -40,7 +41,7 @@ const Body = () => {
     <>
       <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] shadow-lg">
         <img
-          src="https://res.cloudinary.com/ddqyiqkbi/image/upload/v1737894216/2151846558_day7bk.jpg"
+          src={BG_URL}
           className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover absolute top-0 left-0 z-0"
           alt="Background"
         />

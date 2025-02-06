@@ -17,9 +17,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-
+  const LOGO_URL = process.env.LOGO_URL;
   const user = useSelector((store) => store.user.user);
-
   const dispatch = useDispatch();
 
   const handleLogin = (e) => {
@@ -88,7 +87,7 @@ const Navbar = () => {
         </Link>
         <Link to={"/"}>
           <img
-            src="https://res.cloudinary.com/ddqyiqkbi/image/upload/v1737814756/TasteTown_logo_knv3cx.png"
+            src={LOGO_URL}
             alt="Logo"
             className="w-10"
           />

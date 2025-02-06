@@ -14,6 +14,7 @@ const Payment = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { width, height } = useWindowSize();
+  const LOGO_URL = process.env.LOGO_URL;
 
   useEffect(() => {
 
@@ -113,7 +114,7 @@ const Payment = () => {
           },
           theme: {
             color: "#f97316",
-            logo: "https://res.cloudinary.com/ddqyiqkbi/image/upload/v1737814756/TasteTown_logo_knv3cx.png",
+            logo: {LOGO_URL},
           },
           external: {
             error: (error) => {
