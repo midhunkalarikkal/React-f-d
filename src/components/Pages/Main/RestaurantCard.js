@@ -1,4 +1,3 @@
-import { CDN_LINK } from "../../../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -9,7 +8,7 @@ const RestaurantCard = (props) => {
     <div className="flex flex-col rounded-lg overflow-hidden">
       <div className="relative h-44 md:h-56">
         <img
-          src={CDN_LINK + cloudinaryImageId}
+          src={process.env.CDN_LINK + cloudinaryImageId}
           alt="res-card-image"
           className="w-full h-full md:h-full object-cover rounded-lg"
         />

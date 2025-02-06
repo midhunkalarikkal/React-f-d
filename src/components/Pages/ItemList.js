@@ -1,6 +1,5 @@
 import { toast } from "react-toastify";
 import { addItem } from '../../utils/cartSlice';
-import { CDN_LINK } from "../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 
 const ItemList = ({ item }) => {

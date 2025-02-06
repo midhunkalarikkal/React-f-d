@@ -1,4 +1,3 @@
-import { CDN_LINK } from "../../../utils/constants";
 
 const CartItemList = ({ item }) => {
 
@@ -19,7 +18,7 @@ const CartItemList = ({ item }) => {
           </div>
           <div className="flex justify-center w-3/12">
             <img
-              src={CDN_LINK + item.imageId}
+              src={process.env.CDN_LINK + item.imageId}
               alt=""
               className="w-28 object-fill rounded-lg"
             />

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { CDN_LINK } from "../../../utils/constants";
 import RestaurantCategory from "./RestaurantCategory";
 import ResMenuShimmer from "../../Shimmers/ResMenuShimmer";
 import useRestaurantMenu from "../../../utils/useRestaurantMenu";
@@ -38,7 +37,7 @@ const RestaurantMenu = () => {
       <div className="flex p-4 rounded-lg shadow-md w-full h-full bg-slate-100">
         <div className="w-4/12 flex justify-center items-center">
           <img
-            src={CDN_LINK + cloudinaryImageId}
+            src={process.env.CDN_LINK + cloudinaryImageId}
             className="rounded-lg w-auto h-20 md:h-32 object-fit"
             alt="Restaurant"
           />

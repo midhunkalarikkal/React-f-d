@@ -103,11 +103,6 @@ const Payment = () => {
               navigate("/");
             },5000);
           },
-          modal: {
-            ondismiss: () => {
-              toast.error("Payment Failed! Please try again.");
-            },
-          },
           prefill: {
             name: formData?.name || "Guest User",
             contact: formData?.phone || "9999999999",
@@ -115,11 +110,6 @@ const Payment = () => {
           theme: {
             color: "#f97316",
             logo: {LOGO_URL},
-          },
-          external: {
-            error: (error) => {
-              toast.error("Payment failed due to an error! Please try again.");
-            },
           },
         };
         
