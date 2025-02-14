@@ -141,7 +141,7 @@ const Navbar = () => {
           <li>
             {user ? (
               <img
-                src={user.profileImage}
+                src={user.profileImage || process.env.USER_DEFAULT_PROFILE_LINK}
                 alt="Pr"
                 className="w-10 h-10 rounded-full cursor-pointer border-2 border-orange-400"
                 onClick={() => setShowProfileDropDown((prev) => !prev)}
@@ -180,7 +180,7 @@ const Navbar = () => {
                 <li>
                   <div className="flex items-center cursor-pointer">
                     <img
-                      src={user.profileImage}
+                      src={user.profileImage || process.env.USER_DEFAULT_PROFILE_LINK}
                       alt="Pr"
                       className="w-10 h-10 rounded-full"
                     />

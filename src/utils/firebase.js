@@ -10,13 +10,13 @@ import {  getAuth, GoogleAuthProvider } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDe-7eeGxWWuVh4ojsn6ijXFm7Umdy09jA",
-  authDomain: "craveroute-cc28f.firebaseapp.com",
-  projectId: "craveroute-cc28f",
-  storageBucket: "craveroute-cc28f.firebasestorage.app",
-  messagingSenderId: "1063403510429",
-  appId: "1:1063403510429:web:0be7e89b2ab32c8275d274",
-  measurementId: "G-YSW40LXKRE"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APPID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase
